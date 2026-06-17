@@ -15,6 +15,7 @@ function enter_blink(dt)
  
         if love.keyboard.isDown("return") then 
             gameState = "play" 
+            spawn_player()
         end 
     end 
 end 

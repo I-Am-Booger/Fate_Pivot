@@ -2,6 +2,7 @@ require("introscreen/globals")
 require("introscreen/title_screen")
 require("grid/grid_draw")
 require("grid/grid_table")
+require("spawning_player")
 
 function love.load()
     --[[ START SCREEN STUFF, SETTING THE TITLE, RESOLUTION, 
@@ -26,7 +27,7 @@ function love.load()
     score = 0 
     level = 0 
     
-    timer = 3
+    timer = 3 -- when gameplay it will start at 2 testing 3
     spawnTime = 3
 
 --blinking timer 
@@ -35,7 +36,7 @@ function love.load()
 
 
 -- emd of title stuff
-    building_the_grid() --builds the grid on load 
+building_the_grid() --builds the grid on load 
 
 end
 
@@ -47,11 +48,13 @@ function love.update(dt)
         timer = timer - dt
 
         if timer <= 0 then 
+            spawn_player()
             timer = spawnTime
         end
     end 
 
 end 
+
 
 function love.draw()
     
@@ -65,9 +68,9 @@ function love.draw()
     end 
     
     if gameState == "play" then 
-    
+        draw_player_block()
         grid()
-                
+                        
         love.graphics.line(1500, 1500, 1500, 0  )     
         love.graphics.setFont(bigFont)
         
@@ -75,4 +78,5 @@ function love.draw()
         love.graphics.print("Timer: " .. string.format("%.2f", timer), 1600, 180)
         love.graphics.print("Scores: " .. score, 1600, 260)
     end    
+    
 end 
