@@ -48,7 +48,7 @@ function love.update(dt)
         timer = timer - dt
 
         if timer <= 0 then 
-            spawn_player()
+            spawn_bad_block()
             timer = spawnTime
         end
     end 
@@ -68,7 +68,7 @@ function love.draw()
     end 
     
     if gameState == "play" then 
-        draw_player_block()
+        draw_block()
         grid()
                         
         love.graphics.line(1500, 1500, 1500, 0  )     

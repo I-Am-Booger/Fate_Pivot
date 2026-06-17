@@ -1,4 +1,4 @@
-function spawn_player()
+function spawn_bad_block()
     
     local random = {}
 

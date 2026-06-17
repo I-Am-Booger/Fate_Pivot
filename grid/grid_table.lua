@@ -13,7 +13,8 @@ function grid_blocks(num, x, y)
     
     for i = 1, num do
         local gt = {id = id, x = x , y = y, w = c, h = c, 
-        color = nil, occupied = false, block = nil, owner = nil}     
+        occupied = false, owner = nil, color = nil, button = nil }     
+        
         table.insert(grid_table, gt)
         id = id + 1
         x = x + c
@@ -46,8 +47,8 @@ for i, cellData in ipairs(grid_table) do
     print(i, cellData.x, cellData.y)
 end
 
-function draw_player_block() -- we are felling in the blocks to create the player inside of them
-    love.graphics.setColor(0,1,0)
+function draw_block() -- we are felling in the blocks to create the player inside of them
+    love.graphics.setColor(0,1,0) -- testing and trying to fix it 
     for i, cellData in ipairs(grid_table) do 
         if cellData.occupied == true then -- once it is true it draws a block
             love.graphics.rectangle("fill", cellData.x, cellData.y, cellData.w, cellData.h)
