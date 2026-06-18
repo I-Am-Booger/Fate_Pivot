@@ -2,7 +2,9 @@ require("introscreen/globals")
 require("introscreen/title_screen")
 require("grid/grid_draw")
 require("grid/grid_table")
-require("spawning_player")
+require("block_Spawning/spawning_blocks")
+require("block_Spawning/spawning_player")
+require("block_spawning/spawning_bad_blocks")
 
 function love.load()
     --[[ START SCREEN STUFF, SETTING THE TITLE, RESOLUTION, 
@@ -46,15 +48,12 @@ function love.update(dt)
 
     if gameState == "play" then 
         timer = timer - dt
-
         if timer <= 0 then 
             spawn_bad_block()
             timer = spawnTime
         end
     end 
-
 end 
-
 
 function love.draw()
     
@@ -70,7 +69,7 @@ function love.draw()
     if gameState == "play" then 
         draw_block()
         grid()
-                        
+                                
         love.graphics.line(1500, 1500, 1500, 0  )     
         love.graphics.setFont(bigFont)
         

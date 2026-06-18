@@ -1,5 +1,0 @@
-Next 
-- Timer spawn system
-- player block destroy
-- controller support
-- make occupied blocks different colors

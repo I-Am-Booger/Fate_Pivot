@@ -13,9 +13,9 @@ function enter_blink(dt)
         end 
         -- end of working on blinking timer 
  
-        if love.keyboard.isDown("return") then 
+        if love.keyboard.isDown("return") and gameState == "title" then 
             gameState = "play" 
-            spawn_bad_block()
+            spawn_player()
         end 
     end 
 end 
