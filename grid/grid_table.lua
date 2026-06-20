@@ -1,14 +1,19 @@
---[[ This is the file to buid the grid to hold the block 
-and your blocks ]]
-local x = borderX -- easier to read 
+--[[ 
+        1. This is the file to buid the grid to hold the cell info
+        2. x, y, amd c are short hand for dimensions. id = 1 as a shorthand for incrmention        
+        3. grid_table hold a dictionary type list with the info for each cell in the grid 
+        4. grid blocks makes a line of blocks()
+        5.  building_the_grid() takes gridblocks draws a line of blocks and then changes the 
+            cordanance for the next time grid blocks is called  
+]]
+
+local x = borderX 
 local y = borderY
 local c = cell
 local id = 1
 
 grid_table = {}
 
-
--- Grid blocks makes the line of blocks 
 function grid_blocks(num, x, y)
     
     for i = 1, num do
@@ -20,10 +25,6 @@ function grid_blocks(num, x, y)
         x = x + c
     end  
 end 
-
---[[ building_the_grid uses grid-blocks to draw the blocks and then repositions 
-     the blocks with a new cordanence 
-]]
 
 function building_the_grid()  
 
@@ -40,33 +41,8 @@ function building_the_grid()
     x = x + c
     y = y + c
     grid_blocks(4, x ,y)
-
 end 
 
-for i, cellData in ipairs(grid_table) do
-    print(i, cellData.x, cellData.y)
-end
 
-function draw_block() -- we are felling in the blocks to create the player inside of them
-    for i, cellData in ipairs(grid_table) do 
-        if cellData.occupied == true then -- once it is true it draws a block
-    
-        if cellData.color == "blue" then
-            love.graphics.setColor(0,0,1)
-        elseif cellData.color == "green" then
-            love.graphics.setColor(0,1,0)
-        elseif cellData.color == "red" then
-            love.graphics.setColor(1,0,0)
-        elseif cellData.color == "yellow" then
-            love.graphics.setColor(1,1,0)
-        elseif cellData.color =="white" then
-            love.graphics.setColor(1,1,1)
-        end
-  
-        love.graphics.rectangle("fill", cellData.x, cellData.y, cellData.w, cellData.h)
-     
-        end 
-    end
-end 
 
 

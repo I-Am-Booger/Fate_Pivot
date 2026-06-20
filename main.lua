@@ -1,11 +1,12 @@
 require("introscreen/globals")
 require("introscreen/title_screen")
+require("music/music")
 require("grid/grid_draw")
 require("grid/grid_table")
 require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")
 require("block_Spawning/spawning_bad_blocks")
-require("controller")
+require("gameplay/controller")
 
 function love.load()
     --[[ START SCREEN STUFF, SETTING THE TITLE, RESOLUTION, 
@@ -17,20 +18,15 @@ function love.load()
     gameState = "title"
     showEnter = true
 
-    --start page song 
-    backgroundMusic = love.audio.newSource("music/IntroSong.mp3", "stream")
-    --looping the song
-    backgroundMusic:setLooping(true)
-    love.audio.play(backgroundMusic)
-    -- End o screen stuff etc
 
+    songs()
+    -- End o screen stuff etc
 ---------------------------------------------------------------------------------
     bigFont = love.graphics.newFont(48)
 
     score = 0 
     level = 0 
     
-
     timer = 3 -- when gameplay it will start at 2 testing 3
     spawnTime_timer = 3
     player_timer = 3
@@ -59,8 +55,6 @@ function love.update(dt)
 end 
 
 
-
-
 function love.draw()
     
     if gameState == "title" then 
@@ -75,13 +69,14 @@ function love.draw()
     if gameState == "play" then 
         draw_block()
         grid()
-                                
+        
         love.graphics.line(1500, 1500, 1500, 0  )     
         love.graphics.setFont(bigFont)
         
         love.graphics.print("Lvl: " .. level, 1600, 100)
         love.graphics.print("Timer: " .. string.format("%.2f", timer), 1600, 180)
         love.graphics.print("Scores: " .. score, 1600, 260)
+        draw_selector() -- this will probably have to more 
     end    
-    
+
 end 

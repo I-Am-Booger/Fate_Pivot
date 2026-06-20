@@ -1,3 +1,9 @@
+--[[
+       1. Shared spawning helper 
+       2. Finds one random empty grid cell by checking if occupied in the random table using a for loop 
+       3. Player blocks and bad blocks both uuse this 
+]]
+
 function get_random_empty_block()
     
     local random = {}
