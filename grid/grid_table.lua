@@ -59,6 +59,8 @@ function draw_block() -- we are felling in the blocks to create the player insid
             love.graphics.setColor(1,0,0)
         elseif cellData.color == "yellow" then
             love.graphics.setColor(1,1,0)
+        elseif cellData.color =="white" then
+            love.graphics.setColor(1,1,1)
         end
   
         love.graphics.rectangle("fill", cellData.x, cellData.y, cellData.w, cellData.h)

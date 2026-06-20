@@ -19,8 +19,3 @@ function get_random_empty_block()
     
 end 
 
--- spawn_bad_block() old name for the funtion get_random_empty_blocks 
--- and must be replaced 
-
--- Must put this in both spawning_bad blocks and spawning_player.lua
--- chosenCell.occupied = true

@@ -4,7 +4,8 @@ require("grid/grid_draw")
 require("grid/grid_table")
 require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")
-require("block_spawning/spawning_bad_blocks")
+require("block_Spawning/spawning_bad_blocks")
+require("controller")
 
 function love.load()
     --[[ START SCREEN STUFF, SETTING THE TITLE, RESOLUTION, 
@@ -29,8 +30,10 @@ function love.load()
     score = 0 
     level = 0 
     
+
     timer = 3 -- when gameplay it will start at 2 testing 3
-    spawnTime = 3
+    spawnTime_timer = 3
+    player_timer = 3
 
 --blinking timer 
     blinkTimer = 0
@@ -50,10 +53,13 @@ function love.update(dt)
         timer = timer - dt
         if timer <= 0 then 
             spawn_bad_block()
-            timer = spawnTime
+            timer = spawnTime_timer
         end
     end 
 end 
+
+
+
 
 function love.draw()
     

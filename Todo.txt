@@ -1,0 +1,25 @@
+□ R1 destroy
+□ Respawn player
+□ Controller support
+□ Cursor
+□ D-pad movement
+□ Symbols
+□ Symbol matching
+□ Score
+□ Lose condition
+□ Combo system
+Polish
+□ Art
+□ Particles
+□ Sound effects
+□ Better fonts
+□ Menus
+□ Options
+□ Difficulty
+□ Colorblind mode
+Future
+□ Multiplayer
+□ Online play
+□ VR version
+□ Rotating board
+□ Reverse controls
