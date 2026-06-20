@@ -6,7 +6,7 @@ require("grid/grid_table")
 require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")
 require("block_Spawning/spawning_bad_blocks")
-require("gameplay/controller")
+require("controls/controls")
 
 function love.load()
     --[[ START SCREEN STUFF, SETTING THE TITLE, RESOLUTION, 
