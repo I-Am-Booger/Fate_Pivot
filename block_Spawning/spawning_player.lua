@@ -5,8 +5,6 @@
          It also respawns the piece to another place by using the spawn_player() and using get_random_empty_block
 ]]
 
-
-
 function spawn_player()
     local cell = get_random_empty_block()
     
@@ -18,19 +16,4 @@ function spawn_player()
     selectedCell = cell
 
     return cell
-end 
-
-function destroy_player()
-    if currentPlayerCell then
-        
-        currentPlayerCell.occupied = false
-        currentPlayerCell.owner = nil
-        currentPlayerCell.color = nil
-        currentPlayerCell.button = nil
-    
-    end
-
-    currentPlayerCell = nil
-
-    spawn_player()
 end 

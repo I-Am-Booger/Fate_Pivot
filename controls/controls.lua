@@ -19,3 +19,30 @@ function move_selector(move)
         end 
     end
 end 
+
+function destroy_player()
+    if currentPlayerCell then
+        
+        currentPlayerCell.occupied = false
+        currentPlayerCell.owner = nil
+        currentPlayerCell.color = nil
+        currentPlayerCell.button = nil
+    
+    end
+
+    currentPlayerCell = nil
+
+    spawn_player()
+end 
+
+function destroy_bad_block(buttonPressed)
+    if selectedCell == nil then return end 
+    if selectedCell.owner ~= "bad" then return end 
+
+    selectedCell.occupied = false
+    selectedCell.owner = nil
+    selectedCell.color = nil
+    selectedCell.button = nil
+
+    selectedCell = currentPlayerCell
+end 

@@ -18,7 +18,6 @@ function love.load()
     gameState = "title"
     showEnter = true
 
-
     songs()
     -- End o screen stuff etc
 ---------------------------------------------------------------------------------
@@ -38,7 +37,6 @@ function love.load()
 
 -- emd of title stuff
 building_the_grid() --builds the grid on load 
-
 end
 
 
@@ -78,5 +76,4 @@ function love.draw()
         love.graphics.print("Scores: " .. score, 1600, 260)
         draw_selector() -- this will probably have to more 
     end    
-
 end 

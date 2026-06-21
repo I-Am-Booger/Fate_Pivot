@@ -5,7 +5,6 @@
 ]]
 
 function get_random_empty_block()
-    
     local random = {}
     
     for i, cellData in ipairs(grid_table) do
@@ -21,7 +20,5 @@ function get_random_empty_block()
     local mathR = love.math.random(1, #random)
     local chosenCell = random[mathR]
     
-    return chosenCell
-    
+    return chosenCell    
 end 
-
