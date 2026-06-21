@@ -63,7 +63,11 @@ function draw_block() -- we are felling in the blocks to create the player insid
         end
   
         love.graphics.rectangle("fill", cellData.x, cellData.y, cellData.w, cellData.h)
-     
+        
+        if cellData.owner == "bad" and cellData.button ~= nil then
+            love.graphics.setColor(1, 1, 1)
+
+            love.graphics.print(cellData.button, cellData.x + 25, cellData.y + 35) end
         end 
     end
 end 
