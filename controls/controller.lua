@@ -9,10 +9,10 @@ function love.gamepadpressed(joystick, button)
 
     if button == "start" then end -- pauses the game or starts the game
     
-    if button == "y" then destroy_bad_block("triangle") end -- this is the triangle button
-    if button == "a" then destroy_bad_block("x") end -- this is the cross button
-    if button == "s" then destroy_bad_block("square") end -- this is the square button
-    if button == "b" then destroy_bad_block("circle") end -- this is the circle button
+    if button == "y" then destroy_bad_block("Y") end -- this is the triangle button
+    if button == "x" then destroy_bad_block("X") end -- this is the cross button
+    if button == "a" then destroy_bad_block("A") end -- this is the square button
+    if button == "b" then destroy_bad_block("B") end -- this is the circle button
 
     if button == "rightshoulder" then destroy_player() end 
 end

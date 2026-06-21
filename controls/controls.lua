@@ -39,10 +39,15 @@ function destroy_bad_block(buttonPressed)
     if selectedCell == nil then return end 
     if selectedCell.owner ~= "bad" then return end 
 
+    if selectedCell.button ~= buttonPressed then
+        return
+    end
+
     selectedCell.occupied = false
     selectedCell.owner = nil
     selectedCell.color = nil
     selectedCell.button = nil
 
     selectedCell = currentPlayerCell
+
 end 

@@ -13,10 +13,10 @@ bad_blockColors = {
 }
 
 button_symble = {
-    "T",
+    "Y",
     "X",
-    "S",
-    "o"
+    "A",
+    "B"
 }
 
 
