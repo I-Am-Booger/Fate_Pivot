@@ -1,3 +1,10 @@
+function setDisplay()
+    love.window.setMode(1920, 1080)
+    love.window.setTitle("Fate & Pivot")
+end
+
+
+
 function enter_blink(dt)    
     if gameState == "title" then
         blinkTimer = blinkTimer + dt    
@@ -12,10 +19,5 @@ function enter_blink(dt)
             blinkTimer = 0
         end 
         -- end of working on blinking timer 
- 
-        if love.keyboard.isDown("return") and gameState == "title" then 
-            gameState = "play" 
-            spawn_player()
-        end 
     end 
 end 

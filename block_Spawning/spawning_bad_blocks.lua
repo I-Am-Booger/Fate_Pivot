@@ -12,7 +12,7 @@ bad_blockColors = {
     "blue"
 }
 
-button_symble = {
+button_symbol = {
     "Y",
     "X",
     "A",
@@ -23,8 +23,13 @@ button_symble = {
 function spawn_bad_block()
     local cell = get_random_empty_block()
 
+    if cell == nil then 
+        game_over()
+        return
+    end 
+
     local randomColor  = bad_blockColors[love.math.random(1, #bad_blockColors)]
-    local randomSymble = button_symble[love.math.random(1, #button_symble)]
+    local randomSymble = button_symbol[love.math.random(1, #button_symbol)]
     cell.occupied = true
     cell.owner = "bad"
     cell.color = randomColor

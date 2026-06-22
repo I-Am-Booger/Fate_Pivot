@@ -8,6 +8,11 @@
 function spawn_player()
     local cell = get_random_empty_block()
     
+    if cell == nil then
+        game_over()
+        return
+    end 
+    
     cell.occupied = true
     cell.owner = "player"
     cell.color = "white"

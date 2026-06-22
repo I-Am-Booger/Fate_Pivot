@@ -3,6 +3,8 @@ require("controls/keyboard")
 
 
 function move_selector(move)
+    if gameState ~= "play" then return end 
+    if currentPlayerCell == nil then return end 
 
     local targetX = currentPlayerCell.x
     local targetY = currentPlayerCell.y
@@ -49,5 +51,5 @@ function destroy_bad_block(buttonPressed)
     selectedCell.button = nil
 
     selectedCell = currentPlayerCell
-
+    add_score(1)
 end 

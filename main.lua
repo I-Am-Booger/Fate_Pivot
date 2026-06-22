@@ -1,44 +1,18 @@
-require("introscreen/globals")
-require("introscreen/title_screen")
-require("music/music")
-require("grid/grid_draw")
-require("grid/grid_table")
-require("block_Spawning/spawning_blocks")
-require("block_Spawning/spawning_player")
-require("block_Spawning/spawning_bad_blocks")
-require("controls/controls")
+require("routingSystem/rout")
 
 function love.load()
-    --[[ START SCREEN STUFF, SETTING THE TITLE, RESOLUTION, 
-         GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC ]]
-    love.window.setMode(1920, 1080)
-    love.window.setTitle("Fate & Pivot")
-    
-    -- title stuff 
-    gameState = "title"
-    showEnter = true
-
+    -- START SCREEN STUFF, GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC
+    setDisplay()  
     songs()
     -- End o screen stuff etc
----------------------------------------------------------------------------------
     bigFont = love.graphics.newFont(48)
-
-    score = 0 
-    level = 0 
     
-    timer = 3 -- when gameplay it will start at 2 testing 3
-    spawnTime_timer = 3
-    player_timer = 3
-
---blinking timer 
+    --blinking timer 
     blinkTimer = 0
--- end of blinking timer 
 
-
--- emd of title stuff
-building_the_grid() --builds the grid on load 
+    -- emd of title stuff
+    building_the_grid() --builds the grid on load 
 end
-
 
 function love.update(dt)
     enter_blink(dt)
@@ -52,15 +26,18 @@ function love.update(dt)
     end 
 end 
 
-
 function love.draw()
     
     if gameState == "title" then 
-        love.graphics.setFont(bigFont)
+        love.graphics.setFont(bigFont)                                            
         love.graphics.print("Fate & Pivot", 800, 325 )
         
-        if showEnter == true then 
-            love.graphics.print("Press ENTER", 800, 375)
+        if showEnter then 
+            if inputDevice == "keyboard" then     
+                love.graphics.print("Press ENTER", 800, 375)
+            else 
+                love.graphics.print("Press START", 800, 375)
+            end
         end
     end 
     
@@ -76,4 +53,10 @@ function love.draw()
         love.graphics.print("Scores: " .. score, 1600, 260)
         draw_selector() -- this will probably have to more 
     end    
+
+    if gameState == "gameOver" then
+        love.graphics.setFont(bigFont)                                            
+        love.graphics.printf("Game Over", 0, 400, love.graphics.getWidth(), "center")
+        love.graphics.printf("Press Enter to Restart", 0, 470, love.graphics.getWidth(), "center")
+    end
 end 

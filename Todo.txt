@@ -1,9 +1,3 @@
-□ Controller support
-□ Cursor
-□ D-pad movement
-□ Symbols
-□ Symbol matching
-□ Score
 □ Lose condition
 □ Combo system
 Polish
