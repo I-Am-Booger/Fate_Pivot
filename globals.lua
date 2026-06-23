@@ -8,9 +8,13 @@ inputDevice = "keyboard"
 
 gameState = "title"
 level = 0 
+
+
 timer = 3 -- when gameplay it will start at 2 testing 3
-spawnTime_timer = 3
-player_timer = 3
 
+bad_timer = 3
+bad_timer_max = 3 
+player_timer = 4
+player_timer_max = 4
 
-showEnter = true
+-- showEnter = true

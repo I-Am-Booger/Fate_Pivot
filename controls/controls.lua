@@ -35,6 +35,7 @@ function destroy_player()
     currentPlayerCell = nil
 
     spawn_player()
+    player_timer = player_timer_max
 end 
 
 function destroy_bad_block(buttonPressed)

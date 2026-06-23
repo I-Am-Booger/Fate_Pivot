@@ -18,13 +18,23 @@ function love.update(dt)
     enter_blink(dt)
 
     if gameState == "play" then 
-        timer = timer - dt
-        if timer <= 0 then 
-            spawn_bad_block()
-            timer = spawnTime_timer
+        player_timer = player_timer - dt
+        if player_timer <= 0 then 
+            destroy_player()
+            player_timer = player_timer_max
         end
     end 
+    
+    if gameState == "play" then 
+        bad_timer = bad_timer - dt
+        if bad_timer <= 0 then
+            spawn_bad_block()
+            bad_timer = bad_timer_max
+        end 
+    end 
 end 
+
+
 
 function love.draw()
     
@@ -49,7 +59,7 @@ function love.draw()
         love.graphics.setFont(bigFont)
         
         love.graphics.print("Lvl: " .. level, 1600, 100)
-        love.graphics.print("Timer: " .. string.format("%.2f", timer), 1600, 180)
+        love.graphics.print("Timer: " .. string.format("%.2f", player_timer), 1600, 180)
         love.graphics.print("Scores: " .. score, 1600, 260)
         draw_selector() -- this will probably have to more 
     end    
