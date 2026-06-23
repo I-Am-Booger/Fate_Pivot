@@ -11,8 +11,11 @@ score = 0
 game_over_score = -5
 
 bad_timer = 3
+base_bad_timer_max = 3
 bad_timer_max = 3 
+
 player_timer = 4
+base_player_timer = 4
 player_timer_max = 4
 
 

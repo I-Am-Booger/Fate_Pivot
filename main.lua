@@ -34,8 +34,7 @@ function love.update(dt)
         end 
     end
 
-    level_up()
-    
+       
     if gameState == "play" and score <= -5 then 
         game_over()
     end 
@@ -64,7 +63,7 @@ function love.draw()
         love.graphics.setFont(bigFont)
         
         love.graphics.print("Lvl: " .. level, 1600, 100)
-        love.graphics.print("Next: " .. level, 1600, 180)
+        love.graphics.print("Next: " .. (block_to_next_level - block_destroyed), 1600, 180)
         love.graphics.print("Timer: " .. string.format("%.2f", player_timer), 1600, 240)
         love.graphics.print("Scores: " .. score, 1600, 300)
         draw_selector() -- this will probably have to more 

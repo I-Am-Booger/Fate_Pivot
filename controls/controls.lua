@@ -43,6 +43,9 @@ function destroy_bad_block(buttonPressed)
     if selectedCell.owner ~= "bad" then return end 
 
     if selectedCell.button ~= buttonPressed then
+        spawn_bad_block()
+        player_timer = player_timer - 0.10
+        
         return
     end
 
