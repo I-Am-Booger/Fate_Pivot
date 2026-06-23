@@ -21,7 +21,7 @@ function love.update(dt)
 
         bad_timer = bad_timer - dt
 
-        if bad_timer  <- 0 then 
+        if bad_timer  <= 0 then 
            spawn_bad_block()
            bad_timer = bad_timer_max
         end 
@@ -34,7 +34,7 @@ function love.update(dt)
         end 
     end
 
-    if score == -5 then 
+    if score <= -5 then 
         game_over()
     end 
 end 
