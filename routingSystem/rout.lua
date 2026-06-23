@@ -11,6 +11,8 @@ require("grid/grid_table")
 require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")
 require("block_Spawning/spawning_bad_blocks")
+require("counter_system/counter_system")
+require("level_up/level_up")
 
 require("controls/controls")
 

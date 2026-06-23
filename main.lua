@@ -38,6 +38,8 @@ function love.update(dt)
     if gameState == "play" and score <= -5 then 
         game_over()
     end 
+
+    update_occupancy_timer()
 end 
 
 function love.draw()
@@ -72,4 +74,7 @@ function love.draw()
     if gameState == "gameOver" then
         draw_game_over()
     end
+
+    -- love.graphics.print("Bad Blocks: " .. count_bad_blocks(), 1600, 360)
+    --love.graphics.print("MaT: " .. string.format("%.2f", player_timer_max), 1600, 420)
 end 

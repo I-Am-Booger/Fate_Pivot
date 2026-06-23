@@ -14,10 +14,6 @@ function level_up()
         
         player_timer = player_timer_max
         bad_timer = bad_timer_max
-    
-        print("LEVEL:", level)
-        print("PLAYER TIMER:", player_timer_max)
-        print("BAD TIMER:", bad_timer_max)
     end 
 end 
 
