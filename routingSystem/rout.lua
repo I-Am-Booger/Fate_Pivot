@@ -1,5 +1,6 @@
 require("globals")
 require("states/gameOver")
+require("level_up/level_up")
 
 require("introscreen/title_screen")
 require("music/music")

@@ -53,4 +53,6 @@ function destroy_bad_block(buttonPressed)
 
     selectedCell = currentPlayerCell
     add_score(1)
+    block_destroyed = block_destroyed + 1
+    level_up()
 end 

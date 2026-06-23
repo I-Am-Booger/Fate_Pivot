@@ -7,14 +7,18 @@ selectedCell = nil
 inputDevice = "keyboard"
 
 gameState = "title"
-level = 0 
-
-
-timer = 3 -- when gameplay it will start at 2 testing 3
+score = 0
+game_over_score = -5
 
 bad_timer = 3
 bad_timer_max = 3 
 player_timer = 4
 player_timer_max = 4
 
--- showEnter = true
+
+level = 1 
+block_destroyed = 0
+block_to_next_level = 10   
+
+
+showEnter = true

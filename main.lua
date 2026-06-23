@@ -34,12 +34,12 @@ function love.update(dt)
         end 
     end
 
-    if score <= -5 then 
+    level_up()
+    
+    if gameState == "play" and score <= -5 then 
         game_over()
     end 
 end 
-
-
 
 function love.draw()
     
@@ -64,8 +64,9 @@ function love.draw()
         love.graphics.setFont(bigFont)
         
         love.graphics.print("Lvl: " .. level, 1600, 100)
-        love.graphics.print("Timer: " .. string.format("%.2f", player_timer), 1600, 180)
-        love.graphics.print("Scores: " .. score, 1600, 260)
+        love.graphics.print("Next: " .. level, 1600, 180)
+        love.graphics.print("Timer: " .. string.format("%.2f", player_timer), 1600, 240)
+        love.graphics.print("Scores: " .. score, 1600, 300)
         draw_selector() -- this will probably have to more 
     end    
 
@@ -73,6 +74,3 @@ function love.draw()
         draw_game_over()
     end
 end 
--- love.graphics.setFont(bigFont)                                            
--- love.graphics.printf("Game Over", 0, 400, love.graphics.getWidth(), "center")
--- love.graphics.printf("Press Enter to Restart", 0, 470, love.graphics.getWidth(), "center")
