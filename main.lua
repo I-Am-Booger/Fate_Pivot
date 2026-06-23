@@ -18,19 +18,24 @@ function love.update(dt)
     enter_blink(dt)
 
     if gameState == "play" then 
-        player_timer = player_timer - dt
-        if player_timer <= 0 then 
-            destroy_player()
-            player_timer = player_timer_max
-        end
-    end 
-    
-    if gameState == "play" then 
+
         bad_timer = bad_timer - dt
-        if bad_timer <= 0 then
-            spawn_bad_block()
-            bad_timer = bad_timer_max
+
+        if bad_timer  <- 0 then 
+           spawn_bad_block()
+           bad_timer = bad_timer_max
         end 
+
+        player_timer = player_timer - dt
+        
+        if player_timer <= 0 then 
+           remove_score(1)
+           destroy_player()
+        end 
+    end
+
+    if score == -5 then 
+        game_over()
     end 
 end 
 
@@ -65,8 +70,9 @@ function love.draw()
     end    
 
     if gameState == "gameOver" then
-        love.graphics.setFont(bigFont)                                            
-        love.graphics.printf("Game Over", 0, 400, love.graphics.getWidth(), "center")
-        love.graphics.printf("Press Enter to Restart", 0, 470, love.graphics.getWidth(), "center")
+        draw_game_over()
     end
 end 
+-- love.graphics.setFont(bigFont)                                            
+-- love.graphics.printf("Game Over", 0, 400, love.graphics.getWidth(), "center")
+-- love.graphics.printf("Press Enter to Restart", 0, 470, love.graphics.getWidth(), "center")

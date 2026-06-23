@@ -1,5 +1,5 @@
 require("globals")
-require("gameOver/gameOver")
+require("states/gameOver")
 
 require("introscreen/title_screen")
 require("music/music")
