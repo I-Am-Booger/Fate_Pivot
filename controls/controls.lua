@@ -55,7 +55,7 @@ function destroy_bad_block(buttonPressed)
     selectedCell.button = nil
 
     selectedCell = currentPlayerCell
-    add_score(1)
+    add_score(10)
     block_destroyed = block_destroyed + 1
     level_up()
 end 

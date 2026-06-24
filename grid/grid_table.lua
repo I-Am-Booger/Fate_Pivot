@@ -14,11 +14,11 @@ local id = 1
 
 grid_table = {}
 
-function grid_blocks(num, x, y)
+function grid_blocks(num, x, y, row)
     
     for i = 1, num do
         local gt = {id = id, x = x , y = y, w = c, h = c, 
-        occupied = false, owner = nil, color = nil, button = nil }     
+        occupied = false, owner = nil, color = nil, button = nil, row = row, col = i}     
         
         table.insert(grid_table, gt)
         id = id + 1
@@ -28,19 +28,19 @@ end
 
 function building_the_grid()  
 
-    grid_blocks(4, x, y)
+    grid_blocks(4, x, y, 1)
     x = x - c
     y = y + c
-    grid_blocks(6, x, y)
+    grid_blocks(6, x, y, 2)
     y = y + c
-    grid_blocks(6, x, y)
+    grid_blocks(6, x, y, 3)
     y = y + c
-    grid_blocks(6, x, y)
+    grid_blocks(6, x, y, 4)
     y = y + c
-    grid_blocks(6, x, y)
+    grid_blocks(6, x, y, 5)
     x = x + c
     y = y + c
-    grid_blocks(4, x ,y)
+    grid_blocks(4, x ,y, 6)
 end 
 
 

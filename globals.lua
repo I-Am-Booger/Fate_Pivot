@@ -8,7 +8,7 @@ inputDevice = "keyboard"
 
 gameState = "title"
 score = 0
-game_over_score = -5
+game_over_score = -50
 
 bad_timer = 3
 base_bad_timer_max = 3

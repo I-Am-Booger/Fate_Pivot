@@ -29,13 +29,12 @@ function love.update(dt)
         player_timer = player_timer - dt
         
         if player_timer <= 0 then 
-           remove_score(1)
+           remove_score(10)
            destroy_player()
         end 
     end
-
        
-    if gameState == "play" and score <= -5 then 
+    if gameState == "play" and score <= game_over_score then 
         game_over()
     end 
 
@@ -74,7 +73,7 @@ function love.draw()
     if gameState == "gameOver" then
         draw_game_over()
     end
-
+    --print("spawn counter:", spawns_near_bad, "cell:", cell and cell.id)
     -- love.graphics.print("Bad Blocks: " .. count_bad_blocks(), 1600, 360)
     --love.graphics.print("MaT: " .. string.format("%.2f", player_timer_max), 1600, 420)
 end 

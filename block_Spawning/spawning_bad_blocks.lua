@@ -20,6 +20,12 @@ button_symbol = {
 }
 
 
+-- Bad block spawning goal:
+-- 1. Try to spawn next to the player block.
+-- 2. If no adjacent empty cell is found, spawn anywhere empty.
+-- 3. Later: first 3 bad blocks = chance-based adjacency.
+-- 4. 4th bad block = guaranteed adjacent if possible.
+
 function spawn_bad_block()
     local cell = get_random_empty_block()
 
