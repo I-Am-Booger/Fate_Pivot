@@ -19,7 +19,7 @@ function move_selector(move)
             selectedCell = cellData
             return             
         end 
-    end
+    end     
 end 
 
 function destroy_player()

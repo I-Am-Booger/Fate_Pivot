@@ -23,6 +23,9 @@ function love.update(dt)
 
         if bad_timer  <= 0 then 
            spawn_bad_block()
+           -- just testing the fate block
+           spawn_fate_block()
+           --
            bad_timer = bad_timer_max
         end 
 
@@ -39,6 +42,7 @@ function love.update(dt)
     end 
 
     update_occupancy_timer()
+    update_fate_timer(dt)
 end 
 
 function love.draw()
