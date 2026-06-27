@@ -23,5 +23,7 @@ level = 1
 block_destroyed = 0
 block_to_next_level = 10   
 
+last_destroyed_color = nil
+combo_count = 0
 
 showEnter = true
