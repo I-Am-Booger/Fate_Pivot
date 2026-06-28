@@ -12,6 +12,7 @@ function love.load()
 
     -- emd of title stuff
     building_the_grid() --builds the grid on load 
+
 end
 
 function love.update(dt)
@@ -43,6 +44,7 @@ function love.update(dt)
 
     update_occupancy_timer()
     update_fate_timer(dt)
+    
 end 
 
 function love.draw()
@@ -77,7 +79,4 @@ function love.draw()
     if gameState == "gameOver" then
         draw_game_over()
     end
-    --print("spawn counter:", spawns_near_bad, "cell:", cell and cell.id)
-    -- love.graphics.print("Bad Blocks: " .. count_bad_blocks(), 1600, 360)
-    --love.graphics.print("MaT: " .. string.format("%.2f", player_timer_max), 1600, 420)
 end 

@@ -31,3 +31,5 @@ last_destroyed_color = nil
 combo_count = 0
 
 showEnter = true
+
+currentFateCell = nil
