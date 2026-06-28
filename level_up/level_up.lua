@@ -3,7 +3,7 @@ function level_up()
         level = level + 1
         block_destroyed = 0    
 
-        block_to_next_level = level * 10
+        block_to_next_level = level * 8
 
         player_timer_max = base_player_timer - ((level - 1) * 0.10)
         

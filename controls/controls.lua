@@ -76,8 +76,6 @@ function destroy_bad_block(buttonPressed)
         last_destroyed_color = nil
     end
     
-    print(destroyed_color, combo_count) 
-
     block_destroyed = block_destroyed + 1
 
     level_up()
@@ -92,6 +90,7 @@ function activate_combo(color)
                 cell.color = nil
                 cell.button = nil
 
+                block_destroyed = block_destroyed + 1
                 add_score(10)
             end
         end
@@ -104,6 +103,7 @@ function activate_combo(color)
                 cell.color = nil
                 cell.button = nil
 
+                block_destroyed = block_destroyed + 1
                 add_score(10)
             end
         end
@@ -134,6 +134,7 @@ function activate_combo(color)
             cell.color = nil
             cell.button = nil
 
+            block_destroyed = block_destroyed
             add_score(10)
 
             table.remove(yellow_bad, randomIndex)

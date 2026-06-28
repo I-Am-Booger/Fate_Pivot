@@ -89,7 +89,6 @@ end
 function get_random_near_bad_cell()
     local near_bad_cells = get_empty_cells_near_bad()
 
-    print("empty cells:", #near_bad_cells)
     if #near_bad_cells == 0 then
         return nil
     end
