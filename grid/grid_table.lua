@@ -42,7 +42,3 @@ function building_the_grid()
     y = y + c
     grid_blocks(4, x ,y, 6)
 end 
-
-
-
-

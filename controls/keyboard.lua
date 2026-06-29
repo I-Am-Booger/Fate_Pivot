@@ -20,7 +20,7 @@ function love.keypressed(key)
         gameState = "play" spawn_player() end  
     
     -- restarting the game     
-    if key == "return" and gameState == "gameOver" then 
+    if key == "return" and gameState == "game_over" then 
         love.event.quit("restart") end 
 
     -- pausing the game     

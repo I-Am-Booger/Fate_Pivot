@@ -1,4 +1,4 @@
-require("routingSystem/rout")
+require("routing_system/rout")
 
 function love.load()
     -- START SCREEN STUFF, GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC
@@ -76,7 +76,7 @@ function love.draw()
         draw_selector() -- this will probably have to more 
     end    
 
-    if gameState == "gameOver" then
+    if gameState == "game_over" then
         draw_game_over()
     end
 end 

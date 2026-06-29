@@ -11,11 +11,11 @@ inputDevice = "keyboard"
         game state possible values
         1. "title"
         2. "options"
-        3. "onePlayer"
-        4. "twoPlayer"
+        3. "one_player"
+        4. "two_player"
         5. "play"
         6. "pause"
-        7. "gameOver"
+        7. "game_over"
 ]] 
 
 

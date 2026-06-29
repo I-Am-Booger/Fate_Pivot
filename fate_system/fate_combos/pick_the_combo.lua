@@ -1,7 +1,7 @@
-require("fate_systems/fate_combos/red")
-require("fate_systems/fate_combos/blue")
-require("fate_systems/fate_combos/green")
-require("fate_systems/fate_combos/yellow")
+require("fate_system/fate_combos/red")
+require("fate_system/fate_combos/blue")
+require("fate_system/fate_combos/green")
+require("fate_system/fate_combos/yellow")
 
 function pick_the_combo()
     local combo_table = {"red", "blue", "green", "yellow"}

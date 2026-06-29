@@ -1,5 +1,5 @@
 function game_over()
-    gameState = "gameOver"
+    gameState = "game_over"
 end 
 
 function draw_game_over()

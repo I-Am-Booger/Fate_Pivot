@@ -1,11 +1,11 @@
 require("globals")
-require("states/gameOver")
+require("states/game_over")
 require("level_up/level_up")
 
 require("introscreen/title_screen")
 require("music/music")
 
-require("grid/grid_draw")
+require("grid/draw_the_grid")
 require("grid/grid_table")
 
 require("block_Spawning/spawning_blocks")

@@ -22,7 +22,7 @@ function love.gamepadpressed(joystick, button)
         gameState = "play" spawn_player() end 
     
     -- restarting the game 
-    if button == "start" and gameState == "gameOver" then
+    if button == "start" and gameState == "game_over" then
         love.event.quit("restart") end
 
     -- pausing the game     

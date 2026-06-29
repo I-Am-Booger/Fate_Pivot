@@ -2,7 +2,7 @@ require("fate_system/fate_blocks/add_minus_blocks")
 require("fate_system/fate_blocks/destroy_all_bad_blocks")
 require("fate_system/fate_level/remove_level")
 require("fate_system/fate_level/add_level")
-require("fate_system/fate_combos/green")
+require("fate_system/fate_combos/pick_the_combo")
 
 function activate_fate()
     local roll =  5 -- love.math.random(3, 4)
