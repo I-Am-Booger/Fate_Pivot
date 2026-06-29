@@ -8,10 +8,10 @@ function love.keypressed(key)
     if key == "d" then move_selector("right") end 
 
 
-    if key == "y" then destroy_bad_block("Y") end    
-    if key == "x" then destroy_bad_block("X") end    
-    if key == "z" then destroy_bad_block("A") end    
-    if key == "b" then destroy_bad_block("B") end    
+    if key == "y" then handle_destroy_button("Y") end    
+    if key == "x" then handle_destroy_button("X") end    
+    if key == "z" then handle_destroy_button("A") end    
+    if key == "b" then handle_destroy_button("B") end    
     if key == "r" then destroy_player() end    
     
     -- controlling the states 

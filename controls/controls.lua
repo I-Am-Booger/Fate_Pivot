@@ -1,7 +1,7 @@
+require("controls/controller_type")
 require("controls/controller")
 require("controls/keyboard")
 require("controls/handle_destroy")
-
 
 function move_selector(move)
     if gameState ~= "play" then return end 
