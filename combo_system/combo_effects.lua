@@ -1,4 +1,4 @@
-function activate_combo(color)
+function activate_combo(color) -- look in the combos for the colors with fate combos
     if color == "red" then
         for i, cell in ipairs(grid_table) do
             if cell.row == currentPlayerCell.row and cell.owner == "bad" then
