@@ -8,6 +8,8 @@ require("music/music")
 require("grid/draw_the_grid")
 require("grid/grid_table")
 
+require("ui/ui_hub")
+
 require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")
 require("block_Spawning/spawning_bad_blocks")

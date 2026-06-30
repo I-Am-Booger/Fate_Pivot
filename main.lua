@@ -64,6 +64,9 @@ function love.draw()
     
     if gameState == "play" then 
         draw_the_grid()
+        -- draw_score()
+        -- draw_timer()
+        draw_level()
     end    
 
     if gameState == "game_over" then
