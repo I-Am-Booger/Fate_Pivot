@@ -7,38 +7,27 @@
             cordanance for the next time grid blocks is called  
 ]]
 
+require("grid/grid_table_helper_functions/grid_blocks")
+
 local x = borderX 
 local y = borderY
 local c = cell
 local id = 1
 
-grid_table = {}
-
-function grid_blocks(num, x, y, row)
-    
-    for i = 1, num do
-        local gt = {id = id, x = x , y = y, w = c, h = c, 
-        occupied = false, owner = nil, color = nil, button = nil, row = row, col = i}     
-        
-        table.insert(grid_table, gt)
-        id = id + 1
-        x = x + c
-    end  
-end 
 
 function building_the_grid()  
 
-    grid_blocks(4, x, y, 1)
+    grid_blocks(4, id, x, y, c, 1)
     x = x - c
     y = y + c
-    grid_blocks(6, x, y, 2)
+    grid_blocks(6, id, x, y, c, 2)
     y = y + c
-    grid_blocks(6, x, y, 3)
+    grid_blocks(6, id, x, y, c, 3)
     y = y + c
-    grid_blocks(6, x, y, 4)
+    grid_blocks(6, id, x, y, c, 4)
     y = y + c
-    grid_blocks(6, x, y, 5)
+    grid_blocks(6, id, x, y, c, 5)
     x = x + c
     y = y + c
-    grid_blocks(4, x ,y, 6)
+    grid_blocks(4, id, x ,y, c, 6)
 end 
