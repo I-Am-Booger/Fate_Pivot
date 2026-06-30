@@ -63,17 +63,7 @@ function love.draw()
     end 
     
     if gameState == "play" then 
-        draw_block()
-        grid()
-        
-        love.graphics.line(1500, 1500, 1500, 0  )     
-        love.graphics.setFont(bigFont)
-        
-        love.graphics.print("Lvl: " .. level, 1600, 100)
-        love.graphics.print("Next: " .. (block_to_next_level - block_destroyed), 1600, 180)
-        love.graphics.print("Timer: " .. string.format("%.2f", player_timer), 1600, 240)
-        love.graphics.print("Scores: " .. score, 1600, 300)
-        draw_selector() -- this will probably have to more 
+        draw_the_grid()
     end    
 
     if gameState == "game_over" then

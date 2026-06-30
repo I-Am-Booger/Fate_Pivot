@@ -1,4 +1,6 @@
-function grid() -- 
+-- original grid
+
+function grid() 
     local x = borderX
     local y = borderY
     local c = cell

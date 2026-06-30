@@ -8,3 +8,9 @@ require("grid/grid_draw_helper_functions/cells")
 require("grid/grid_draw_helper_functions/draw_block")
 require("grid/grid_draw_helper_functions/draw_selector")
 require("grid/grid_draw_helper_functions/grid")
+
+function draw_the_grid()
+    grid() -- I am not for sure 
+    draw_block()
+    draw_selector()
+end 
