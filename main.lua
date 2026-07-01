@@ -12,7 +12,9 @@ function love.load()
 
     -- emd of title stuff
     building_the_grid() --builds the grid on load 
-
+    load_blocks_and_buttons() -- testing 
+    bl_x = 100 / player_image:getWidth() -- testing
+    bl_y = 100 / player_image:getHeight() -- testing
 end
 
 function love.update(dt)
@@ -36,12 +38,14 @@ function love.update(dt)
            remove_score(10)
            destroy_player()
         end 
+        --placeholder for blocks and buttons
+        
     end
-       
+    
     if gameState == "play" and score <= game_over_score then 
         game_over()
     end 
-
+    
     update_occupancy_timer()
     update_fate_timer(dt)
     
@@ -49,6 +53,7 @@ end
 
 function love.draw()
     
+    love.graphics.draw(player_image, 10, 10, 0, bl_x, bl_y) --testing
     if gameState == "title" then 
         love.graphics.setFont(bigFont)                                            
         love.graphics.print("Fate & Pivot", 800, 325 )
