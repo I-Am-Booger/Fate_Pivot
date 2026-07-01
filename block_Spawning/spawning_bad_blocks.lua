@@ -16,7 +16,8 @@ button_symbol = {
     "Y",
     "X",
     "A",
-    "B"
+    "B",
+    "?"
 }
 
 -- Bad block spawning goal:

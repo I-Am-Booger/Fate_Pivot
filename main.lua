@@ -12,7 +12,10 @@ function love.load()
 
     -- emd of title stuff
     building_the_grid() --builds the grid on load 
-    load_blocks_and_buttons() -- testing 
+    
+    load_blocks()
+    load_buttons()
+    
     bl_x = 100 / player_image:getWidth() -- testing
     bl_y = 100 / player_image:getHeight() -- testing
 end
