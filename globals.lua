@@ -26,7 +26,7 @@ gameState = "title"
 
 score = 0
 game_over_score = -50
-
+combo_made = 0
 
 -- Timers 
 bad_timer = 3
@@ -53,3 +53,7 @@ combo_count = 0
 showEnter = true
 
 currentFateCell = nil
+
+
+-- Working on this 
+playerPulse = 0 

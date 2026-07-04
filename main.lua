@@ -3,6 +3,10 @@ require("routing_system/rout")
 function love.load()
     -- START SCREEN STUFF, GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC
     setDisplay()  
+
+    font = love.graphics.newFont(24)
+    bigFont = love.graphics.newFont(48)
+    
     songs()
     -- End o screen stuff etc
     bigFont = love.graphics.newFont(48)
@@ -10,9 +14,10 @@ function love.load()
     --blinking timer 
     blinkTimer = 0
 
-    -- emd of title stuff
+    -- end of title stuff
     building_the_grid() --builds the grid on load 
     
+    love.graphics.setDefaultFilter("linear", "linear")
     load_blocks()
     load_buttons()
     
@@ -51,12 +56,11 @@ function love.update(dt)
     
     update_occupancy_timer()
     update_fate_timer(dt)
-    
+    playerPulse = playerPulse + dt
 end 
 
 function love.draw()
     
-    love.graphics.draw(player_image, 10, 10, 0, bl_x, bl_y) --testing
     if gameState == "title" then 
         love.graphics.setFont(bigFont)                                            
         love.graphics.print("Fate & Pivot", 800, 325 )
@@ -72,9 +76,28 @@ function love.draw()
     
     if gameState == "play" then 
         draw_the_grid()
-        -- draw_score()
-        -- draw_timer()
-        draw_level()
+        
+    
+        -- Right UI panel
+    love.graphics.setColor(1, 1, 1)
+
+    love.graphics.print("Score: " .. score, 1500, 150)
+    love.graphics.print("Level: " .. level, 1500, 220)
+    love.graphics.print("Timer:", 1500, 300)
+
+    love.graphics.setFont(bigFont)
+    love.graphics.print(string.format("%.2f", player_timer), 1500, 340)
+
+    love.graphics.setFont(font)
+    love.graphics.print("Combo: " .. combo_made, 1500, 450)
+    love.graphics.print("Fate: ready", 1500, 520)
+
+
+
+
+        -- -- draw_score()
+        -- -- draw_timer()
+        -- display_info()
     end    
 
     if gameState == "game_over" then

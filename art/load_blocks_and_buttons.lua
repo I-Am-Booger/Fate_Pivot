@@ -18,7 +18,11 @@ function load_buttons()
     x_button = love.graphics.newImage("art/buttons/switch_xbox/x_button.png")
     y_button = love.graphics.newImage("art/buttons/switch_xbox/y_button.png")
     fate_button = love.graphics.newImage("art/buttons/switch_xbox/fate_button.png")
+    player_diamond = love.graphics.newImage("art/buttons/player/diamond.png")
+    player_dot = love.graphics.newImage("art/buttons/player/dot.png")
 
-    button_x = 70 / a_button:getWidth()
-    button_y = 70 / a_button:getHeight()
+    
+
+    button_x = 65 / a_button:getWidth()
+    button_y = 65 / a_button:getHeight()
 end 

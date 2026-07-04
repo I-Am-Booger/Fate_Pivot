@@ -10,8 +10,10 @@ function combo_counter(destroyed_color)
 
     if combo_count == 3 then
         activate_combo(destroyed_color)
-        
+        combo_made = combo_made + 1
+
         combo_count = 0
         last_destroyed_color = nil
+
     end
 end
