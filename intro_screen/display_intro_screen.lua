@@ -1,9 +1,9 @@
 function display_intro_screen() 
     if game_state == "title" then 
-        love.graphics.setFont(bigFont)                                            
+        love.graphics.setFont(big_font)                                            
         love.graphics.print("Fate & Pivot", 800, 325 )
         
-        if showEnter then 
+        if show_enter then 
             if input_device == "keyboard" then     
                 love.graphics.print("Press ENTER", 800, 375)
             else 

@@ -3,7 +3,7 @@ require("fate_system/activate_fate")
 local fate_symbol = "?"
 
 function spawn_fate_block()
-    if currentFateCell ~= nil then return end 
+    if current_fate_cell ~= nil then return end 
     
     local cell = get_random_empty_block()
 
@@ -14,7 +14,7 @@ function spawn_fate_block()
     cell.color = "purple"
     cell.button = fate_symbol
 
-    currentFateCell = cell
+    current_fate_cell = cell
     fate_timer = 5
 
     if fate_timer <= 0 then 
@@ -26,19 +26,19 @@ end
 
 function destroy_fate_block()
     
-    if currentFateCell == nil then return end
+    if current_fate_cell == nil then return end
 
-    currentFateCell.occupied = false
-    currentFateCell.owner = nil
-    currentFateCell.color = nil
-    currentFateCell.button = nil
+    current_fate_cell.occupied = false
+    current_fate_cell.owner = nil
+    current_fate_cell.color = nil
+    current_fate_cell.button = nil
 
-    currentFateCell = nil
+    current_fate_cell = nil
 end
 
 
 function update_fate_timer(dt)
-    if currentFateCell == nil then return end 
+    if current_fate_cell == nil then return end 
     
     fate_timer = fate_timer - dt
 

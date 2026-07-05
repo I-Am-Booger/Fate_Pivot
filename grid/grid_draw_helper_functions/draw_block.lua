@@ -7,7 +7,7 @@ function draw_block() -- This is the code to filling in the blocks of the grid
             if cell_data.owner == "player" then -- player pulse block
                 local pulse_speed = 1.4
                 local pulse_amount = 0.004
-                local pulse = 1 + math.sin(playerPulse * pulse_speed) * pulse_amount
+                local pulse = 1 + math.sin(player_pulse * pulse_speed) * pulse_amount
 
 
 

@@ -32,7 +32,7 @@ function love.update(dt)
     
     update_occupancy_timer()
     update_fate_timer(dt)
-    playerPulse = playerPulse + dt
+    player_pulse = player_pulse + dt
 end 
 
 function love.draw()

@@ -1,7 +1,7 @@
 -- these are global variables 
 -- Fonts for the game 
 font = love.graphics.newFont(24)
-bigFont = love.graphics.newFont(48)
+big_font = love.graphics.newFont(48)
 
 
 borderX = 460
@@ -29,7 +29,7 @@ input_device = "keyboard"
 ]] 
 
 
-comboState = "nonActive"
+combo_state = "nonActive"
 game_state = "title"
 
 
@@ -38,7 +38,7 @@ game_over_score = -50
 combo_made = 0
 
 -- Timers 
-blinkTimer = 0 -- for the title screen starting button
+blink_timer = 0 -- for the title screen starting button
 bad_timer = 3
 base_bad_timer_max = 3
 bad_timer_max = 3 
@@ -60,10 +60,10 @@ block_to_next_level = 10
 last_destroyed_color = nil
 combo_count = 0
 
-showEnter = true
+show_enter = true
 
-currentFateCell = nil
+current_fate_cell = nil
 
 
 -- Working on this 
-playerPulse = 0 
+player_pulse = 0 
