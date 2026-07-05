@@ -23,8 +23,8 @@ function draw_block() -- This is the code to filling in the blocks of the grid
 
                 love.graphics.draw(player_image, player_draw_x, player_draw_y, 0, player_draw_w / player_image:getWidth(), player_draw_h / player_image:getHeight())
                 love.graphics.draw(player_diamond, player_draw_x, player_draw_y, 0, player_draw_w / player_image:getWidth(), player_draw_h / player_image:getHeight())
-                love.graphics.draw(player_dot, player_draw_x, player_draw_y, 0, player_draw_w / player_image:getWidth(), player_draw_h / player_image:getHeight())
-           
+                love.graphics.draw(player_diamond_r, player_draw_x, player_draw_y, 0, player_draw_w / player_image:getWidth(), player_draw_h / player_image:getHeight())
+                
             elseif cellData.color == "blue" then
                love.graphics.draw(blue_block, cellData.x, cellData.y - 1, 0, block_x, block_y)
             elseif cellData.color == "green" then

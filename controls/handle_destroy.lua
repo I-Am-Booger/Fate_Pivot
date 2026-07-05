@@ -1,4 +1,4 @@
-function handle_destroy_button(buttonPressed)
+function handle_destroy_button(buttonPressed, joystick)
     if selectedCell == nil then return end -- this checks to see if there is even a cell if not it says forget about it
 
     if selectedCell.owner == "bad" then -- if it is bad, destroy that bad block, handle it to the destroy_bad_block() system

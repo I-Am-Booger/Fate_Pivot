@@ -6,7 +6,7 @@ end
 
 
 function enter_blink(dt)    
-    if gameState == "title" then
+    if game_state == "title" then
         blinkTimer = blinkTimer + dt    
         
         if showEnter == true and blinkTimer >= 3.96 then

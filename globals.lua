@@ -1,11 +1,15 @@
 -- these are global variables 
+-- Fonts for the game 
+font = love.graphics.newFont(24)
+bigFont = love.graphics.newFont(48)
+
+
 borderX = 460
 borderY = 100
 cell    = 100
 currentPlayerCell = nil
 selectedCell = nil
 inputDevice = "keyboard"
-
 
 --[[
         game state possible values
@@ -19,9 +23,8 @@ inputDevice = "keyboard"
 ]] 
 
 
-
 comboState = "nonActive"
-gameState = "title"
+game_state = "title"
 
 
 score = 0
@@ -29,6 +32,7 @@ game_over_score = -50
 combo_made = 0
 
 -- Timers 
+blinkTimer = 0 -- for the title screen starting button
 bad_timer = 3
 base_bad_timer_max = 3
 bad_timer_max = 3 

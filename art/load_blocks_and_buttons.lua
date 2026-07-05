@@ -19,7 +19,8 @@ function load_buttons()
     y_button = love.graphics.newImage("art/buttons/switch_xbox/y_button.png")
     fate_button = love.graphics.newImage("art/buttons/switch_xbox/fate_button.png")
     player_diamond = love.graphics.newImage("art/buttons/player/diamond.png")
-    player_dot = love.graphics.newImage("art/buttons/player/dot.png")
+    player_diamond_r = love.graphics.newImage("art/buttons/player/diamond_r.png")
+    
 
     
 

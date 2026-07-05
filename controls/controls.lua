@@ -2,9 +2,10 @@ require("controls/controller_type")
 require("controls/controller")
 require("controls/keyboard")
 require("controls/handle_destroy")
+require("controls/button_click")
 
 function move_selector(move)
-    if gameState ~= "play" then return end 
+    if game_state ~= "play" then return end 
     if currentPlayerCell == nil then return end 
 
     local targetX = currentPlayerCell.x

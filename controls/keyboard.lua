@@ -16,14 +16,14 @@ function love.keypressed(key)
     
     -- controlling the states 
     -- starting the game
-    if key == "return" and gameState == "title" then
-        gameState = "play" spawn_player() end  
+    if key == "return" and game_state == "title" then
+        game_state = "play" spawn_player() end  
     
     -- restarting the game     
-    if key == "return" and gameState == "game_over" then 
+    if key == "return" and game_state == "game_over" then 
         love.event.quit("restart") end 
 
     -- pausing the game     
-    if key == "start" and gameState == "play" then
+    if key == "start" and game_state == "play" then
     end -- I don't have the pause option yet 
 end 

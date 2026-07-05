@@ -17,6 +17,14 @@ function destroy_bad_block(buttonPressed)
     selectedCell.color = nil
     selectedCell.button = nil
 
+    button_click()
+    
+    local joysticks = love.joystick.getJoysticks()    
+    
+    if joysticks[1] then
+        joysticks[1]:setVibration(0.22, 0.22, 0.04)
+    end
+    
     selectedCell = currentPlayerCell
     
     add_score(10)
