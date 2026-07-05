@@ -2,7 +2,7 @@ require("globals")
 require("states/game_over")
 require("level_up/level_up")
 
-require("introscreen/title_screen")
+require("intro_screen/intro_screen_hub")
 require("music/music")
 
 require("grid/draw_the_grid")

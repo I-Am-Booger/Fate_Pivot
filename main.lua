@@ -2,7 +2,7 @@ require("routing_system/rout")
 
 function love.load()
     -- START SCREEN STUFF, GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC
-    setDisplay()  
+    set_display()  
     songs()
     -- End o screen stuff etc
 
@@ -55,18 +55,7 @@ end
 
 function love.draw()
     
-    if game_state == "title" then 
-        love.graphics.setFont(bigFont)                                            
-        love.graphics.print("Fate & Pivot", 800, 325 )
-        
-        if showEnter then 
-            if inputDevice == "keyboard" then     
-                love.graphics.print("Press ENTER", 800, 375)
-            else 
-                love.graphics.print("Press START", 800, 375)
-            end
-        end
-    end 
+    display_intro_screen()
         
     display_info()
 
