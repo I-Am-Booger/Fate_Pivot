@@ -1,7 +1,7 @@
 --[[
       1. Spawning player uses spawning_blocks.lua to create the blocks 
       2. spawn_player() uses get_random_empty_block() to get a cell and then change properties
-      3. destroy_player changes the properties in the currentPlayerCell and removes them effectivly destroying the piece
+      3. destroy_player changes the properties in the current_player_cell and removes them effectivly destroying the piece
          It also respawns the piece to another place by using the spawn_player() and using get_random_empty_block
 ]]
 spawns_near_bad = 0
@@ -44,15 +44,15 @@ function spawn_player()
     cell.owner = "player"
     cell.color = "white"
 
-    currentPlayerCell = cell
-    selectedCell = cell
+    current_player_cell = cell
+    selected_cell = cell
     return cell   
 end 
 
 function get_cell_by_row_col(row, col)
-    for i, cellData in ipairs(grid_table) do     
-        if cellData.row == row and cellData.col == col then
-            return cellData
+    for i, cell_data in ipairs(grid_table) do     
+        if cell_data.row == row and cell_data.col == col then
+            return cell_data
         end
     end
 

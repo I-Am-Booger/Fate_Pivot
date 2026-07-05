@@ -1,8 +1,8 @@
 function destroy_bad_block(buttonPressed)
-    if selectedCell == nil then return end 
-    if selectedCell.owner ~= "bad" then return end 
+    if selected_cell == nil then return end 
+    if selected_cell.owner ~= "bad" then return end 
 
-    if selectedCell.button ~= buttonPressed then
+    if selected_cell.button ~= buttonPressed then
         spawn_bad_block()
         remove_score(20)
         player_timer = player_timer - 0.10
@@ -10,12 +10,12 @@ function destroy_bad_block(buttonPressed)
         return
     end
     
-    local destroyed_color = selectedCell.color
+    local destroyed_color = selected_cell.color
     
-    selectedCell.occupied = false
-    selectedCell.owner = nil
-    selectedCell.color = nil
-    selectedCell.button = nil
+    selected_cell.occupied = false
+    selected_cell.owner = nil
+    selected_cell.color = nil
+    selected_cell.button = nil
 
     button_click()
     
@@ -25,7 +25,7 @@ function destroy_bad_block(buttonPressed)
         joysticks[1]:setVibration(0.22, 0.22, 0.04)
     end
     
-    selectedCell = currentPlayerCell
+    selected_cell = current_player_cell
     
     add_score(10)
     combo_counter(destroyed_color)   

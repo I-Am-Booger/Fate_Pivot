@@ -4,7 +4,7 @@ function display_intro_screen()
         love.graphics.print("Fate & Pivot", 800, 325 )
         
         if showEnter then 
-            if inputDevice == "keyboard" then     
+            if input_device == "keyboard" then     
                 love.graphics.print("Press ENTER", 800, 375)
             else 
                 love.graphics.print("Press START", 800, 375)

@@ -1,6 +1,6 @@
 -- keyboard
 function love.keypressed(key)
-    inputDevice = "keyboard"
+    input_device = "keyboard"
     
     if key == "w" then move_selector("up") end
     if key == "s" then move_selector("down") end 

@@ -1,7 +1,7 @@
 function activate_combo(color) -- look in the combos for the colors with fate combos
     if color == "red" then
         for i, cell in ipairs(grid_table) do
-            if cell.row == currentPlayerCell.row and cell.owner == "bad" then
+            if cell.row == current_player_cell.row and cell.owner == "bad" then
                 cell.occupied = false
                 cell.owner = nil
                 cell.color = nil
@@ -14,7 +14,7 @@ function activate_combo(color) -- look in the combos for the colors with fate co
 
     elseif color == "blue" then
         for i, cell in ipairs(grid_table) do
-            if cell.x == currentPlayerCell.x and cell.owner == "bad" then
+            if cell.x == current_player_cell.x and cell.owner == "bad" then
                 cell.occupied = false
                 cell.owner = nil
                 cell.color = nil

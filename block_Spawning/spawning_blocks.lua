@@ -9,9 +9,9 @@
 function get_random_empty_block()
     local random = {}
     
-    for i, cellData in ipairs(grid_table) do
-        if cellData.occupied == false then 
-            table.insert(random, cellData)
+    for i, cell_data in ipairs(grid_table) do
+        if cell_data.occupied == false then 
+            table.insert(random, cell_data)
         end 
     end
     

@@ -1,6 +1,6 @@
 function red_combo()
     for i, cell in ipairs(grid_table) do
-        if cell.row == currentPlayerCell.row and cell.owner == "bad" then
+        if cell.row == current_player_cell.row and cell.owner == "bad" then
             cell.occupied = false
             cell.owner = nil
             cell.color = nil

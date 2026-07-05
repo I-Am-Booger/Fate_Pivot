@@ -8,9 +8,14 @@ borderX = 460
 borderY = 100
 cell    = 100
 
-currentPlayerCell = nil
-selectedCell = nil
-inputDevice = "keyboard"
+current_player_cell = nil
+selected_cell = nil
+
+input_device = "keyboard"
+
+
+
+
 
 --[[
         game state possible values

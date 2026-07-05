@@ -3,7 +3,7 @@
 
 function love.gamepadpressed(joystick, button)
     controller_name(joystick)
-    inputDevice = "controller"
+    input_device = "controller"
 
     if button == "dpup" then move_selector("up") end 
     if button == "dpdown" then move_selector("down") end 
@@ -11,13 +11,9 @@ function love.gamepadpressed(joystick, button)
     if button == "dpright" then move_selector("right") end 
 
     if button == "y" then handle_destroy_button("Y", joystick)end 
-    
     if button == "x" then handle_destroy_button("X", joystick)end
-    
     if button == "a" then handle_destroy_button("A", joystick)end
-
     if button == "b" then handle_destroy_button("B", joystick) end
-
     if button == "rightshoulder" then destroy_player() end 
     
     -- Controlling the states 

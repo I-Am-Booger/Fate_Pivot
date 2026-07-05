@@ -23,23 +23,7 @@ function love.update(dt)
     if game_state == "play" then 
         update_bad_block_timer(dt)
         update_player_timer(dt)
-        -- bad_timer = bad_timer - dt
 
-        -- if bad_timer  <= 0 then 
-        --    spawn_bad_block()
-        --    -- just testing the fate block
-        --    spawn_fate_block()
-        --    --
-        --    bad_timer = bad_timer_max
-        -- end 
-
-        -- player_timer = player_timer - dt
-        
-        -- if player_timer <= 0 then 
-        --    remove_score(10)
-        --    destroy_player()
-        -- end 
-        
     end
     
     if game_state == "play" and score <= game_over_score then 

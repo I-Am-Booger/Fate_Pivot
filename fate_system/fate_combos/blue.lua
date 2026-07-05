@@ -1,7 +1,7 @@
 function blue_combo()
 
     for i, cell in ipairs(grid_table) do
-        if cell.x == currentPlayerCell.x and cell.owner == "bad" then
+        if cell.x == current_player_cell.x and cell.owner == "bad" then
             cell.occupied = false
             cell.owner = nil
             cell.color = nil
