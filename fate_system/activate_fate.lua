@@ -5,7 +5,7 @@ require("fate_system/fate_level/add_level")
 require("fate_system/fate_combos/pick_the_combo")
 
 function activate_fate()
-    local roll =  5 -- love.math.random(3, 4)
+    local roll = love.math.random(1, 5) -- still have to work these out but working on other things
     
     if roll == 1 then add_minus_blocks() end 
     if roll == 2 then destroy_all_bad_blocks() end 
