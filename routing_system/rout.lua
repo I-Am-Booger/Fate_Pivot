@@ -9,9 +9,12 @@ require("grid/draw_the_grid")
 require("grid/grid_table")
 
 
+
 require("art/load_blocks_and_buttons")
 
 require("ui/ui_hub")
+
+require("timers/timer_hub")
 
 require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")

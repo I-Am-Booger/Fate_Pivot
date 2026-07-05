@@ -5,7 +5,7 @@ require("ui/draw_combo")
 require("ui/draw_fate_condition")
 
 
-function display_info()
+display_gameplay_info = function()
      if game_state == "play" then 
         draw_the_grid()
         love.graphics.setColor(1, 1, 1)
@@ -17,3 +17,5 @@ function display_info()
         draw_fate_condition() 
     end
 end 
+
+print("ui_hub loaded")

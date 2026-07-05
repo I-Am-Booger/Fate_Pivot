@@ -7,6 +7,7 @@ bigFont = love.graphics.newFont(48)
 borderX = 460
 borderY = 100
 cell    = 100
+
 currentPlayerCell = nil
 selectedCell = nil
 inputDevice = "keyboard"
