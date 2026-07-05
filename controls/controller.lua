@@ -30,5 +30,13 @@ function love.gamepadpressed(joystick, button)
     end -- I don't have the pause option yet 
 end
 
+function love.joystickadded(joystick)
+    print("Controller added: " .. joystick:getName())
+    load_buttons()
+end
 
+function love.joystickremoved(joystick)
+    print("Controller removed: " .. joystick:getName())
+    load_buttons()
+end 
 
