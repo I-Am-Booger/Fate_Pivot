@@ -16,12 +16,14 @@ function love.keypressed(key)
     
     -- controlling the states 
     -- starting the game
-    if key == "return" and game_state == "title" then
-        game_state = "play" spawn_player() end  
-    
-    -- restarting the game     
-    if key == "return" and game_state == "game_over" then 
-        love.event.quit("restart") end 
+
+    if key == "return" and game_state == "splash_screen" then
+        game_state = "title" 
+    elseif key == "return" and game_state == "title" then
+        game_state = "play" spawn_player()   
+    elseif key == "return" and game_state == "game_over" then 
+        love.event.quit("restart") 
+    end 
 
     -- pausing the game     
     if key == "start" and game_state == "play" then

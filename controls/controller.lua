@@ -18,12 +18,14 @@ function love.gamepadpressed(joystick, button)
     
     -- Controlling the states 
     -- starting the game
-    if button == "start" and game_state == "title" then
-        game_state = "play" spawn_player() end 
-    
-    -- restarting the game 
-    if button == "start" and game_state == "game_over" then
-        love.event.quit("restart") end
+
+    if button == "start" and game_state == "splash_screen" then
+        game_state = "title" 
+    elseif button == "start" and game_state == "title" then
+        game_state = "play" spawn_player()  
+    elseif button == "start" and game_state == "game_over" then
+        love.event.quit("restart") 
+    end
 
     -- pausing the game     
     if button == "start" and game_state == "play" then

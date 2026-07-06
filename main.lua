@@ -23,7 +23,6 @@ function love.update(dt)
     if game_state == "play" then 
         update_bad_block_timer(dt)
         update_player_timer(dt)
-
     end
     
     if game_state == "play" and score <= game_over_score then 
@@ -36,11 +35,11 @@ function love.update(dt)
 end 
 
 function love.draw()
-    
+    splash_screen()
     display_intro_screen()       
     display_gameplay_info()
 
     if game_state == "game_over" then
         draw_game_over()
     end
-end 
+end

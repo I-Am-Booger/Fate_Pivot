@@ -30,7 +30,7 @@ input_device = "keyboard"
 
 
 combo_state = "nonActive"
-game_state = "title"
+game_state = "splash_screen" --title was original
 
 
 score = 0

@@ -2,6 +2,7 @@ require("globals")
 require("states/game_over")
 require("level_up/level_up")
 
+require("splash_screen/splash_screen")
 require("intro_screen/intro_screen_hub")
 require("music/music")
 
