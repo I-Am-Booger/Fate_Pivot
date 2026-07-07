@@ -18,6 +18,8 @@ function love.load()
 end
 
 function love.update(dt)
+    update_splash_screen(dt)
+    
     enter_blink(dt)
 
     if game_state == "play" then 

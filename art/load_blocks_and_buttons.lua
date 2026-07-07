@@ -19,25 +19,33 @@ function load_buttons(joystick)
     local joysticks = love.joystick.getJoysticks()
     local joystick = joysticks[1]
 
-        if joystick == nil then controller = "keyboard"
-            else controller = joystick:getName() end  
+    if joystick == nil then controller = "keyboard"
+        else controller = joystick:getName() end  
 
-        if controller == "Controller (Xbox One For Windows)" then 
-            a_button = love.graphics.newImage("art/buttons/switch_xbox/a_button.png")
-            b_button = love.graphics.newImage("art/buttons/switch_xbox/b_button.png")
-            x_button = love.graphics.newImage("art/buttons/switch_xbox/x_button.png")
-            y_button = love.graphics.newImage("art/buttons/switch_xbox/y_button.png")
-            
-        elseif controller == "DualSense Wireless Controller" then 
-            a_button = love.graphics.newImage("art/buttons/playstation/x_button.png")
-            b_button = love.graphics.newImage("art/buttons/playstation/circle_button.png")
-            x_button = love.graphics.newImage("art/buttons/playstation/square_button.png")
-            y_button = love.graphics.newImage("art/buttons/playstation/triangle_button.png")
-        end         
-         
-            fate_button = love.graphics.newImage("art/buttons/switch_xbox/fate_button.png")
-            player_diamond = love.graphics.newImage("art/buttons/player/diamond.png")
-            player_diamond_r = love.graphics.newImage("art/buttons/player/diamond_r.png")
+    if controller == "Controller (Xbox One For Windows)" then 
+        a_button = love.graphics.newImage("art/buttons/switch_xbox/a_button.png")
+        b_button = love.graphics.newImage("art/buttons/switch_xbox/b_button.png")
+        x_button = love.graphics.newImage("art/buttons/switch_xbox/x_button.png")
+        y_button = love.graphics.newImage("art/buttons/switch_xbox/y_button.png")
+        
+    elseif controller == "DualSense Wireless Controller" then 
+        a_button = love.graphics.newImage("art/buttons/playstation/x_button.png")
+        b_button = love.graphics.newImage("art/buttons/playstation/circle_button.png")
+        x_button = love.graphics.newImage("art/buttons/playstation/square_button.png")
+        y_button = love.graphics.newImage("art/buttons/playstation/triangle_button.png")
+    -- where the change was made 
+    else 
+        a_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
+        b_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
+        x_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
+        y_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
+    -- where the change ended 
+    end         
+        
+    fate_button = love.graphics.newImage("art/buttons/fate/fate_button.png")
+    player_diamond = love.graphics.newImage("art/buttons/player/diamond.png")
+    player_diamond_r = love.graphics.newImage("art/buttons/player/diamond_r.png")
+    
     button_x = 65 / a_button:getWidth()
     button_y = 65 / a_button:getHeight()
 end 

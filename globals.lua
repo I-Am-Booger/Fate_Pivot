@@ -31,13 +31,16 @@ input_device = "keyboard"
 
 combo_state = "nonActive"
 game_state = "splash_screen" --title was original
-
+title_selection = 1
 
 score = 0
 game_over_score = -50
 combo_made = 0
 
 -- Timers 
+splash_timer = 3
+splash_duration = 3
+
 blink_timer = 0 -- for the title screen starting button
 bad_timer = 3
 base_bad_timer_max = 3
@@ -67,3 +70,5 @@ current_fate_cell = nil
 
 -- Working on this 
 player_pulse = 0 
+
+game_version = "0.1.1"

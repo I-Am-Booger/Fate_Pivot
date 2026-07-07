@@ -10,5 +10,9 @@ function display_intro_screen()
                 love.graphics.print("Press START", 800, 375)
             end
         end
+    
+    love.graphics.setFont(font)
+    love.graphics.print("v" .. game_version, 20, 1040)
+
     end 
 end 
