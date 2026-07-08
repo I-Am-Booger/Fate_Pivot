@@ -4,6 +4,7 @@ function love.load()
     -- START SCREEN STUFF, GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC
     set_display()  
     songs()
+    diamond_selector = love.graphics.newImage("art/buttons/player/diamond_r.png")
     -- End o screen stuff etc
 
     -- end of title stuff
@@ -38,7 +39,8 @@ end
 
 function love.draw()
     splash_screen()
-    display_intro_screen()       
+    display_intro_screen()     
+    display_mode_select()  
     display_gameplay_info()
 
     if game_state == "game_over" then

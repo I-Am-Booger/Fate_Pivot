@@ -17,13 +17,22 @@ function love.keypressed(key)
     -- controlling the states 
     -- starting the game
 
+
     if key == "return" and game_state == "splash_screen" then
         game_state = "title" 
     elseif key == "return" and game_state == "title" then
-        game_state = "play" spawn_player()   
-    elseif key == "return" and game_state == "game_over" then 
+        game_state = "mode_select"   
+    elseif key == "return" and game_state == "mode_select" then
+        game_state = "play" spawn_player()  
+    elseif key == "return" and game_state == "game_over" then
         love.event.quit("restart") 
-    end 
+    end
+
+     if title_selection == 1 and game_state == "mode_select" then  
+        if key == "s" then title_selection = 2 end 
+    elseif title_selection == 2 and game_state == "mode_select" then
+        if key == "w" then title_selection = 1 end 
+    end
 
     -- pausing the game     
     if key == "start" and game_state == "play" then

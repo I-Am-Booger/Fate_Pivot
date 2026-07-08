@@ -1,6 +1,7 @@
 -- these are global variables 
 -- Fonts for the game 
 font = love.graphics.newFont(24)
+mid_font = love.graphics.newFont(36)
 big_font = love.graphics.newFont(48)
 
 

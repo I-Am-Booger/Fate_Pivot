@@ -22,9 +22,17 @@ function love.gamepadpressed(joystick, button)
     if button == "start" and game_state == "splash_screen" then
         game_state = "title" 
     elseif button == "start" and game_state == "title" then
+        game_state = "mode_select"   
+    elseif button == "start" and game_state == "mode_select" then
         game_state = "play" spawn_player()  
     elseif button == "start" and game_state == "game_over" then
         love.event.quit("restart") 
+    end
+
+    if title_selection == 1 and game_state == "mode_select" then  
+        if button == "dpdown" then title_selection = 2 end 
+    elseif title_selection == 2 and game_state == "mode_select" then
+        if button == "dpup" then title_selection = 1 end 
     end
 
     -- pausing the game     
