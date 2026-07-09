@@ -29,10 +29,20 @@ function love.gamepadpressed(joystick, button)
         love.event.quit("restart") 
     end
 
-    if title_selection == 1 and game_state == "mode_select" then  
-        if button == "dpdown" then title_selection = 2 end 
-    elseif title_selection == 2 and game_state == "mode_select" then
-        if button == "dpup" then title_selection = 1 end 
+   if game_state == "mode_select" then
+        if button == "dpdown" then
+            title_selection = title_selection + 1
+            if title_selection > 3 then
+                title_selection = 1
+            end
+        end
+
+        if button == "dpup" then
+            title_selection = title_selection - 1
+            if title_selection < 1 then
+                title_selection = 3
+            end
+        end
     end
 
     -- pausing the game     

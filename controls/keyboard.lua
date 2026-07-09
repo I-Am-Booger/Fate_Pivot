@@ -28,13 +28,26 @@ function love.keypressed(key)
         love.event.quit("restart") 
     end
 
-     if title_selection == 1 and game_state == "mode_select" then  
-        if key == "s" then title_selection = 2 end 
-    elseif title_selection == 2 and game_state == "mode_select" then
-        if key == "w" then title_selection = 1 end 
+
+    if game_state == "mode_select" then
+        if key == "s" then
+            title_selection = title_selection + 1
+            if title_selection > 3 then
+                title_selection = 1
+            end
+        end
+
+        if key == "w" then
+            title_selection = title_selection - 1
+            if title_selection < 1 then
+                title_selection = 3
+            end
+        end
     end
 
+
+
     -- pausing the game     
-    if key == "start" and game_state == "play" then
+    if key == "enter" and game_state == "play" then
     end -- I don't have the pause option yet 
 end 

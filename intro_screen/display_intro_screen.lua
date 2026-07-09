@@ -19,10 +19,10 @@ end
 
 function display_mode_select()
     if game_state == "mode_select" then
-    local d_p_c = 32 -- diamond position close
-    local h = 196 
-    local close = 50 -- selector close
-    local far = 90
+        local d_p_c = 32 -- diamond position close
+        local h = 196 
+        local close = 50 -- selector close
+        local far = 90
 
 
         love.graphics.setFont(big_font)                                            
@@ -31,17 +31,45 @@ function display_mode_select()
         love.graphics.setFont(mid_font)
         
         if title_selection == 1 then
-            love.graphics.draw(diamond_selector, d_p_c, 180.5, 0, 0.05, 0.05)
-            love.graphics.print("Start Game", far, 185)
-            love.graphics.print("Options", close, 265)
+            love.graphics.setColor(1, 1, 1, 1)
+            love.graphics.draw(diamond_selector, d_p_c, 170.5, 0, 0.05, 0.05)
+            love.graphics.print("Start Game", far, 175)
+
+            love.graphics.setColor(1, 1, 1, 0.35)
+            love.graphics.print("Options", close, 240)
+
+            love.graphics.print("How to play", close, 305)
 
             elseif title_selection == 2 then
-                love.graphics.print("Start Game", close, 185)
-                love.graphics.draw(diamond_selector, d_p_c, 261.5, 0, 0.05, 0.05)
-                love.graphics.print("Options", far, 265)
-        end
-    end
+                love.graphics.setColor(1, 1, 1, 0.35) 
+                love.graphics.print("Start Game", close, 175)
+                
+                love.graphics.setColor(1, 1, 1, 1)
+                love.graphics.draw(diamond_selector, d_p_c, 236.5, 0, 0.05, 0.05)
+                love.graphics.print("Options", far, 240)
+                
+                love.graphics.setColor(1, 1, 1, 0.35) 
+                love.graphics.print("How to play", close, 305)
+             
 
-    love.graphics.setFont(font)
-    love.graphics.print("v" .. game_version, 50, 1040)
+            elseif title_selection == 3 then 
+                love.graphics.setColor(1, 1, 1, 0.35)
+                love.graphics.print("Start Game", close, 175)
+
+                love.graphics.print("Options", close, 240)
+
+                love.graphics.setColor(1, 1, 1, 1)
+                love.graphics.draw(diamond_selector, d_p_c, 301.5, 0, 0.05, 0.05)
+                love.graphics.print("How to play", far, 305)
+            
+            
+            
+        end
+     
+
+        love.graphics.setColor(1, 1, 1, 1)
+
+        love.graphics.setFont(font)
+        love.graphics.print("v" .. game_version, 50, 1040)
+    end 
 end 
