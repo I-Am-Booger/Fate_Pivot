@@ -6,7 +6,7 @@ function red_combo()
             cell.color = nil
             cell.button = nil
 
-            block_destroyed = block_destroyed + 1
+            blocks_destroyed = blocks_destroyed + 1
             add_score(10)
         end
     end

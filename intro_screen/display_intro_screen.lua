@@ -1,3 +1,6 @@
+require("intro_screen/how_to_play_and_options/options") 
+require("intro_screen/how_to_play_and_options/how_to_play") 
+
 function display_intro_screen() 
     if game_state == "title" then 
         love.graphics.setFont(big_font)                                            

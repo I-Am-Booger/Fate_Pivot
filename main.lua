@@ -41,6 +41,7 @@ function love.draw()
     splash_screen()
     display_intro_screen()     
     display_mode_select()  
+    display_options()
     display_gameplay_info()
 
     if game_state == "game_over" then

@@ -1,5 +1,5 @@
 function apply_level_settings()
-        block_destroyed = 0    
+        blocks_destroyed = 0    
 
         block_to_next_level = level * 8
 

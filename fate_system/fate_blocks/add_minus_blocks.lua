@@ -28,7 +28,7 @@ function add_minus_blocks()
             cell.button = nil
 
             add_score(10)
-            block_destroyed = block_destroyed + 1
+            blocks_destroyed = blocks_destroyed + 1
 
             table.remove(bad_blocks, randomIndex)
         end 

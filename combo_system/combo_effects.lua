@@ -7,7 +7,7 @@ function activate_combo(color) -- look in the combos for the colors with fate co
                 cell.color = nil
                 cell.button = nil
 
-                block_destroyed = block_destroyed + 1
+                blocks_destroyed = blocks_destroyed + 1
                 add_score(10)
             end
         end
@@ -20,7 +20,7 @@ function activate_combo(color) -- look in the combos for the colors with fate co
                 cell.color = nil
                 cell.button = nil
 
-                block_destroyed = block_destroyed + 1
+                blocks_destroyed = blocks_destroyed + 1
                 add_score(10)
             end
         end
@@ -51,7 +51,7 @@ function activate_combo(color) -- look in the combos for the colors with fate co
             cell.color = nil
             cell.button = nil
 
-            block_destroyed = block_destroyed + 1
+            blocks_destroyed = blocks_destroyed + 1
             add_score(10)
 
             table.remove(yellow_bad, randomIndex)
