@@ -35,10 +35,10 @@ function load_buttons(joystick)
         y_button = love.graphics.newImage("art/buttons/playstation/triangle_button.png")
     -- where the change was made 
     else 
-        a_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
-        b_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
-        x_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
-        y_button = love.graphics.newImage("art/buttons/keyboard/p_button.png")
+        a_button = love.graphics.newImage("art/buttons/keyboard/k_button.png")
+        b_button = love.graphics.newImage("art/buttons/keyboard/l_button.png")
+        x_button = love.graphics.newImage("art/buttons/keyboard/j_button.png")
+        y_button = love.graphics.newImage("art/buttons/keyboard/i_button.png")
     -- where the change ended 
     end         
         

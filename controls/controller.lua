@@ -21,12 +21,23 @@ function love.gamepadpressed(joystick, button)
 
     if button == "start" and game_state == "splash_screen" then
         game_state = "title" 
-    elseif button == "start" and game_state == "title" then
-        game_state = "mode_select"   
-    elseif button == "start" and game_state == "mode_select" then
-        game_state = "play" spawn_player()  
-    elseif button == "start" and game_state == "game_over" then
-        love.event.quit("restart") 
+    
+        elseif button == "start" and game_state == "title" then
+            game_state = "mode_select"
+    
+        -- mode select screen and the option in inside
+        elseif button == "start" and game_state == "mode_select" 
+            and title_selection == 1 then game_state = "play" spawn_player()  
+    
+        elseif button == "start" and game_state == "mode_select"
+            and title_selection == 2 then game_state = "options" 
+        
+        elseif button == "start" and game_state == "mode_select"
+            and title_selection == 3 then game_state = "how_to_play"
+        -------------------------------------------------------------------------------------------
+
+        elseif button == "start" and game_state == "game_over" then
+            love.event.quit("restart") 
     end
 
    if game_state == "mode_select" then

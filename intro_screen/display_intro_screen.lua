@@ -13,7 +13,6 @@ function display_intro_screen()
     
     love.graphics.setFont(font)
     love.graphics.print("v" .. game_version, 50, 1040)
-
     end 
 end 
 
@@ -49,8 +48,7 @@ function display_mode_select()
                 love.graphics.print("Options", far, 240)
                 
                 love.graphics.setColor(1, 1, 1, 0.35) 
-                love.graphics.print("How to play", close, 305)
-             
+                love.graphics.print("How to play", close, 305)  
 
             elseif title_selection == 3 then 
                 love.graphics.setColor(1, 1, 1, 0.35)
@@ -60,12 +58,9 @@ function display_mode_select()
 
                 love.graphics.setColor(1, 1, 1, 1)
                 love.graphics.draw(diamond_selector, d_p_c, 301.5, 0, 0.05, 0.05)
-                love.graphics.print("How to play", far, 305)
-            
-            
+                love.graphics.print("How to play", far, 305)   
             
         end
-     
 
         love.graphics.setColor(1, 1, 1, 1)
 

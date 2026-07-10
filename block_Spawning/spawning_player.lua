@@ -7,6 +7,9 @@
 spawns_near_bad = 0
 
 function spawn_player()
+    if current_player_cell ~= nil and current_player_cell.owner == "player" then 
+        return current_player_cell end 
+
     local cell = nil
 
     -- the counter

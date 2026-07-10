@@ -8,11 +8,11 @@ function love.keypressed(key)
     if key == "d" then move_selector("right") end 
 
 
-    if key == "y" then handle_destroy_button("Y") end    
-    if key == "x" then handle_destroy_button("X") end    
-    if key == "z" then handle_destroy_button("A") end    
-    if key == "b" then handle_destroy_button("B") end    
-    if key == "r" then destroy_player() end    
+    if key == "i" then handle_destroy_button("Y") end    
+    if key == "j" then handle_destroy_button("X") end    
+    if key == "k" then handle_destroy_button("A") end    
+    if key == "l" then handle_destroy_button("B") end    
+    if key == "space" then destroy_player() end    
     
     -- controlling the states 
     -- starting the game
@@ -20,10 +20,23 @@ function love.keypressed(key)
 
     if key == "return" and game_state == "splash_screen" then
         game_state = "title" 
-    elseif key == "return" and game_state == "title" then
-        game_state = "mode_select"   
-    elseif key == "return" and game_state == "mode_select" then
-        game_state = "play" spawn_player()  
+
+        elseif key == "return" and game_state == "title" then
+            game_state = "mode_select"   
+ 
+        -- mode select screen and the options in inside    
+        elseif key == "return" and game_state == "mode_select" 
+            and title_selection == 1 then game_state = "play" spawn_player()  
+            
+        elseif key == "return" and game_state == "mode_select"
+            and title_selection == 2 then game_state = "options"
+
+
+        elseif key == "return" and game_state == "mode_select"
+            and title_selection == 3 then game_state = "how_to_play"
+        -----------------------------------------------------------------
+
+
     elseif key == "return" and game_state == "game_over" then
         love.event.quit("restart") 
     end
