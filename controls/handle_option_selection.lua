@@ -1,18 +1,18 @@
 function handle_option_selection(input)
-    if game_state == "options_select" then
-    
+    if game_state == "options" then
+
         if input == "dpdown" or input == "s" then
-            option_selection = option_selection + 1
+            options_selection = options_selection + 1
 
-            if option_selection > 5 then title_selection = 1 end 
-        
+            if options_selection > 5 then 
+                options_selection = 1 end
         end
-    end 
 
-    if input == "dpup" or input == "w" then 
-        option_selection = option_selection - 1
+        if input == "dpup" or input == "w" then
+            options_selection = options_selection - 1
 
-        if option_selection < 1 then option_selection = 5
+            if options_selection < 1 then 
+                options_selection = 5 end
         end
     end
-end 
+end
