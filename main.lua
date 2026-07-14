@@ -2,6 +2,18 @@ require("routing_system/rout")
 
 function love.load()
     -- START SCREEN STUFF, GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC
+
+    love.window.setMode(0, 0, {
+        fullscreen = true,
+        fullscreentype = "desktop",
+        vsync = 1,
+        resizable = false
+    })
+
+    calculate_display_scale()
+
+
+
     set_display()  
     songs()
     diamond_selector = love.graphics.newImage("art/buttons/player/diamond_r.png")
@@ -26,15 +38,16 @@ function love.update(dt)
     if game_state == "play" then 
         update_bad_block_timer(dt)
         update_player_timer(dt)
+        update_occupancy_timer()
+        update_fate_timer(dt)
+        player_pulse = player_pulse + dt
+        if game_state == "play" and score <= game_over_score then 
+            game_over()
+        end 
     end
+
     
-    if game_state == "play" and score <= game_over_score then 
-        game_over()
-    end 
     
-    update_occupancy_timer()
-    update_fate_timer(dt)
-    player_pulse = player_pulse + dt
 end 
 
 function love.draw()
@@ -43,8 +56,12 @@ function love.draw()
     display_mode_select()  
     display_options()
     display_gameplay_info()
-
+    
     if game_state == "game_over" then
-        draw_game_over()
+        draw_game_over()    
     end
+    
+    if game_state == "pause" then 
+        display_pause() 
+    end  
 end

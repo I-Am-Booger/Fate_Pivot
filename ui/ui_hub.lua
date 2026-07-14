@@ -6,7 +6,7 @@ require("ui/draw_fate_condition")
 
 
 display_gameplay_info = function()
-     if game_state == "play" then 
+     if game_state == "play" or game_state == "pause" then 
         draw_the_grid()
         love.graphics.setColor(1, 1, 1)
 
@@ -15,7 +15,9 @@ display_gameplay_info = function()
         draw_player_timer()
         draw_combo()
         draw_fate_condition() 
-    end
+    
+     end     
+
 end 
 
-print("ui_hub loaded")
+-- love.graphics.setColor(0, 0, 0, 0.85) 

@@ -10,23 +10,44 @@ function love.gamepadpressed(joystick, button)
     -- Starting and changing states
     if button == "start" and game_state == "splash_screen" then game_state = "title"
 
-    elseif button == "start" and game_state == "title" then game_state = "mode_select"
+        elseif button == "start" and game_state == "title" then game_state = "mode_select"
 
-    elseif button == "start" and game_state == "mode_select"
-        and title_selection == 1 then game_state = "play" spawn_player()
+        elseif button == "start" and game_state == "mode_select"
+            and title_selection == 1 then game_state = "play" spawn_player()
 
-    elseif button == "start" and game_state == "mode_select"
-        and title_selection == 2 then game_state = "options"
+        elseif button == "start" and game_state == "mode_select"
+            and title_selection == 2 then game_state = "options"
 
-    elseif button == "start" and game_state == "mode_select" 
-        and title_selection == 3 then game_state = "how_to_play"
+        elseif button == "start" and game_state == "options"
+            and option_selection == 1 then 
 
-    elseif button == "start" and game_state == "play" then game_state = "pause"
 
-    elseif button == "start" and game_state == "pause" then game_state = "play"
 
-    elseif button == "start" and game_state == "game_over" then
-        love.event.quit("restart") end
+
+
+
+
+
+
+
+
+        elseif button == "start" and game_state == "mode_select" 
+            and title_selection == 3 then game_state = "how_to_play"
+
+         -- I put game_state = "exit" so that a quick glace I could see whare I was in the code        
+        elseif button == "start" and game_state == "mode_select"
+            and title_selection == 4 then game_state = "exit" love.event.quit() 
+                
+        elseif button == "start" and game_state == "play" then game_state = "pause"
+
+        elseif button == "start" and game_state == "pause" then game_state = "play"
+
+        elseif button == "back" and (game_state == "play" or game_state == "pause")
+            then game_state = "mode_select"
+            
+        elseif button == "start" and game_state == "game_over" then
+            love.event.quit("restart") 
+    end
 
     -- Gameplay controls
     if game_state == "play" then

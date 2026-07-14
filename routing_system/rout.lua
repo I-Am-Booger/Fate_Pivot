@@ -2,6 +2,7 @@ require("globals")
 require("states/game_over")
 require("level_up/level_up")
 
+require("display/display")
 require("splash_screen/splash_screen")
 require("intro_screen/intro_screen_hub")
 require("music/music")
@@ -30,5 +31,6 @@ require("combo_system/combo_counter")
 require("combo_system/combo_effects")
 
 require("controls/controls")
+require("pause/pause")
 
 require("score/scoring")

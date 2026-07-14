@@ -1,5 +1,14 @@
-TODO:
-Investigate why block font is tiny on first startup but correct on subsequent runs.
+OPTIONS
+
+► Fullscreen
+
+► Resolution
+
+► Music Volume
+
+► Sound Volume
+
+► Back
 
 
 
