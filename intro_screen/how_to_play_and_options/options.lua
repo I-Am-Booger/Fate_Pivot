@@ -1,4 +1,7 @@
-require("intro_screen/select_options")
+require("intro_screen/how_to_play_and_options/select_options")
+require("intro_screen/how_to_play_and_options/handle_options")
+
+
 
 function display_options()
     if game_state == "options" then 
@@ -11,5 +14,5 @@ function display_options()
         love.graphics.setFont(mid_font)
 
         select_options_selection()
-        end 
+    end 
 end

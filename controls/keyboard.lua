@@ -10,39 +10,38 @@ function love.keypressed(input)
     
     -- Change game states
     if input == "return" and game_state == "splash_screen" then 
-        game_state = "title"
+        game_state = "title" return
 
     elseif input == "return" and game_state == "title" then 
-        game_state = "mode_select"
+        game_state = "mode_select" return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 1 then
-        game_state = "play" spawn_player()
+        game_state = "play" spawn_player() return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 2 then
-        game_state = "options"
+        game_state = "options" return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 3 then
-        game_state = "how_to_play"
+        game_state = "how_to_play" return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 4 then
         game_state = "exit" love.event.quit()
 
-    elseif input == "escape" and game_state == "options" and options_selection == 1 then 
-        game_state = "mode_select"
+    elseif input == "escape" and game_state == "options" then 
+        game_state = "mode_select" return
 
-
-
-
+    elseif input == "return" and game_state == "options" then 
+        activate_options() return  
 
 
     elseif input == "return" and game_state == "play" then
-        game_state = "pause"
+        game_state = "pause" return
 
     elseif input == "return" and game_state == "pause" then
-        game_state = "play"
+        game_state = "play" return
 
     elseif input == "escape" and (game_state == "play" or game_state == "pause")
-        then game_state = "mode_select"
+        then game_state = "mode_select" return
 
     elseif input == "return" and game_state == "game_over" then
         love.event.quit("restart")

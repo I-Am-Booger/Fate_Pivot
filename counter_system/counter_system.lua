@@ -15,7 +15,9 @@ function update_occupancy_timer()
 
     local level_timer = base_player_timer - ((level - 1) * 0.10)
 
-    local occupancy_penalty = level * bad_count * 0.03
+
+ -- the occupancy_penalty was 0.03 it was a bit too harsh 
+    local occupancy_penalty = level * bad_count * 0.02
     player_timer_max = level_timer - occupancy_penalty
 
     player_timer_max = math.max(0.5, player_timer_max)

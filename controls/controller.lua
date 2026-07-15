@@ -9,32 +9,51 @@ function love.gamepadpressed(joystick, input)
     handle_option_selection(input)
 
     -- Starting and changing states
-    if input == "start" and game_state == "splash_screen" then game_state = "title"
+    if input == "start" and game_state == "splash_screen" then 
+        game_state = "title" return 
 
-        elseif input == "start" and game_state == "title" then game_state = "mode_select"
+        elseif input == "start" and game_state == "title" then 
+            game_state = "mode_select" return
 
-        elseif input == "start" and game_state == "mode_select"
-            and title_selection == 1 then game_state = "play" spawn_player()
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 1 then 
+            game_state = "play" spawn_player() return
 
-        elseif input == "start" and game_state == "mode_select"
-            and title_selection == 2 then game_state = "options"
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 2 then 
+            game_state = "options" return
 
-        elseif input == "back" and game_state == "options"
-            and options_selection == 1 then game_state = "mode_select"
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 3 then 
+            game_state = "how_to_play" return
+        
+            -- I put game_state = "exit" so that a quick glace I could see whare I was in the code        
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 4 then 
+            game_state = "exit" love.event.quit() 
+        
+        elseif (input == "back" or input == "b") and game_state == "options"  then 
+            game_state = "mode_select" return
 
-        elseif input == "start" and game_state == "mode_select" 
-            and title_selection == 3 then game_state = "how_to_play"
+        elseif (input == "start" or input == "a") and game_state == "options" then
+            activate_options() return
+    
+        elseif (input == "dpleft") and game_state == "options" and options_selection == 2 then
+            change_resolution(-1) return
 
-         -- I put game_state = "exit" so that a quick glace I could see whare I was in the code        
-        elseif input == "start" and game_state == "mode_select"
-            and title_selection == 4 then game_state = "exit" love.event.quit() 
-                
-        elseif input == "start" and game_state == "play" then game_state = "pause"
+        elseif (input == "dpright") and game_state == "options" and options_selection == 2 then
+            change_resolution(1) return  
+              
+        elseif(input == "dpleft") and game_state == "options" and options_selection == 3 then 
+            change_music_volume(-1) return 
 
-        elseif input == "start" and game_state == "pause" then game_state = "play"
+        elseif(input == "dpright") and game_state == "options" and options_selection == 3 then 
+            change_music_volume(1) return
 
-        elseif input == "back" and (game_state == "play" or game_state == "pause")
-            then game_state = "mode_select"
+
+
+        elseif input == "start" and game_state == "play" then game_state = "pause" return
+
+        elseif input == "start" and game_state == "pause" then game_state = "play" return
+
+        elseif (input == "back") and (game_state == "play" or game_state == "pause")
+            then game_state = "mode_select" return
             
         elseif input == "start" and game_state == "game_over" then
             love.event.quit("restart") 

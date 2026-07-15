@@ -137,4 +137,5 @@ freeze_time_timer = 0
 -- GAME INFORMATION
 --------------------------------------
 
-game_version = "0.2.2"
+music_volume = 1.0 
+game_version = "0.3.2"
