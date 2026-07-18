@@ -52,6 +52,7 @@ end
 function change_music_volume(direction)
     music_volume = music_volume + (direction * 0.1)
 
+
     if music_volume > 1 then 
         music_volume = 1
     
@@ -59,5 +60,7 @@ function change_music_volume(direction)
             music_volume = 0
     end 
 
-
+        love.audio.setVolume(music_volume)
 end 
+
+-- change_music_volume(-1)
