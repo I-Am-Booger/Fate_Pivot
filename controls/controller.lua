@@ -46,6 +46,12 @@ function love.gamepadpressed(joystick, input)
         elseif(input == "dpright") and game_state == "options" and options_selection == 3 then 
             change_music_volume(1) return
 
+        elseif(input == "dpleft") and game_state == "options" and options_selection == 4 then 
+            change_sound_volume(-1) return
+
+        elseif(input == "dpright") and game_state == "options" and options_selection == 4 then 
+            change_sound_volume(1) return 
+
 
 
         elseif input == "start" and game_state == "play" then game_state = "pause" return

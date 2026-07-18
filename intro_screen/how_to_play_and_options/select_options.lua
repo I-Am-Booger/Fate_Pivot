@@ -29,9 +29,14 @@ function select_options_selection()
         end
     end
 
+
+    -- the drawing of the options 
     love.graphics.setColor(1, 1, 1, 1)
 
     love.graphics.print(current_resolution.w .. " x " .. current_resolution.h, 450, 240)
+    
     love.graphics.print(math.floor(music_volume * 100 + 0.5) .. "%", 450, 305)
+
+    love.graphics.print(math.floor(sound_volume * 100 + 0.5) .. "%", 450, 370)
 
 end

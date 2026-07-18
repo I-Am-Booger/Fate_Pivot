@@ -138,4 +138,5 @@ freeze_time_timer = 0
 --------------------------------------
 
 music_volume = 1.0 
+sound_volume = 1.0
 game_version = "0.3.2"
