@@ -1,6 +1,6 @@
 require("controls/controller_type")
 require("controls/handle_destroy")
-require("controls/button_click")
+
 
 require("controls/handle_title_selection")
 require("controls/handle_option_selection")

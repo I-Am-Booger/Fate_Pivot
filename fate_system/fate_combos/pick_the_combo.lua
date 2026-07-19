@@ -27,7 +27,7 @@ function how_many_combos()
         pick_the_combo()
         pick_the_combo()
         pick_the_combo()
-    elseif random_amount >= 4 and random_amount == 8 then 
+    elseif random_amount >= 4 and random_amount < 8 then 
         pick_the_combo()
         pick_the_combo()
         pick_the_combo()

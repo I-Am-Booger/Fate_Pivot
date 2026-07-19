@@ -16,7 +16,9 @@ function love.keypressed(input)
         game_state = "mode_select" return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 1 then
-        game_state = "play" spawn_player() return
+        reset_game()
+        game_state = "play" 
+        spawn_player() return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 2 then
         game_state = "options" return
@@ -30,10 +32,28 @@ function love.keypressed(input)
     elseif input == "escape" and game_state == "options" then 
         game_state = "mode_select" return
 
-    elseif input == "return" and game_state == "options" then 
-        activate_options() return  
 
+    elseif (input == "return") and game_state == "options" then
+        activate_options() return
+    
+    elseif (input == "a") and game_state == "options" and options_selection == 2 then
+        change_resolution(-1) return
 
+    elseif (input == "d") and game_state == "options" and options_selection == 2 then
+        change_resolution(1) return  
+              
+    elseif(input == "a") and game_state == "options" and options_selection == 3 then 
+        change_music_volume(-1) return 
+
+    elseif(input == "d") and game_state == "options" and options_selection == 3 then 
+        change_music_volume(1) return
+
+    elseif(input == "a") and game_state == "options" and options_selection == 4 then 
+        change_sound_volume(-1) return
+
+    elseif(input == "d") and game_state == "options" and options_selection == 4 then 
+        change_sound_volume(1) return     
+    
     elseif input == "return" and game_state == "play" then
         game_state = "pause" return
 

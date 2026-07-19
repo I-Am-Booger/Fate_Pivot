@@ -4,7 +4,6 @@
        3. Player blocks and bad blocks both uuse this 
 ]]
 
--- TODO:
 -- replace this random spawn with adjacent-to-player spawn logic
 function get_random_empty_block()
     local random = {}

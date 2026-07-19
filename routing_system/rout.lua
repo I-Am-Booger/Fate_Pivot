@@ -1,11 +1,14 @@
 require("globals")
 require("states/game_over")
+require("states/reset_game")
 require("level_up/level_up")
 
 require("display/display")
 require("splash_screen/splash_screen")
 require("intro_screen/intro_screen_hub")
 require("music/music")
+require("music/effects")
+require("music/load_audio")
 
 require("grid/draw_the_grid")
 require("grid/grid_table")

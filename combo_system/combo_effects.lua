@@ -43,7 +43,7 @@ function activate_combo(color) -- look in the combos for the colors with fate co
                 break
             end
 
-            local randomIndex = math.random(1, #yellow_bad)
+            local randomIndex = love.math.random(1, #yellow_bad)
             local cell = yellow_bad[randomIndex]
 
             cell.occupied = false

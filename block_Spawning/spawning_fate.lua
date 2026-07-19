@@ -17,9 +17,6 @@ function spawn_fate_block()
     current_fate_cell = cell
     fate_timer = 5
 
-    if fate_timer <= 0 then 
-        destroy_fate_block()
-    end   
     return cell
 end
 
@@ -47,3 +44,25 @@ function update_fate_timer(dt)
     end
 end 
 
+function update_fate_spawn_timer(dt)
+    if current_fate_cell ~= nil then return end 
+    
+    fate_spawn_timer = fate_spawn_timer - dt
+
+    if fate_spawn_timer <= 0 then 
+        spawn_fate_block()
+        
+        if level <= 5 then 
+            fate_spawn_timer = love.math.random(20, 50) return 
+        
+            elseif level <= 10 then
+                fate_spawn_timer = love.math.random(18, 45) return
+            elseif level <= 15 then 
+                fate_spawn_timer = love.math.random(15, 40) return
+            else 
+                fate_spawn_timer = love.math.random(10, 30) return
+
+        end
+
+    end 
+end 

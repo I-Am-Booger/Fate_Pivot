@@ -6,10 +6,10 @@ function activate_options()
         -- resolution changes with left and right 
 
     elseif options_selection == 3 then
-        change_music_volume()
+        -- change music_volume with left and right 
 
     elseif options_selection == 4 then
-        -- change_sound_volume()
+        -- change_sound_volume() with left and right
 
     elseif options_selection == 5 then
         game_state = "mode_select"
@@ -60,7 +60,8 @@ function change_music_volume(direction)
             music_volume = 0
     end 
 
-        love.audio.setVolume(music_volume)
+        background_music:setVolume(music_volume)
+        
 end 
 
 function change_sound_volume(direction)
@@ -73,5 +74,5 @@ function change_sound_volume(direction)
             sound_volume = 0
     end
 
-    
+    button_click()
 end 

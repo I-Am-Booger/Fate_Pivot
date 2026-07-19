@@ -20,9 +20,9 @@ function spawn_player()
     if spawns_near_bad == 1 or 
        spawns_near_bad == 2 or 
        spawns_near_bad == 3 then 
-            rspawn = love.math.random(1, 100) 
+        local respawn_roll = love.math.random(1, 100) 
     
-        if rspawn >= 75 then 
+        if respawn_roll >= 75 then 
             cell = get_random_near_bad_cell() 
             spawns_near_bad = 0
         end

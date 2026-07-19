@@ -1,5 +1,7 @@
 function songs()
-    backgroundMusic = love.audio.newSource("music/IntroSong.mp3", "stream")
-    backgroundMusic:setLooping(true)
-    love.audio.play(backgroundMusic)
+    background_music = love.audio.newSource("music/IntroSong.mp3", "stream")
+    background_music:setLooping(true)
+    background_music:setVolume(music_volume)
+    background_music:play()
 end 
+

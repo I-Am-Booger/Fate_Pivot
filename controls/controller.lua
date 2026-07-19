@@ -16,7 +16,9 @@ function love.gamepadpressed(joystick, input)
             game_state = "mode_select" return
 
         elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 1 then 
-            game_state = "play" spawn_player() return
+            reset_game() 
+            game_state = "play" 
+            spawn_player() return
 
         elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 2 then 
             game_state = "options" return

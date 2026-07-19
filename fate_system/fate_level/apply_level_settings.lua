@@ -1,7 +1,7 @@
 function apply_level_settings()
         blocks_destroyed = 0    
 
-        blocks_to_next_level = level * 8
+        blocks_to_next_level = level * 7
 
         player_timer_max = base_player_timer - ((level - 1) * 0.10)
         

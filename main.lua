@@ -18,7 +18,7 @@ function love.load()
     songs()
     diamond_selector = love.graphics.newImage("art/buttons/player/diamond_r.png")
     -- End o screen stuff etc
-
+    load_audio()
     -- end of title stuff
     building_the_grid() --builds the grid on load 
     
@@ -39,6 +39,7 @@ function love.update(dt)
         update_bad_block_timer(dt)
         update_player_timer(dt)
         update_occupancy_timer()
+        update_fate_spawn_timer(dt)
         update_fate_timer(dt)
         player_pulse = player_pulse + dt
         if game_state == "play" and score <= game_over_score then 
