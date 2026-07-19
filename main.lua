@@ -13,13 +13,21 @@ function love.load()
     calculate_display_scale()
 
 
-
     set_display()  
     songs()
     diamond_selector = love.graphics.newImage("art/buttons/player/diamond_r.png")
     -- End o screen stuff etc
     load_audio()
     -- end of title stuff
+
+
+--testing it here 
+    create_stars()
+
+
+
+
+
     building_the_grid() --builds the grid on load 
     
     love.graphics.setDefaultFilter("linear", "linear")
@@ -52,12 +60,17 @@ function love.update(dt)
 end 
 
 function love.draw()
+    draw_stars()
     splash_screen()
     display_intro_screen()     
     display_mode_select()  
     display_options()
     display_gameplay_info()
     
+--- testing 
+
+
+
     if game_state == "game_over" then
         draw_game_over()    
     end
