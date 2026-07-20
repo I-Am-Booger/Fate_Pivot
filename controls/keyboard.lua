@@ -33,8 +33,8 @@ function love.keypressed(input)
         game_state = "mode_select" return
 
 
-    elseif (input == "return") and game_state == "options" then
-        activate_options() return
+    elseif (input == "a" or input == "d") and game_state == "options" and options_selection == 1 then
+        toggle_fullscreen() return
     
     elseif (input == "a") and game_state == "options" and options_selection == 2 then
         change_resolution(-1) return

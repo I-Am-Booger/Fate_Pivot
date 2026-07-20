@@ -16,10 +16,19 @@ function activate_options()
     end
 end 
 
+
 function toggle_fullscreen()
     local is_full_screen = love.window.getFullscreen()
     love.window.setFullscreen(not is_full_screen, "desktop")
+
+    if not is_full_screen then 
+        full_screen = "Yes" 
+        
+        else full_screen = "No" 
+    end 
+
 end 
+
 
 resolution_index = 1
 

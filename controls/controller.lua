@@ -33,9 +33,11 @@ function love.gamepadpressed(joystick, input)
         elseif (input == "back" or input == "b") and game_state == "options"  then 
             game_state = "mode_select" return
 
-        elseif (input == "start" or input == "a") and game_state == "options" then
-            activate_options() return
+            
+        elseif (input == "dpleft" or input =="dpright") and game_state == "options" and options_selection then
+            toggle_fullscreen() return
     
+   
         elseif (input == "dpleft") and game_state == "options" and options_selection == 2 then
             change_resolution(-1) return
 

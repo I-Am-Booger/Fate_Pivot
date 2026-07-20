@@ -1,6 +1,14 @@
 require("routing_system/rout")
 
 function love.load()
+    how_to_play_text = love.filesystem.read("how_to_play_text/english.txt") --- just testing this shit 
+    
+    
+    
+    
+    
+    
+    
     -- START SCREEN STUFF, GAMESTATE BETWEEN TITLE SCREEN AND BACKGROUND mUSIC
 
     love.window.setMode(0, 0, {
@@ -22,9 +30,7 @@ function love.load()
 
 
 --testing it here 
-    create_stars()
-
-
+    background_engine_load()
 
 
 
@@ -60,7 +66,7 @@ function love.update(dt)
 end 
 
 function love.draw()
-    draw_stars()
+    background_engine()
     splash_screen()
     display_intro_screen()     
     display_mode_select()  
