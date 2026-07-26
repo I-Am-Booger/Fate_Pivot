@@ -1,4 +1,4 @@
 function draw_fate_condition()
     love.graphics.setFont(font)
-    love.graphics.print("Fate: ready", 1500, 520)
+    love.graphics.print("Fate: ready", hud_x_position, 520)
 end 

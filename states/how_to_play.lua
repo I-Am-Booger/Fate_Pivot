@@ -12,7 +12,7 @@ function fate_and_pivot_header()
 
     love.graphics.setFont(font)
     love.graphics.setColor(1,1,1,1)
-    love.graphics.print("< Previous " .. page_number .. "/3 Next >", far,  120 )    
+    love.graphics.print("< D-Pad   Previous " .. page_number .. "/3 Next   D-Pad >", far,  120 )    
 end 
 
 function fate_and_pivot_help(instructions)   

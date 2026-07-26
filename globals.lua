@@ -2,14 +2,14 @@
 
 
 -----------------------------------------
--- SCREEN AND GRID
+-- SCREEN AND GRID AND Hud
 ------------------------------------------
 
 borderX = 460
 borderY = 100
 cell = 100
 full_screen = "No"
-
+hud_x_position = 1350
 
 ---------------------------------------------
 -- Display And Resolution
