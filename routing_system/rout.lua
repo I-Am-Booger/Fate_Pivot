@@ -1,6 +1,7 @@
 require("globals")
 require("states/game_over")
 require("states/reset_game")
+require("states/how_to_play")
 require("level_up/level_up")
 
 require("display/display")

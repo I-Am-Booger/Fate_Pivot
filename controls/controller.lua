@@ -16,25 +16,37 @@ function love.gamepadpressed(joystick, input)
             game_state = "mode_select" return
 
         elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 1 then 
-            reset_game() 
-            game_state = "play" 
-            spawn_player() return
+            reset_game() game_state = "play" spawn_player() return
 
         elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 2 then 
             game_state = "options" return
 
-        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 3 then 
-            game_state = "how_to_play" return
-        
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 3 then     
+            game_state = "how_to_play" return 
+       
             -- I put game_state = "exit" so that a quick glace I could see whare I was in the code        
         elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 4 then 
             game_state = "exit" love.event.quit() 
         
+
+    -- how to play 
+        elseif (input == "back" or input == "b") and game_state == "how_to_play" then 
+            game_state = "mode_select" return
+
+        elseif(input == "dpleft") and game_state == "how_to_play" then
+            page_number = page_number - 1 
+            if page_number < 1 then page_number = 3 return end 
+
+        elseif(input == "dpright") and game_state == "how_to_play" then
+            page_number = page_number + 1 
+            if page_number > 3 then page_number = 1 return end  
+
+
         elseif (input == "back" or input == "b") and game_state == "options"  then 
             game_state = "mode_select" return
 
             
-        elseif (input == "dpleft" or input =="dpright") and game_state == "options" and options_selection then
+        elseif (input == "dpleft" or input =="dpright") and game_state == "options" and options_selection == 1 then
             toggle_fullscreen() return
     
    

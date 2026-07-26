@@ -1,0 +1,21 @@
+HOW TO PLAY
+
+Your Mission: Don’t let the board explode, implode, overload, 
+or generally ruin your day.
+
+1. You Are the Diamond Block!
+See that fancy block with the diamond? 
+That’s you. You can’t walk anywhere, 
+but you can magically respawn like you’re late for work. 
+Press R1 before the timer yells at you.
+
+2. The Selector
+This is your little cursor buddy. It only moves up, down, left, right.
+No diagonals. It’s allergic. 
+Put it over a block to threaten it with destruction.
+
+3. Destroying Blocks
+Every block shows a specific face button.
+Hit the right one → block goes poof.
+Hit the wrong one → a bad block appears and the board speeds up,
+like it had too much coffee.
