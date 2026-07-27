@@ -5,11 +5,11 @@
 -- SCREEN AND GRID AND Hud
 ------------------------------------------
 
-borderX = 460
-borderY = 100
+borderX = 525 -- old 460 
+borderY = 115 -- old 100
 cell = 100
 full_screen = "No"
-hud_x_position = 1350
+hud_x_position =  1070          --old 1350
 
 ---------------------------------------------
 -- Display And Resolution
