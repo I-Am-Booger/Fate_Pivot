@@ -4,15 +4,21 @@ require("intro_screen/how_to_play_and_options/handle_options")
 
 
 function display_options()
-    if game_state == "options" then 
+    if game_state == "options" then
+
+        update_fullscreen_text()
+        print("Fullscreen:", love.window.getFullscreen())
+
         local close = 50
 
-        love.graphics.setColor(1, 1, 1,1)
+        love.graphics.setColor(1, 1, 1, 1)
         love.graphics.setFont(big_font)
         love.graphics.print("Fate & Pivot", close, 100)
-        
+
         love.graphics.setFont(mid_font)
 
         select_options_selection()
-    end 
+    end
 end
+
+

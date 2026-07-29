@@ -10,15 +10,23 @@ function update_splash_screen(dt)
     end 
 end 
 
-function splash_screen() 
-    local alpha = splash_timer / splash_duration
-    
-    if game_state == "splash_screen" then 
+function splash_screen()
+
+    if game_state == "splash_screen" then
+
+        local alpha = splash_timer / splash_duration
+
         love.graphics.setColor(1, 1, 1, alpha)
         love.graphics.setFont(big_font)
-        love.graphics.print("- Ludere Games -", 800, 325)
-        love.graphics.setColor(1, 1, 1, 1)  
-    end 
-end 
+
+        local splash_text = "- Ludere Games -"
+        local text_width = big_font:getWidth(splash_text)
+
+        love.graphics.print(splash_text, (1920 - text_width) / 2, 325)
+        love.graphics.setColor(1, 1, 1, 1)
+
+    end
+
+end
 
 

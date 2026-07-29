@@ -18,16 +18,14 @@ end
 
 
 function toggle_fullscreen()
-    local is_full_screen = love.window.getFullscreen()
-    love.window.setFullscreen(not is_full_screen, "desktop")
+    local is_fullscreen = love.window.getFullscreen()
 
-    if not is_full_screen then 
-        full_screen = "Yes" 
-        
-        else full_screen = "No" 
-    end 
+    love.window.setFullscreen(not is_fullscreen, "desktop")
 
-end 
+    calculate_display_scale()
+    create_stars()
+    update_fullscreen_text()
+end
 
 
 resolution_index = 1
@@ -38,24 +36,24 @@ resolutions = {
 }
 
 function change_resolution(direction)
-   resolution_index = resolution_index + direction
+
+    resolution_index = resolution_index + direction
 
     if resolution_index > #resolutions then
         resolution_index = 1
-    
-        elseif resolution_index < 1 then
-            resolution_index = #resolutions
+    elseif resolution_index < 1 then
+        resolution_index = #resolutions
     end
 
     local resolution = resolutions[resolution_index]
 
-    love.window.setMode(resolution.w, resolution.h,
-        {
-            fullscreen = false,
-            vsync = 1,
-            resizable = false
-        }
-    )
+    love.window.setMode(resolution.w, resolution.h, {fullscreen = false, vsync = 1,  resizable = false })
+
+    
+    calculate_display_scale()
+    create_stars()
+    update_fullscreen_text()
+
 end
 
 function change_music_volume(direction)
@@ -85,3 +83,13 @@ function change_sound_volume(direction)
 
     button_click()
 end 
+
+function update_fullscreen_text()
+    local is_fullscreen = love.window.getFullscreen()
+
+    if is_fullscreen then
+        full_screen = "Yes"
+    else
+        full_screen = "No"
+    end
+end

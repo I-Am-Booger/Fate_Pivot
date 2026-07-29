@@ -10,15 +10,16 @@ function love.load()
 
 
     -- WINDOW AND DISPLAY
-    love.window.setMode(0, 0, {
-        fullscreen = true,
-        fullscreentype = "desktop",
-        vsync = 1,
-        resizable = false
-    })
+    love.window.setMode(1920, 1080, {fullscreen = true, fullscreentype = "desktop", vsync = 1, resizable = false})
+    
+    
+
+    love.window.setTitle("Fate & Pivot")
 
     calculate_display_scale()
-    set_display()
+    update_fullscreen_text()
+    
+    
 
 
     -- MUSIC AND SOUND
@@ -50,8 +51,8 @@ function love.load()
     bl_x = 100 / player_image:getWidth()
     bl_y = 100 / player_image:getHeight()
 
-end
 
+end
 
 function love.update(dt)
 
@@ -73,7 +74,8 @@ function love.update(dt)
 
 
         if score <= game_over_score then
-            game_over() end
+            game_over()
+        end
 
     end
 
@@ -82,8 +84,15 @@ end
 
 function love.draw()
 
-    -- BACKGROUND
+    -- Draw the background using the real monitor dimensions.
     background_engine()
+
+
+    -- Center and scale the 1920 x 1080 game area.
+    love.graphics.push()
+
+    love.graphics.translate(game_offset_x, game_offset_y)
+    love.graphics.scale(game_scale, game_scale)
 
 
     -- INTRO AND MENUS
@@ -99,16 +108,22 @@ function love.draw()
 
     -- HOW TO PLAY
     if game_state == "how_to_play" then
-        how_to_play()end
+        how_to_play()
+    end
 
 
     -- GAME OVER
-    if game_state == "game_over" then 
-        draw_game_over() end
+    if game_state == "game_over" then
+        draw_game_over()
+    end
 
 
     -- PAUSE
-    if game_state == "pause" then 
-        display_pause() end
+    if game_state == "pause" then
+        display_pause()
+    end
+
+
+    love.graphics.pop()
 
 end
