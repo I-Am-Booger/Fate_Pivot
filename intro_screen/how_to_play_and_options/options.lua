@@ -7,10 +7,7 @@ function display_options()
     if game_state == "options" then
 
         update_fullscreen_text()
-        print("Fullscreen:", love.window.getFullscreen())
-
-        local close = 50
-
+        
         love.graphics.setColor(1, 1, 1, 1)
         love.graphics.setFont(big_font)
         love.graphics.print("Fate & Pivot", close, 100)

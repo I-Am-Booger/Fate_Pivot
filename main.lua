@@ -1,25 +1,27 @@
 require("routing_system/rout")
 
+require("save/save_data")
+require("save/save_manager")
+
 
 function love.load()
+    load_game_data()
 
     -- HOW TO PLAY TEXT
     how_to_play_text_1 = love.filesystem.read("states/how_to_play_text/english_1.txt")
+
     how_to_play_text_2 = love.filesystem.read("states/how_to_play_text/english_2.txt")
+
     how_to_play_text_3 = love.filesystem.read("states/how_to_play_text/english_3.txt")
 
 
     -- WINDOW AND DISPLAY
-    love.window.setMode(1920, 1080, {fullscreen = true, fullscreentype = "desktop", vsync = 1, resizable = false})
-    
-    
+    love.window.setMode(1920, 1080, {fullscreen = true, fullscreentype = "desktop", vsync = 1, resizable = false })
 
     love.window.setTitle("Fate & Pivot")
 
     calculate_display_scale()
     update_fullscreen_text()
-    
-    
 
 
     -- MUSIC AND SOUND
@@ -28,8 +30,7 @@ function love.load()
 
 
     -- TITLE AND MENU ART
-    diamond_selector =
-        love.graphics.newImage("art/buttons/player/diamond_r.png")
+    diamond_selector = love.graphics.newImage("art/buttons/player/diamond_r.png")
 
 
     -- BACKGROUND
@@ -50,8 +51,6 @@ function love.load()
     -- IMAGE SCALE
     bl_x = 100 / player_image:getWidth()
     bl_y = 100 / player_image:getHeight()
-
-
 end
 
 function love.update(dt)
@@ -69,8 +68,8 @@ function love.update(dt)
         update_occupancy_timer()
         update_fate_spawn_timer(dt)
         update_fate_timer(dt)
-
-        player_pulse = player_pulse + dt
+        update_destroy_pulse(dt)
+        -- player_pulse = player_pulse + dt
 
 
         if score <= game_over_score then
@@ -83,47 +82,49 @@ end
 
 
 function love.draw()
-
-    -- Draw the background using the real monitor dimensions.
     background_engine()
 
-
-    -- Center and scale the 1920 x 1080 game area.
     love.graphics.push()
-
     love.graphics.translate(game_offset_x, game_offset_y)
     love.graphics.scale(game_scale, game_scale)
 
+    if game_state == "splash_screen" then
+        splash_screen()
 
-    -- INTRO AND MENUS
-    splash_screen()
-    display_intro_screen()
-    display_mode_select()
-    display_options()
+    elseif game_state == "title" then
+        display_intro_screen()
 
+    elseif game_state == "mode_select" then
+        display_mode_select()
 
-    -- GAMEPLAY
-    display_gameplay_info()
+    elseif game_state == "statistics" then 
+        display_statistics()
 
+    elseif game_state == "options" then
+        display_options()
 
-    -- HOW TO PLAY
-    if game_state == "how_to_play" then
+    elseif game_state == "how_to_play" then
         how_to_play()
-    end
 
+    elseif game_state == "play" then
+        display_gameplay_info()
+        draw_destroy_pulse()
 
-    -- GAME OVER
-    if game_state == "game_over" then
+    elseif game_state == "pause" then
+        display_gameplay_info()
+        draw_destroy_pulse()
+
+    elseif game_state == "game_over" then
         draw_game_over()
     end
 
+    love.graphics.pop()
 
-    -- PAUSE
     if game_state == "pause" then
         display_pause()
     end
+end
 
-
-    love.graphics.pop()
-
+function love.quit()
+    save_game_data()
 end

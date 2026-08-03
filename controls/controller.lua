@@ -16,16 +16,24 @@ function love.gamepadpressed(joystick, input)
             game_state = "mode_select" return
 
         elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 1 then 
-            reset_game() game_state = "play" spawn_player() return
+            reset_game() 
+            game_state = "play" 
+            spawn_player() 
+            save_data.statistics.career.games_played = save_data.statistics.career.games_played + 1
+            save_game_data() return
 
-        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 2 then 
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 2 then
+            game_state = "statistics" return 
+        
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 3 then 
             game_state = "options" return
 
-        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 3 then     
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 4 then     
             game_state = "how_to_play" return 
        
+
             -- I put game_state = "exit" so that a quick glace I could see whare I was in the code        
-        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 4 then 
+        elseif (input == "start" or input == "a") and game_state == "mode_select" and title_selection == 5 then 
             game_state = "exit" love.event.quit() 
         
 
@@ -47,9 +55,7 @@ function love.gamepadpressed(joystick, input)
 
             
         elseif (input == "dpleft" or input =="dpright") and game_state == "options" and options_selection == 1 then
-            toggle_fullscreen() 
-            create_stars()
-            return
+            toggle_fullscreen() return
     
    
         elseif (input == "dpleft") and game_state == "options" and options_selection == 2 then
@@ -75,6 +81,8 @@ function love.gamepadpressed(joystick, input)
             change_sound_volume(1) return 
 
 
+        elseif (input == "back" or input == "b") and game_state == "statistics" then
+            game_state = "mode_select" return
 
         elseif input == "start" and game_state == "play" then game_state = "pause" return
 

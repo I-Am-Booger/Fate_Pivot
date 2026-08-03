@@ -1,7 +1,11 @@
+require("save/save_data")
+require("save/save_manager")
+
 require("globals")
 require("states/game_over")
 require("states/reset_game")
 require("states/how_to_play")
+require("states/statistics")
 require("level_up/level_up")
 
 require("display/display")
@@ -24,6 +28,7 @@ require("ui/ui_hub")
 
 require("timers/timer_hub")
 
+require("effects/pulse")
 require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")
 require("block_Spawning/spawning_bad_blocks")

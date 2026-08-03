@@ -4,7 +4,7 @@
 -----------------------------------------
 -- SCREEN AND GRID AND Hud
 ------------------------------------------
-
+close = 50
 borderX = 525 -- old 460 
 borderY = 115 -- old 100
 cell = 100
@@ -63,8 +63,32 @@ options_selection = 1
 current_player_cell = nil
 selected_cell = nil
 
+
 player_pulse = 0
 
+destroy_pulse_active = false
+destroy_pulse_left = 0
+destroy_pulse_right = 0
+destroy_pulse_top = 0
+destroy_pulse_bottom = 0
+destroy_pulse_distance = 0
+destroy_pulse_speed = 950 -- old 900
+
+destroy_pulse_length = 65 -- old 35
+
+destroy_pulse_top_left_distance = 0
+destroy_pulse_top_right_distance = 0
+
+destroy_pulse_bottom_left_distance = 0
+destroy_pulse_bottom_right_distance = 0
+
+destroy_pulse_left_up_distance = 0
+destroy_pulse_left_down_distance = 0
+
+destroy_pulse_right_up_distance = 0
+destroy_pulse_right_down_distance = 0
+
+destroy_pulse_color = {1, 1, 1}
 
 -----------------------------------------------
 -- SCORE AND PROGRESSION
@@ -75,9 +99,9 @@ game_over_score = -50
 
 level = 1
 blocks_destroyed = 0
-blocks_to_next_level = 10
+blocks_to_next_level = 7
 
-
+penalty = 0
 ------------------------------------------------
 -- COMBOS
 -----------------------------------------------
@@ -153,4 +177,4 @@ sound_volume = 1.0
 ------------------------------------------------
 -- GAME INFORMATION
 -----------------------------------------------
-game_version = "0.4.4"
+game_version = "0.4.9"

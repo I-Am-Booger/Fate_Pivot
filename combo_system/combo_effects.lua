@@ -1,7 +1,12 @@
-function activate_combo(color) -- look in the combos for the colors with fate combos
+function activate_combo(color)
     if color == "red" then
-        for i, cell in ipairs(grid_table) do
-            if cell.row == current_player_cell.row and cell.owner == "bad" then
+        for _, cell in ipairs(grid_table) do
+            if cell.row == current_player_cell.row
+            and cell.owner == "bad" then
+
+                save_data.statistics.gameplay.bad_blocks_destroyed =
+                    save_data.statistics.gameplay.bad_blocks_destroyed + 1
+
                 cell.occupied = false
                 cell.owner = nil
                 cell.color = nil
@@ -12,8 +17,13 @@ function activate_combo(color) -- look in the combos for the colors with fate co
         end
 
     elseif color == "blue" then
-        for i, cell in ipairs(grid_table) do
-            if cell.x == current_player_cell.x and cell.owner == "bad" then
+        for _, cell in ipairs(grid_table) do
+            if cell.x == current_player_cell.x
+            and cell.owner == "bad" then
+
+                save_data.statistics.gameplay.bad_blocks_destroyed =
+                    save_data.statistics.gameplay.bad_blocks_destroyed + 1
+
                 cell.occupied = false
                 cell.owner = nil
                 cell.color = nil
@@ -24,25 +34,38 @@ function activate_combo(color) -- look in the combos for the colors with fate co
         end
 
     elseif color == "green" then
-        player_timer = math.min(player_timer + 3, player_timer_max)
-        bad_timer = math.min(bad_timer + 2, bad_timer_max)
+        player_timer = math.min(
+            player_timer + 3,
+            player_timer_max
+        )
 
-    elseif color == "yellow" then       
+        bad_timer = math.min(
+            bad_timer + 2,
+            bad_timer_max
+        )
+
+    elseif color == "yellow" then
         local yellow_bad = {}
-        
-        for i, cell in ipairs(grid_table) do
-            if cell.occupied == true and cell.owner == "bad" then 
-                table.insert(yellow_bad, cell)     
-            end     
-        end                                                                       
+
+        for _, cell in ipairs(grid_table) do
+            if cell.occupied == true
+            and cell.owner == "bad" then
+                table.insert(yellow_bad, cell)
+            end
+        end
 
         for i = 1, 6 do
             if #yellow_bad == 0 then
                 break
             end
 
-            local randomIndex = love.math.random(1, #yellow_bad)
-            local cell = yellow_bad[randomIndex]
+            local random_index =
+                love.math.random(1, #yellow_bad)
+
+            local cell = yellow_bad[random_index]
+
+            save_data.statistics.gameplay.bad_blocks_destroyed =
+                save_data.statistics.gameplay.bad_blocks_destroyed + 1
 
             cell.occupied = false
             cell.owner = nil
@@ -51,8 +74,9 @@ function activate_combo(color) -- look in the combos for the colors with fate co
 
             add_score(10)
 
-            table.remove(yellow_bad, randomIndex)
-    
+            table.remove(yellow_bad, random_index)
         end
     end
+
+    save_game_data()
 end

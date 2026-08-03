@@ -1,5 +1,4 @@
 local diamond_position_close = 32
-local close = 50
 local far = 90
 
 local options_menu = {

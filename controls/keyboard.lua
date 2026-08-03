@@ -18,20 +18,27 @@ function love.keypressed(input)
     elseif input == "return" and game_state == "mode_select" and title_selection == 1 then
         reset_game()
         game_state = "play" 
-        spawn_player() return
+        spawn_player()
+        save_data.statistics.career.games_playd = save_data.statistics.career.games_playd + 1
+        save_game_data() return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 2 then
-        game_state = "options" return
+        game_state = "statistics" return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 3 then
-        game_state = "how_to_play" return
+        game_state = "options" return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 4 then
+        game_state = "how_to_play" return
+
+    elseif input == "return" and game_state == "mode_select" and title_selection == 5 then
         game_state = "exit" love.event.quit()
 
     elseif input == "escape" and game_state == "options" then 
         game_state = "mode_select" return
 
+    elseif input == "escape" and game_state == "statistics" then
+        game_state = "mode_select" return
 
     elseif (input == "a" or input == "d") and game_state == "options" and options_selection == 1 then
         toggle_fullscreen() return
@@ -64,7 +71,7 @@ function love.keypressed(input)
         then game_state = "mode_select" return
 
     elseif input == "return" and game_state == "game_over" then
-        love.event.quit("restart")
+        game_state = "mode_select" return
     end
 
     -- Gameplay keyboard controls

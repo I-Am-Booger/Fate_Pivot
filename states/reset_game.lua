@@ -1,9 +1,9 @@
 function reset_game()
     score = 0
-
+    penalty = 0
     level = 1
     blocks_destroyed = 0
-    blocks_to_next_level = 10
+    blocks_to_next_level = 7
 
     player_timer_max = base_player_timer
     player_timer = player_timer_max

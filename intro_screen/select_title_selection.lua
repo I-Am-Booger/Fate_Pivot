@@ -1,9 +1,8 @@
 function select_title_selection()
 
-local title_selection_menu = {"Start Game", "Options", "How to play", "Exit"}
+local title_selection_menu = {"Start Game", "Statistics", "Options", "How to play", "Exit"}
 
 local diamond_position_close = 32 -- diamond position close
-local close = 50 -- selector close
 local far = 90 
 
 

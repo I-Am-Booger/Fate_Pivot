@@ -1,4 +1,3 @@
-local close = 50
 local far   = 370
 
 page_number = 1

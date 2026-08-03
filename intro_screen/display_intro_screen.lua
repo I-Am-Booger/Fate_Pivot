@@ -23,7 +23,6 @@ end
 function display_mode_select()
     if game_state == "mode_select" then
         local d_p_c = 32 -- diamond position close
-        local close = 50 -- selector close
         local far = 90
         
         love.graphics.setFont(big_font)                                            
