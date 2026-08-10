@@ -1,7 +1,10 @@
+require("globals")
+
 require("save/save_data")
 require("save/save_manager")
+require("save/high_score")
+require("save/time_played_and_survived")
 
-require("globals")
 require("states/game_over")
 require("states/reset_game")
 require("states/how_to_play")

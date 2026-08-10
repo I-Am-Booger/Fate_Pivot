@@ -1,3 +1,5 @@
+require("block_actions/update_wrong_button_flash")
+
 function destroy_bad_block(buttonPressed)
     if selected_cell == nil then return end
     if selected_cell.owner ~= "bad" then return end
@@ -5,7 +7,11 @@ function destroy_bad_block(buttonPressed)
     if selected_cell.button ~= buttonPressed then
         spawn_bad_block()
         remove_score(-20)
+        play_bad_block_hit_sound()
         player_timer = player_timer - 0.10
+        wrong_button_pressed = true
+        save_data.statistics.gameplay.wrong_buttons_pressed = save_data.statistics.gameplay.wrong_buttons_pressed + 1
+        wrong_button_timer = 0.20
         return
     end
 
@@ -94,12 +100,11 @@ function destroy_bad_block(buttonPressed)
     selected_cell.color = nil
     selected_cell.button = nil
 
-    button_click()
-
+    
     local joysticks = love.joystick.getJoysticks()
 
     if joysticks[1] then
-        joysticks[1]:setVibration(0.22, 0.22, 0.04)
+        joysticks[1]:setVibration(0.005, 0.005, 0.05)
     end
 
     selected_cell = current_player_cell

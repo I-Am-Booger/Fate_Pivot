@@ -62,13 +62,16 @@ function love.update(dt)
 
     -- GAMEPLAY
     if game_state == "play" then
-
+        update_wrong_button_flash(dt)
         update_bad_block_timer(dt)
         update_player_timer(dt)
         update_occupancy_timer()
         update_fate_spawn_timer(dt)
         update_fate_timer(dt)
         update_destroy_pulse(dt)
+        time(dt)
+        record_high_score()
+
         -- player_pulse = player_pulse + dt
 
 

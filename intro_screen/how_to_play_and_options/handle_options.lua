@@ -81,7 +81,7 @@ function change_sound_volume(direction)
             sound_volume = 0
     end
 
-    button_click()
+    play_respawn_click()
 end 
 
 function update_fullscreen_text()

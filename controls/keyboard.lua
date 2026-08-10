@@ -19,7 +19,7 @@ function love.keypressed(input)
         reset_game()
         game_state = "play" 
         spawn_player()
-        save_data.statistics.career.games_playd = save_data.statistics.career.games_playd + 1
+        save_data.statistics.career.games_played = save_data.statistics.career.games_played + 1
         save_game_data() return
 
     elseif input == "return" and game_state == "mode_select" and title_selection == 2 then
@@ -88,6 +88,7 @@ function love.keypressed(input)
 
         if input == "space" then
             destroy_player()
+            play_respawn_click()
         end
     end
 end

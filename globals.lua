@@ -94,10 +94,13 @@ destroy_pulse_color = {1, 1, 1}
 -- SCORE AND PROGRESSION
 ------------------------------------------------
 
+high_score = 0
 score = 0
+
 game_over_score = -50
 
 level = 1
+highest_level = 0
 blocks_destroyed = 0
 blocks_to_next_level = 7
 
@@ -150,14 +153,19 @@ player_timer_max = base_player_timer
 player_timer = player_timer_max
 
 
+--------------------------------------------------
+-- BAD BUTTON PRESSED TIMER STUFF
+--------------------------------------------------
+
+wrong_button_pressed = false
+wrong_button_timer = 0
+
 ------------------------------------------------
--- FATE TIMER 
+-- TIME PLAYED 
 ------------------------------------------------
 
--- fate_spawn_timer = 0 
-
-
-
+run_timer = 0 
+time_p = 0 -- for time Played but I used the name for a function 
 
 
 ------------------------------------------------
@@ -177,4 +185,4 @@ sound_volume = 1.0
 ------------------------------------------------
 -- GAME INFORMATION
 -----------------------------------------------
-game_version = "0.4.9"
+game_version = "0.5.2"

@@ -10,7 +10,7 @@ save_data = {
         career = {
             games_played = 0,
             highest_score = 0,
-            highest_level = 0,
+            highest_level = 1,
             total_time_played = 0
         },
 

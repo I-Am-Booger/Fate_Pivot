@@ -31,6 +31,12 @@ function destroy_fate_block()
     current_fate_cell.button = nil
 
     current_fate_cell = nil
+
+    save_data.statistics.gameplay.fate_blocks_triggered = 
+              save_data.statistics.gameplay.fate_blocks_triggered + 1
+    save_game_data()
+
+    play_fate_block_hit_sound()
 end
 
 

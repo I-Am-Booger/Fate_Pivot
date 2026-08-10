@@ -7,7 +7,7 @@ statistics_names_table = {
             {name = "Games Played", key = "games_played"},
             {name = "Highest Score", key = "highest_score"},
             {name = "Highest Level", key = "highest_level"},
-            {name = "Total Time Played", key = "total_time_played"}
+            {name = "Total Time Played", key = "total_time_played", time = true}
         }
     },
 
@@ -19,11 +19,23 @@ statistics_names_table = {
             {name = "Bad Blocks Destroyed", key = "bad_blocks_destroyed"},
             {name = "Wrong Buttons Pressed", key = "wrong_buttons_pressed"},
             {name = "Fate Blocks Triggered", key = "fate_blocks_triggered"},
-            {name = "Longest Survival", key = "longest_survival"}
+            {name = "Longest Survival", key = "longest_survival", time = true}
         }
     }
 }
 
+function format_time(seconds)
+    local hours = math.floor(seconds / 3600)
+    local minutes = math.floor((seconds % 3600) / 60)
+    local remaining_seconds = math.floor(seconds % 60)
+
+    return string.format(
+        "%02d:%02d:%02d",
+        hours,
+        minutes,
+        remaining_seconds
+    )
+end
 
 function display_statistics()
     love.graphics.setColor(1, 1, 1, 1)
@@ -42,8 +54,11 @@ function display_statistics()
         y = y + 65
 
         for _, item in ipairs(section.items) do
+
             local value =
                 save_data.statistics[section.group][item.key]
+
+            if item.time == true then value = format_time(value) end    
 
             love.graphics.print(item.name, close, y)
             love.graphics.print(tostring(value), value_x, y)
