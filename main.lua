@@ -63,6 +63,7 @@ function love.update(dt)
     -- GAMEPLAY
     if game_state == "play" then
         update_wrong_button_flash(dt)
+        l1_blocks_timer(dt)
         update_bad_block_timer(dt)
         update_player_timer(dt)
         update_occupancy_timer()
@@ -85,11 +86,13 @@ end
 
 
 function love.draw()
+
+    
     background_engine()
 
     love.graphics.push()
     love.graphics.translate(game_offset_x, game_offset_y)
-    love.graphics.scale(game_scale, game_scale)
+    love.graphics.scale(game_scale, game_scale) 
 
     if game_state == "splash_screen" then
         splash_screen()

@@ -110,6 +110,9 @@ function love.gamepadpressed(joystick, input)
 
         if input == "rightshoulder" then 
             destroy_player() play_respawn_click() end
+        
+        if input == "leftshoulder" then
+            spawn_l1_blocks() end  
     end
 end
 

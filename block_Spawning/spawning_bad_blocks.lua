@@ -44,3 +44,16 @@ function spawn_bad_block()
 end 
 
 
+function spawn_l1_blocks()
+    for i = 1, 6 do 
+        spawn_bad_block()
+    end 
+
+    l1_bonus_timer = l1_bonus_timer + 3
+end 
+
+function l1_blocks_timer(dt)
+    l1_bonus_timer = l1_bonus_timer - dt
+
+    if l1_bonus_timer < 0 then l1_bonus_timer = 0 end 
+end 

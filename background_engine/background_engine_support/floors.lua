@@ -8,7 +8,7 @@ function draw_floor()
     local screen_width = love.graphics.getWidth()
     local screen_height = love.graphics.getHeight()
 
-    local floor_height = screen_height * 0.20
+    local floor_height = screen_height * 0.12
     local floor_y = screen_height - floor_height
 
     local scale_x = screen_width / floor1:getWidth()
