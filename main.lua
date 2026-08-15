@@ -82,12 +82,12 @@ function love.update(dt)
 
     end
 
+
 end
 
 
-function love.draw()
+function love.draw()    
 
-    
     background_engine()
 
     love.graphics.push()

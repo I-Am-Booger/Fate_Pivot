@@ -49,11 +49,18 @@ function spawn_l1_blocks()
         spawn_bad_block()
     end 
 
-    l1_bonus_timer = l1_bonus_timer + 3
+    if l1_bonus_timer > 0 then 
+        l1_bonus_multiplier = l1_bonus_multiplier * 2 end 
+
+    l1_bonus_timer = l1_bonus_timer + 4
 end 
 
 function l1_blocks_timer(dt)
     l1_bonus_timer = l1_bonus_timer - dt
 
-    if l1_bonus_timer < 0 then l1_bonus_timer = 0 end 
+    if l1_bonus_timer < 0 then 
+        l1_bonus_timer = 0 
+        l1_bonus_multiplier = 1 
+    end 
+    
 end 

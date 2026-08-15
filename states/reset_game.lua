@@ -29,6 +29,9 @@ function reset_game()
 
     run_timer = 0
 
+    l1_bonus_timer = 0
+    l1_bonus_multiplier = 1
+
     for i, cell_data in ipairs(grid_table) do
         cell_data.occupied = false
         cell_data.owner = nil

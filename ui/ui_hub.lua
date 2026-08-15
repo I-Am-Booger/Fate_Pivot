@@ -3,6 +3,7 @@ require("ui/draw_level")
 require("ui/draw_player_timer")
 require("ui/draw_combo")
 require("ui/draw_fate_condition")
+require("ui/draw_left_side_of_grid_status")
 
 
 display_gameplay_info = function()
@@ -15,7 +16,7 @@ display_gameplay_info = function()
         draw_player_timer()
         draw_combo()
         draw_fate_condition() 
-    
+        draw_left_side_status()
      end     
 
 end 
