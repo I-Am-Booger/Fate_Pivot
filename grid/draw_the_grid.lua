@@ -28,6 +28,30 @@ function draw_the_grid()
     
     grid() 
     draw_block()
+
+    if player_shatter_active then
+        for i = 1, 8 do
+            if player_shards[i] then
+
+                local c = player_shards[i].color
+                love.graphics.setColor(c[1], c[2], c[3])
+
+                love.graphics.push()
+                love.graphics.translate(player_shards[i].x, player_shards[i].y)
+                love.graphics.rotate(player_shards[i].angle)
+
+                love.graphics.polygon(
+                    "line",
+                    0, -8,
+                    -7,  6,
+                     7,  6
+                )
+
+                love.graphics.pop()
+            end
+        end
+    end
+
     draw_selector()
 
     love.graphics.pop()

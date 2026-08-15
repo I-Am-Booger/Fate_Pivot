@@ -153,6 +153,9 @@ player_timer_max = base_player_timer
 player_timer = player_timer_max
 
 
+player_shatter_active = false
+player_shards = {}
+
 -------------------------------------------------
 --L1 TIMER
 -------------------------------------------------

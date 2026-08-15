@@ -72,6 +72,7 @@ function love.update(dt)
         update_destroy_pulse(dt)
         time(dt)
         record_high_score()
+        update_player_shard(dt)
 
         -- player_pulse = player_pulse + dt
 
