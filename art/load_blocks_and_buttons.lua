@@ -2,6 +2,8 @@
 function load_blocks()
     -- blocks 
     player_image = love.graphics.newImage("art/blocks/white_block_t.png")
+    death_block  = love.graphics.newImage("art/blocks/black_block_t.png")
+    clock_image  = love.graphics.newImage("art/buttons/clock/clock.png")
     blue_block   = love.graphics.newImage("art/blocks/blue_block_t.png")
     green_block  = love.graphics.newImage("art/blocks/green_block_t.png")
     purple_block = love.graphics.newImage("art/blocks/purple_block_t.png")

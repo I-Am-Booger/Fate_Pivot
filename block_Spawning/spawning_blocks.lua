@@ -5,14 +5,14 @@
 ]]
 
 -- replace this random spawn with adjacent-to-player spawn logic
-function get_random_empty_block()
+function get_random_empty_block(old_player_cell)
     local random = {}
     
     for i, cell_data in ipairs(grid_table) do
-        if cell_data.occupied == false then 
-            table.insert(random, cell_data)
-        end 
+        if cell_data.occupied == false and cell_data ~= old_player_cell then
+        table.insert(random, cell_data)
     end
+end
     
     if #random == 0 then 
         return nil

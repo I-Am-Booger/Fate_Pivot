@@ -26,7 +26,7 @@ button_symbol = {
 -- 4. 4th bad block = guaranteed adjacent if possible.
 
 function spawn_bad_block()
-    local cell = get_random_empty_block()
+    local cell = get_random_empty_block(old_player_cell)
 
     if cell == nil then 
         game_over()
@@ -35,6 +35,7 @@ function spawn_bad_block()
 
     local randomColor  = bad_blockColors[love.math.random(1, #bad_blockColors)]
     local randomSymble = button_symbol[love.math.random(1, #button_symbol)]
+    
     cell.occupied = true
     cell.owner = "bad"
     cell.color = randomColor
@@ -51,6 +52,14 @@ function spawn_l1_blocks()
 
     if l1_bonus_timer > 0 then 
         l1_bonus_multiplier = l1_bonus_multiplier * 2 end 
+
+        if l1_bonus_multiplier > highest_multiplier then
+            highest_multiplier = l1_bonus_multiplier 
+
+           save_data.statistics.gameplay.highest_multiplier = highest_multiplier
+        end 
+
+
 
     l1_bonus_timer = l1_bonus_timer + 4
 end 

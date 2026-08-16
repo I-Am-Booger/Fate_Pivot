@@ -96,6 +96,7 @@ destroy_pulse_color = {1, 1, 1}
 
 high_score = 0
 score = 0
+highest_multiplier = 1
 
 game_over_score = -50
 
@@ -177,6 +178,35 @@ wrong_button_timer = 0
 
 run_timer = 0 
 time_p = 0 -- for time Played but I used the name for a function 
+
+
+
+
+
+
+
+
+------------------------------------------------
+-- FATES 
+
+-----------------------------------------------
+-- DEATH
+-----------------------------------------------
+death_fate_active = false
+death_fate_timer = 0
+death_fate_tick = 0
+death_fate_cell = nil
+
+-----------------------------------------------
+--- JUSTICE
+-----------------------------------------------
+justice_fate_active = false
+justice_fate_timer  = 0
+
+
+
+
+
 
 
 ------------------------------------------------

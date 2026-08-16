@@ -25,8 +25,21 @@ function draw_block() -- This is the code to filling in the blocks of the grid
                 love.graphics.draw(player_diamond, player_draw_x, player_draw_y, 0, player_draw_w / player_image:getWidth(), player_draw_h / player_image:getHeight())
                 love.graphics.draw(player_diamond_r, player_draw_x, player_draw_y, 0, player_draw_w / player_image:getWidth(), player_draw_h / player_image:getHeight())
                 
+                elseif cell_data.color == "death" then
+                    local clock_scale_x = button_x * 1.35
+                    local clock_scale_y = button_y * 1.35
+
+                    local clock_w = clock_image:getWidth() * clock_scale_x
+                    local clock_h = clock_image:getHeight() * clock_scale_y
+
+                    local clock_x = cell_data.x + (cell - clock_w) / 2
+                    local clock_y = cell_data.y + (cell - clock_h) / 2
+
+                    love.graphics.draw(death_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
+                    love.graphics.draw(clock_image, clock_x, clock_y, 0, clock_scale_x, clock_scale_y) 
+
             elseif cell_data.color == "blue" then
-               love.graphics.draw(blue_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
+                love.graphics.draw(blue_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
             elseif cell_data.color == "green" then
                 love.graphics.draw(green_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y) 
             elseif cell_data.color == "purple" then
@@ -52,7 +65,7 @@ function draw_block() -- This is the code to filling in the blocks of the grid
                 elseif cell_data.button == "Y" then
                     love.graphics.draw(y_button, cell_data.x + 15, cell_data.y + 16, 0, button_x, button_y)
                 elseif cell_data.button == "?" then 
-                    love.graphics.draw(fate_button, cell_data.x + 15, cell_data.y + 16, 0, button_x, button_y)
+                    love.graphics.draw(fate_button, cell_data.x + 15, cell_data.y + 16, 0, button_x, button_y)   
                 end 
             end
         end

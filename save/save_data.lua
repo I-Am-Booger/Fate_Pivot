@@ -15,6 +15,7 @@ save_data = {
         },
 
         gameplay = {
+            highest_multiplier = 1,
             bad_blocks_destroyed = 0,
             wrong_buttons_pressed = 0,
             fate_blocks_triggered = 0,

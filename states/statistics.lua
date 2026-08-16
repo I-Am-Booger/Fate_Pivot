@@ -16,10 +16,11 @@ statistics_names_table = {
         group = "gameplay",
 
         items = {
-            {name = "Bad Blocks Destroyed", key = "bad_blocks_destroyed"},
+            {name = "Highest Multiplier",    key = "highest_multiplier"},
+            {name = "Bad Blocks Destroyed",  key = "bad_blocks_destroyed"},
             {name = "Wrong Buttons Pressed", key = "wrong_buttons_pressed"},
             {name = "Fate Blocks Triggered", key = "fate_blocks_triggered"},
-            {name = "Longest Survival", key = "longest_survival", time = true}
+            {name = "Longest Survival",      key = "longest_survival", time = true}
         }
     }
 }

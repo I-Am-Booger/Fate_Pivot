@@ -6,7 +6,7 @@
 ]]
 spawns_near_bad = 0
 
-function spawn_player()
+function spawn_player(old_player_cell)
     if current_player_cell ~= nil and current_player_cell.owner == "player" then 
         return current_player_cell end 
 
@@ -23,19 +23,19 @@ function spawn_player()
         local respawn_roll = love.math.random(1, 100) 
     
         if respawn_roll >= 75 then 
-            cell = get_random_near_bad_cell() 
+            cell = get_random_near_bad_cell(old_player_cell) 
             spawns_near_bad = 0
         end
     end 
     
     -- the 100%
     if spawns_near_bad >= 4 then 
-        cell = get_random_near_bad_cell()
+        cell = get_random_near_bad_cell(old_player_cell)
         spawns_near_bad = 0
     end 
 
     if cell == nil then
-        cell = get_random_empty_block()
+        cell = get_random_empty_block(old_player_cell)
     end
 
     if cell == nil then
@@ -77,11 +77,11 @@ function cell_touches_bad_block(cell)
 end 
 
 
-function get_empty_cells_near_bad()
+function get_empty_cells_near_bad(old_player_cell)
     local near_bad_cells = {}
     
     for i, cell in ipairs(grid_table) do
-        if not cell.occupied and cell_touches_bad_block(cell) then
+        if not cell.occupied and cell ~= old_player_cell and cell_touches_bad_block(cell) then
             table.insert(near_bad_cells, cell)
         end
     end
@@ -89,8 +89,8 @@ function get_empty_cells_near_bad()
     return near_bad_cells
 end
 
-function get_random_near_bad_cell()
-    local near_bad_cells = get_empty_cells_near_bad()
+function get_random_near_bad_cell(old_player_cell)
+    local near_bad_cells = get_empty_cells_near_bad(old_player_cell)
 
     if #near_bad_cells == 0 then
         return nil

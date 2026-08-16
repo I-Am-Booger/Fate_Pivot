@@ -5,7 +5,7 @@ local fate_symbol = "?"
 function spawn_fate_block()
     if current_fate_cell ~= nil then return end 
     
-    local cell = get_random_empty_block()
+    local cell = get_random_empty_block(old_player_cell)
 
     if cell == nil then return end 
 
@@ -40,8 +40,11 @@ function destroy_fate_block()
 end
 
 
+
 function update_fate_timer(dt)
     if current_fate_cell == nil then return end 
+
+    if current_fate_cell.owner ~= "fate" then return end
     
     fate_timer = fate_timer - dt
 
@@ -49,6 +52,10 @@ function update_fate_timer(dt)
         destroy_fate_block()
     end
 end 
+
+
+
+
 
 function update_fate_spawn_timer(dt)
     if current_fate_cell ~= nil then return end 
