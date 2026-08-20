@@ -35,8 +35,25 @@ function draw_block() -- This is the code to filling in the blocks of the grid
                     local clock_x = cell_data.x + (cell - clock_w) / 2
                     local clock_y = cell_data.y + (cell - clock_h) / 2
 
+                    local scythe_scale_x = button_x * 1.15
+                    local scythe_scale_y = button_y * 1.15
+
+                    local scythe_w = scythe_image:getWidth() * scythe_scale_x
+                    local scythe_h = scythe_image:getHeight() * scythe_scale_y
+
+                    local scythe_x = cell_data.x + (cell - scythe_w) / 2
+                    local scythe_y = cell_data.y + (cell - scythe_h) / 2
+
+                    local scythe_angle = math.rad(death_fate_spawn_count * 30)
+
+                    local scythe_center_x = cell_data.x + cell / 2
+                    local scythe_center_y = cell_data.y + cell / 2
+
                     love.graphics.draw(death_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
                     love.graphics.draw(clock_image, clock_x, clock_y, 0, clock_scale_x, clock_scale_y) 
+                    love.graphics.draw(scythe_image, scythe_center_x, scythe_center_y, scythe_angle, scythe_scale_x, scythe_scale_y, scythe_image:getWidth() / 2, scythe_image:getHeight() / 2
+)
+
 
             elseif cell_data.color == "blue" then
                 love.graphics.draw(blue_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
@@ -69,7 +86,6 @@ function draw_block() -- This is the code to filling in the blocks of the grid
                 end 
             end
         end
+    end     
+end          
 
-         
-    end
-end 

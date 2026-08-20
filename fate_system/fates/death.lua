@@ -34,10 +34,15 @@ function update_death_fate(dt)
     if death_fate_spawn_count >= 12 then 
         death_fate_timer = 0
 
+        start_block_destruction_effect(death_fate_cell)
         death_fate_cell.occupied = false
         death_fate_cell.owner = nil
         death_fate_cell.color = nil
         death_fate_cell.button = nil
+
+        if current_fate_cell == death_fate_cell then
+           current_fate_cell = nil 
+        end
 
         death_fate_cell = nil
         death_fate_active = false

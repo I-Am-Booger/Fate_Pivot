@@ -7,6 +7,8 @@ function activate_combo(color)
                 save_data.statistics.gameplay.bad_blocks_destroyed =
                     save_data.statistics.gameplay.bad_blocks_destroyed + 1
 
+                start_block_destruction_effect(cell)
+
                 cell.occupied = false
                 cell.owner = nil
                 cell.color = nil
@@ -23,6 +25,8 @@ function activate_combo(color)
 
                 save_data.statistics.gameplay.bad_blocks_destroyed =
                     save_data.statistics.gameplay.bad_blocks_destroyed + 1
+
+                start_block_destruction_effect(cell)
 
                 cell.occupied = false
                 cell.owner = nil
@@ -43,6 +47,9 @@ function activate_combo(color)
             bad_timer + 2,
             bad_timer_max
         )
+        if l1_bonus_timer > 0 then 
+            l1_bonus_timer = l1_bonus_timer + 1.25 
+        end 
 
     elseif color == "yellow" then
         local yellow_bad = {}
@@ -66,6 +73,8 @@ function activate_combo(color)
 
             save_data.statistics.gameplay.bad_blocks_destroyed =
                 save_data.statistics.gameplay.bad_blocks_destroyed + 1
+
+            start_block_destruction_effect(cell)
 
             cell.occupied = false
             cell.owner = nil

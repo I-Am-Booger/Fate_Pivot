@@ -17,6 +17,8 @@ function issue_justice()
         
         local cell = justice_fate_teardown[i]
 
+        start_block_destruction_effect(cell)
+        
         cell.occupied = false
         cell.owner = nil
         cell.color = nil

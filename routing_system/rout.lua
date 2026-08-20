@@ -36,6 +36,7 @@ require("block_Spawning/spawning_blocks")
 require("block_Spawning/spawning_player")
 require("block_Spawning/spawning_bad_blocks")
 require("block_Spawning/spawning_fate")
+require("block_actions/block_destruction_effect")
 
 require("block_actions/destroy_player")
 require("block_actions/destroy_blocks")

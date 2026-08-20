@@ -95,6 +95,7 @@ function destroy_bad_block(buttonPressed)
     destroy_pulse_distance = 0
     destroy_pulse_active = true
 
+    start_block_destruction_effect(selected_cell)
     selected_cell.occupied = false
     selected_cell.owner = nil
     selected_cell.color = nil

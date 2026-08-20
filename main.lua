@@ -75,6 +75,7 @@ function love.update(dt)
         time(dt)
         record_high_score()
         update_player_shard(dt)
+        update_block_destruction_effects(dt)
 
         -- player_pulse = player_pulse + dt
 
@@ -117,6 +118,7 @@ function love.draw()
 
     elseif game_state == "play" then
         display_gameplay_info()
+        draw_block_destruction_effects()
         draw_destroy_pulse()
 
     elseif game_state == "pause" then
