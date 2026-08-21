@@ -202,7 +202,8 @@ death_fate_cell = nil
 -----------------------------------------------
 justice_fate_active = false
 justice_fate_timer  = 0
-
+justice_resolving = false
+justice_resolve_timer = 0
 
 
 

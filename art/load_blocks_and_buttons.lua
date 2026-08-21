@@ -1,10 +1,29 @@
 
 function load_blocks()
     -- blocks 
+    
+    -- Player Block 
     player_image = love.graphics.newImage("art/blocks/white_block_t.png")
+    player_diamond = love.graphics.newImage("art/buttons/player/diamond.png")
+    player_diamond_r = love.graphics.newImage("art/buttons/player/diamond_r.png")
+    
+    -- Death Block
     death_block  = love.graphics.newImage("art/blocks/black_block_t.png")
     clock_image  = love.graphics.newImage("art/buttons/clock/clock.png")
     scythe_image  = love.graphics.newImage("art/buttons/clock/scythe.png")
+
+    -- Justice Block
+    justice_block = love.graphics.newImage("art/blocks/justice_block_t.png")
+    scale1_image  = love.graphics.newImage("art/buttons/justice/scale1.png")
+    scale2_image  = love.graphics.newImage("art/buttons/justice/scale2.png")
+    scale3_image  = love.graphics.newImage("art/buttons/justice/scale3.png")
+
+    
+    
+    
+    
+    
+    
     blue_block   = love.graphics.newImage("art/blocks/blue_block_t.png")
     green_block  = love.graphics.newImage("art/blocks/green_block_t.png")
     purple_block = love.graphics.newImage("art/blocks/purple_block_t.png")
@@ -18,13 +37,14 @@ end
 
 
 
+
 function load_buttons(joystick)
     local joysticks = love.joystick.getJoysticks()
     local joystick = joysticks[1]
-
+    
     if joystick == nil then controller = "keyboard"
-        else controller = joystick:getName() end  
-
+    else controller = joystick:getName() end  
+    
     if controller == "Controller (Xbox One For Windows)" then 
         a_button = love.graphics.newImage("art/buttons/switch_xbox/a_button.png")
         b_button = love.graphics.newImage("art/buttons/switch_xbox/b_button.png")
@@ -36,19 +56,16 @@ function load_buttons(joystick)
         b_button = love.graphics.newImage("art/buttons/playstation/circle_button.png")
         x_button = love.graphics.newImage("art/buttons/playstation/square_button.png")
         y_button = love.graphics.newImage("art/buttons/playstation/triangle_button.png")
-    -- where the change was made 
+        -- where the change was made 
     else 
         a_button = love.graphics.newImage("art/buttons/keyboard/k_button.png")
         b_button = love.graphics.newImage("art/buttons/keyboard/l_button.png")
         x_button = love.graphics.newImage("art/buttons/keyboard/j_button.png")
         y_button = love.graphics.newImage("art/buttons/keyboard/i_button.png")
-    -- where the change ended 
+        -- where the change ended 
     end         
-        
-    fate_button = love.graphics.newImage("art/buttons/fate/fate_button.png")
-    player_diamond = love.graphics.newImage("art/buttons/player/diamond.png")
-    player_diamond_r = love.graphics.newImage("art/buttons/player/diamond_r.png")
     
+    fate_button = love.graphics.newImage("art/buttons/fate/fate_button.png")
     button_x = 65 / a_button:getWidth()
     button_y = 65 / a_button:getHeight()
 end 

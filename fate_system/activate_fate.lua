@@ -6,7 +6,7 @@ require("fate_system/fates/death")
 -- require("fate_system/fate_combos/pick_the_combo")
 
 function activate_fate()
-    local roll = 2 -- love.math.random(1, 9) Testing -- still have to work these out but working on other things
+    local roll = 3 -- love.math.random(1, 9) Testing -- still have to work these out but working on other things
     
     --[[
             1. cups double your multiplier time 
@@ -33,7 +33,7 @@ function activate_fate()
 
     print(roll)
 
-    if roll ~= 2 then 
+    if roll ~= 2 and roll ~= 3 then 
         destroy_fate_block()
     end 
 end 

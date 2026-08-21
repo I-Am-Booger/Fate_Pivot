@@ -38,12 +38,6 @@ function draw_block() -- This is the code to filling in the blocks of the grid
                     local scythe_scale_x = button_x * 1.15
                     local scythe_scale_y = button_y * 1.15
 
-                    local scythe_w = scythe_image:getWidth() * scythe_scale_x
-                    local scythe_h = scythe_image:getHeight() * scythe_scale_y
-
-                    local scythe_x = cell_data.x + (cell - scythe_w) / 2
-                    local scythe_y = cell_data.y + (cell - scythe_h) / 2
-
                     local scythe_angle = math.rad(death_fate_spawn_count * 30)
 
                     local scythe_center_x = cell_data.x + cell / 2
@@ -51,8 +45,54 @@ function draw_block() -- This is the code to filling in the blocks of the grid
 
                     love.graphics.draw(death_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
                     love.graphics.draw(clock_image, clock_x, clock_y, 0, clock_scale_x, clock_scale_y) 
-                    love.graphics.draw(scythe_image, scythe_center_x, scythe_center_y, scythe_angle, scythe_scale_x, scythe_scale_y, scythe_image:getWidth() / 2, scythe_image:getHeight() / 2
-)
+                    love.graphics.draw(scythe_image, scythe_center_x, scythe_center_y, scythe_angle, scythe_scale_x, scythe_scale_y, scythe_image:getWidth() / 2, scythe_image:getHeight() / 2)
+
+                elseif cell_data.color == "justice" then
+                
+                local justice_scale_x = button_x * 1.25
+                local justice_scale_y = button_y * 1.25
+
+                local justice_image
+
+                if justice_resolving == true then
+                    justice_image = scale2_image
+
+                    elseif justice_fate_timer > 2 then
+                        justice_image = scale1_image
+
+                    elseif justice_fate_timer > 1 then
+                        justice_image = scale2_image
+
+                    else
+                        justice_image = scale3_image
+                end
+
+                local justice_w = justice_image:getWidth() * justice_scale_x
+                local justice_h = justice_image:getHeight() * justice_scale_y
+
+                local justice_x = cell_data.x + (cell - justice_w) / 2
+                local justice_y = cell_data.y + (cell - justice_h) / 2
+
+                love.graphics.draw(
+                    justice_block,
+                    cell_data.x,
+                    cell_data.y - 1,
+                    0,
+                    block_x,
+                    block_y
+                )
+
+                love.graphics.draw(
+                    justice_image,
+                    justice_x,
+                    justice_y,
+                    0,
+                    justice_scale_x,
+                    justice_scale_y
+                )    
+
+
+
 
 
             elseif cell_data.color == "blue" then

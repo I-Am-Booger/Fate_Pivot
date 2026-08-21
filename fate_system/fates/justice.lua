@@ -1,6 +1,14 @@
 function justice()
     justice_fate_active = true
     justice_fate_timer = 3
+
+    justice_resolving = false
+    justice_resolve_timer = 0
+
+    current_fate_cell.owner = "justice"
+    current_fate_cell.color = "justice"
+    current_fate_cell.button = nil
+    current_fate_cell.occupied = true
 end
 
 function issue_justice()
@@ -53,6 +61,7 @@ function issue_justice()
 
         table.remove(justice_fate_rebuild, random_index)
     end 
+
 end
 
 function update_justice_fate(dt)
@@ -60,13 +69,40 @@ function update_justice_fate(dt)
         return
     end
 
-    justice_fate_timer = justice_fate_timer - dt
 
-    if justice_fate_timer <= 0 then
-        justice_fate_timer = 0
+    if justice_resolving == false then
+        justice_fate_timer = justice_fate_timer - dt
 
+        if justice_fate_timer <= 0 then
+            justice_fate_timer = 0
+
+            justice_resolving = true
+            justice_resolve_timer = 0.25
+        end
+
+        return
+    end
+
+
+    justice_resolve_timer = justice_resolve_timer - dt
+
+    if justice_resolve_timer <= 0 then
         issue_justice()
 
+        if current_fate_cell ~= nil
+        and current_fate_cell.owner == "justice" then
+
+            current_fate_cell.occupied = false
+            current_fate_cell.owner = nil
+            current_fate_cell.color = nil
+            current_fate_cell.button = nil
+
+            current_fate_cell = nil
+        end
+
+        justice_resolving = false
+        justice_resolve_timer = 0
         justice_fate_active = false
     end
 end
+
