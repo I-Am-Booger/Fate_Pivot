@@ -1,12 +1,16 @@
-require("fate_system/fates/justice")
 require("fate_system/fates/death")
+require("fate_system/fates/devil")
+require("fate_system/fates/justice")
+require("fate_system/fates/lovers")
+
+
 -- require("fate_system/fate_blocks/destroy_all_bad_blocks")
 -- require("fate_system/fate_level/remove_level")
 -- require("fate_system/fate_level/add_level")
 -- require("fate_system/fate_combos/pick_the_combo")
 
 function activate_fate()
-    local roll = 3 -- love.math.random(1, 9) Testing -- still have to work these out but working on other things
+    local roll = 2 -- love.math.random(1, 9) Testing -- still have to work these out but working on other things
     
     --[[
             1. cups double your multiplier time 
@@ -21,19 +25,15 @@ function activate_fate()
             9. Wheel of furtune rotates the board but randomly destoys one block each sec
     ]]
 
-    if roll == 1 then cups() end 
-    if roll == 2 then death() end 
-    if roll == 3 then justice() end
-    if roll == 4 then swords() end   
-    if roll == 5 then the_devil() end 
-    if roll == 6 then the_moon() end 
-    if roll == 7 then the_sun() end 
-    if roll == 8 then the_tower() end 
-    if roll == 9 then wheel_of_fortune() end
+    if roll == 1 then death() end 
+    if roll == 2 then devil() end
+    if roll == 4 then justice() end
+    if roll == 3 then lovers() end  
 
+    
     print(roll)
 
-    if roll ~= 2 and roll ~= 3 then 
+    if roll ~= 1 and roll ~= 2 and roll ~= 3 and roll ~= 4 then 
         destroy_fate_block()
     end 
 end 

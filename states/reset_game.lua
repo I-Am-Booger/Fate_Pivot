@@ -21,6 +21,7 @@ function reset_game()
 
     fate_timer = 5
     fate_spawn_timer = love.math.random(20, 50)
+    
 
     spawns_near_bad = 0
 
@@ -48,4 +49,14 @@ function reset_game()
     justice_resolve_timer = 0
 
     block_destruction_effects = {}
+
+    lovers_fate_active = false
+    lovers_fate_uses = 0
+
+    lovers_red = 0
+    lovers_blue = 0
+    lovers_green = 0
+    lovers_yellow = 0
+
+    lovers_fate_cell = nil
 end

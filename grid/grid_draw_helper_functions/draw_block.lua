@@ -73,27 +73,20 @@ function draw_block() -- This is the code to filling in the blocks of the grid
                 local justice_x = cell_data.x + (cell - justice_w) / 2
                 local justice_y = cell_data.y + (cell - justice_h) / 2
 
-                love.graphics.draw(
-                    justice_block,
-                    cell_data.x,
-                    cell_data.y - 1,
-                    0,
-                    block_x,
-                    block_y
-                )
+                love.graphics.draw(justice_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
+                love.graphics.draw(justice_image, justice_x, justice_y, 0, justice_scale_x, justice_scale_y)    
 
-                love.graphics.draw(
-                    justice_image,
-                    justice_x,
-                    justice_y,
-                    0,
-                    justice_scale_x,
-                    justice_scale_y
-                )    
+                elseif cell_data.color == "lovers" then
+                    local lovers_sway = math.sin(lovers_animation_timer * 2.5) * 0.04
+                    local lovers_pulse = 1 + math.sin(lovers_animation_timer * 3.0) * 0.015
 
+                    local lovers_scale_x = block_x * 0.79 * lovers_pulse
+                    local lovers_scale_y = block_y * 0.79 * lovers_pulse
 
+                    local lovers_center_x = cell_data.x + cell / 2
+                    local lovers_center_y = cell_data.y + cell / 2
 
-
+                    love.graphics.draw(lovers_block, lovers_center_x, lovers_center_y, lovers_sway, lovers_scale_x, lovers_scale_y, lovers_block:getWidth() / 2, lovers_block:getHeight() / 2)
 
             elseif cell_data.color == "blue" then
                 love.graphics.draw(blue_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)

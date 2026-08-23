@@ -12,6 +12,8 @@ function draw_fate_condition()
                 else
                     love.graphics.print("Fate: JUSTICE " .. math.ceil(justice_fate_timer), hud_x_position, 540)
             end
-             
+        
+        elseif lovers_fate_active == true then
+            love.graphics.print("Fate: LOVERS " .. lovers_fate_uses, hud_x_position, 540)   
     end 
 end 

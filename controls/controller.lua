@@ -98,11 +98,20 @@ function love.gamepadpressed(joystick, input)
 
     -- Gameplay controls
     if game_state == "play" then
-        if input == "dpup" then move_selector("up") end
-        if input == "dpdown" then move_selector("down") end
-        if input == "dpleft" then move_selector("left") end
-        if input == "dpright" then move_selector("right") end
-
+        
+        if devil_fate_active == true then
+            if input == "dpup" then move_selector("down") end
+            if input == "dpdown" then move_selector("up") end
+            if input == "dpleft" then move_selector("right") end
+            if input == "dpright" then move_selector("left") end
+        
+            else
+                if input == "dpup" then move_selector("up") end
+                if input == "dpdown" then move_selector("down") end
+                if input == "dpleft" then move_selector("left") end
+                if input == "dpright" then move_selector("right") end
+        end     
+        
         if input == "y" then handle_destroy_button("Y", joystick) end
         if input == "x" then handle_destroy_button("X", joystick) end
         if input == "a" then handle_destroy_button("A", joystick) end

@@ -197,6 +197,13 @@ death_fate_timer = 0
 death_fate_tick = 0
 death_fate_cell = nil
 
+----------------------------------------------
+--- THE DEVIL
+----------------------------------------------
+devil_fate_active = false
+devil_fate_timer = 0
+devil_fate_cell = nil
+
 -----------------------------------------------
 --- JUSTICE
 -----------------------------------------------
@@ -205,14 +212,24 @@ justice_fate_timer  = 0
 justice_resolving = false
 justice_resolve_timer = 0
 
+----------------------------------------------
+--- THE LOVERS
+----------------------------------------------
+lovers_fate_active = false
+lovers_fate_uses = 0
 
+lovers_red    = 0
+lovers_blue   = 0
+lovers_green  = 0
+lovers_yellow = 0
 
+lovers_fate_cell = nil
 
+lovers_animation_timer = 0
 
-
-------------------------------------------------
+----------------------------------------------
 -- FREEZE TIME
------------------------------------------------
+----------------------------------------------
 
 freeze_time_active = false
 freeze_time_timer = 0

@@ -18,11 +18,13 @@ function load_blocks()
     scale2_image  = love.graphics.newImage("art/buttons/justice/scale2.png")
     scale3_image  = love.graphics.newImage("art/buttons/justice/scale3.png")
 
+    -- lovers Block
+    lovers_block = love.graphics.newImage("art/blocks/the_lovers.png") 
     
-    
-    
-    
-    
+    -- devil_block
+    devil_block  = love.graphics.newImage("art/blocks/black_block_t.png")
+    devil_image  = love.graphics.newImage("art/buttons/devil/devil.png")
+    devil_arrows = love.graphics.newImage("art/buttons/devil/arrows.png")
     
     blue_block   = love.graphics.newImage("art/blocks/blue_block_t.png")
     green_block  = love.graphics.newImage("art/blocks/green_block_t.png")

@@ -112,15 +112,27 @@ function destroy_bad_block(buttonPressed)
 
     add_score(level + 9)
     
-    if l1_bonus_timer > 0 then add_score((level + 4) * l1_bonus_multiplier) end
+    if l1_bonus_timer > 0 then
+        local bonus_points = (level + 4) * l1_bonus_multiplier
 
-    combo_counter(destroyed_color)
-    blocks_destroyed = blocks_destroyed + 1
+        if devil_fate_active == true then
+            bonus_points = bonus_points * 2
+        end
 
-    save_data.statistics.gameplay.bad_blocks_destroyed = 
+        add_score(bonus_points)
+    end
+
+        combo_counter(destroyed_color)
+        blocks_destroyed = blocks_destroyed + 1
+
+        if lovers_fate_active == true then
+            lovers_destroy_random_block()
+        end
+
+        save_data.statistics.gameplay.bad_blocks_destroyed = 
               save_data.statistics.gameplay.bad_blocks_destroyed + 1
-    save_game_data()
+        save_game_data()
 
 
-    level_up()
+        level_up()
 end

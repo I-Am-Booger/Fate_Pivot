@@ -76,6 +76,11 @@ function love.update(dt)
         record_high_score()
         update_player_shard(dt)
         update_block_destruction_effects(dt)
+        update_devil_fate(dt)
+
+        if lovers_fate_active == true then
+            lovers_animation_timer = lovers_animation_timer + dt
+        end
 
         -- player_pulse = player_pulse + dt
 
