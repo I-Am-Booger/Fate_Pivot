@@ -39,9 +39,9 @@ function spawn_player(old_player_cell)
     end
 
     if cell == nil then
-        game_over()
-        return
-    end 
+        start_board_death()
+        return false
+    end
     
     cell.occupied = true
     cell.owner = "player"

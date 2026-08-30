@@ -1,7 +1,8 @@
 -- controller
 
+
+
 function love.gamepadpressed(joystick, input)
-    controller_name(joystick)
     input_device = "controller"
 
     -- Let the shared menu handler process D-pad input
@@ -60,12 +61,10 @@ function love.gamepadpressed(joystick, input)
    
         elseif (input == "dpleft") and game_state == "options" and options_selection == 2 then
             change_resolution(-1)
-            create_stars()
             return
 
         elseif (input == "dpright") and game_state == "options" and options_selection == 2 then
             change_resolution(1) 
-            create_stars()
             return  
               
         elseif(input == "dpleft") and game_state == "options" and options_selection == 3 then 

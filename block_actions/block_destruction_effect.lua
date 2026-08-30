@@ -31,6 +31,9 @@ function get_destruction_block_image(color)
 
     elseif color == "death" then
         return death_block
+
+    elseif color == "sun" then
+        return sun_block
     end
 
     return nil
@@ -54,6 +57,9 @@ function set_destruction_effect_color(color, alpha)
 
     elseif color == "death" then
         love.graphics.setColor(0.8, 0.8, 0.8, alpha)
+
+    elseif color == "sun" then
+        love.graphics.setColor(1, 0.75, 0, alpha)
 
     else
         love.graphics.setColor(1, 1, 1, alpha)

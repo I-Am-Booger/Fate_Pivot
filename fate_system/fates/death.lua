@@ -23,7 +23,6 @@ function update_death_fate(dt)
     death_fate_tick  = death_fate_tick  - dt
 
     if death_fate_tick <= 0 then 
-        print("DEATH TICK")
         spawn_bad_block()
 
         death_fate_spawn_count = death_fate_spawn_count + 1

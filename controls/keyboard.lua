@@ -6,8 +6,7 @@ function love.keypressed(input)
     -- Sends W or S to the shared menu-selection function
     handle_title_selection(input)
     handle_option_selection(input)
-    
-    
+        
     -- Change game states
     if input == "return" and game_state == "splash_screen" then 
         game_state = "title" return
@@ -39,6 +38,37 @@ function love.keypressed(input)
 
     elseif input == "escape" and game_state == "statistics" then
         game_state = "mode_select" return
+
+    elseif input == "escape" and game_state == "how_to_play" then
+        game_state = "mode_select" return    
+
+        elseif input == "escape" and game_state == "how_to_play" then
+        game_state = "mode_select"
+        return
+
+    elseif input == "a" and game_state == "how_to_play" then
+        page_number = page_number - 1
+
+        if page_number < 1 then
+            page_number = 3
+        end
+
+        return
+
+    elseif input == "d" and game_state == "how_to_play" then
+        page_number = page_number + 1
+
+        if page_number > 3 then
+            page_number = 1
+        end
+
+        return
+
+    elseif (input == "a" or input == "d")
+    and game_state == "options" and options_selection == 1 then
+
+        toggle_fullscreen()
+        return    
 
     elseif (input == "a" or input == "d") and game_state == "options" and options_selection == 1 then
         toggle_fullscreen() return
@@ -76,10 +106,17 @@ function love.keypressed(input)
 
     -- Gameplay keyboard controls
     if game_state == "play" then
-        if input == "w" then move_selector("up") end
-        if input == "s" then move_selector("down") end
-        if input == "a" then move_selector("left") end
-        if input == "d" then move_selector("right") end
+        if devil_fate_active == true then
+            if input == "w" then move_selector("down") end
+            if input == "s" then move_selector("up") end
+            if input == "a" then move_selector("right") end
+            if input == "d" then move_selector("left") end
+                else
+                    if input == "w" then move_selector("up") end
+                    if input == "s" then move_selector("down") end
+                    if input == "a" then move_selector("left") end
+                    if input == "d" then move_selector("right") end
+            end
 
         if input == "i" then handle_destroy_button("Y") end
         if input == "j" then handle_destroy_button("X") end
@@ -89,6 +126,10 @@ function love.keypressed(input)
         if input == "space" then
             destroy_player()
             play_respawn_click()
+        end
+
+        if input == "u" then
+            spawn_l1_blocks()   
         end
     end
 end

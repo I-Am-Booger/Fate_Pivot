@@ -28,10 +28,10 @@ button_symbol = {
 function spawn_bad_block()
     local cell = get_random_empty_block(old_player_cell)
 
-    if cell == nil then 
-        game_over()
-        return
-    end 
+    if cell == nil then
+        start_board_death()
+        return false
+    end
 
     local randomColor  = bad_blockColors[love.math.random(1, #bad_blockColors)]
     local randomSymble = button_symbol[love.math.random(1, #button_symbol)]
@@ -41,22 +41,26 @@ function spawn_bad_block()
     cell.color = randomColor
     cell.button = randomSymble
 
-    return cell
+    return true
 end 
 
 
 function spawn_l1_blocks()
     for i = 1, 6 do 
-        spawn_bad_block()
-    end 
+        local spawned = spawn_bad_block()
+
+        if spawned == false then
+            return
+        end
+    end
 
     if l1_bonus_timer > 0 then 
         l1_bonus_multiplier = l1_bonus_multiplier * 2 end 
 
-        if l1_bonus_multiplier > highest_multiplier then
-            highest_multiplier = l1_bonus_multiplier 
+        if l1_bonus_multiplier > save_data.statistics.gameplay.highest_multiplier then
+            save_data.statistics.gameplay.highest_multiplier = l1_bonus_multiplier
 
-           save_data.statistics.gameplay.highest_multiplier = highest_multiplier
+            save_game_data()
         end 
 
 

@@ -6,11 +6,9 @@ function level_up()
         apply_level_settings()
         play_level_up_sound()
 
-        if level > highest_level then 
-            highest_level = level
-        end 
-
-        save_data.statistics.career.highest_level = highest_level
+        if level > save_data.statistics.career.highest_level then
+            save_data.statistics.career.highest_level = level
+        end
 
         save_game_data()
     end

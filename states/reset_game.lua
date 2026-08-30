@@ -40,8 +40,15 @@ function reset_game()
         cell_data.button = nil
     end
 
+---------------------------------------
+--FATES
+---------------------------------------
     death_fate_active = false
     death_fate_cell = nil
+
+    devil_fate_active = false
+    devil_fate_timer = 0
+    devil_fate_cell = nil
 
     justice_fate_active = false
     justice_fate_timer = 0
@@ -59,4 +66,29 @@ function reset_game()
     lovers_yellow = 0
 
     lovers_fate_cell = nil
+
+    sun_fate_active = false
+    sun_fate_timer = 0
+    sun_fate_tick = 0
+    sun_fate_destroy_count = 0
+    sun_fate_cell = nil
+
+    player_shatter_active = false
+    player_shards = {}
+
+    wrong_button_pressed = false
+    wrong_button_timer = 0
+
+    destroy_pulse_active = false
+    destroy_pulse_distance = 0
+
+    lovers_animation_timer = 0  
+
+
+----------------------------------
+-- Board Death 
+---------------------------------
+
+    board_death_active = false
+    board_death_timer = 0
 end

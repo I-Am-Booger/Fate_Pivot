@@ -1,11 +1,15 @@
 require("routing_system/rout")
-
 require("save/save_data")
 require("save/save_manager")
 
 
 function love.load()
     load_game_data()
+
+    music_volume = save_data.settings.music_volume or 1
+    sound_volume = save_data.settings.sound_volume or 1
+    resolution_index = save_data.settings.resolution_index or 1
+
 
     -- HOW TO PLAY TEXT
     how_to_play_text_1 = love.filesystem.read("states/how_to_play_text/english_1.txt")
@@ -16,7 +20,15 @@ function love.load()
 
 
     -- WINDOW AND DISPLAY
-    love.window.setMode(1920, 1080, {fullscreen = true, fullscreentype = "desktop", vsync = 1, resizable = false })
+    local resolution = resolutions[resolution_index]
+
+    love.window.setMode(resolution.w, resolution.h,
+    {
+        fullscreen = save_data.settings.fullscreen,
+        fullscreentype = "desktop",
+        vsync = 1,
+        resizable = false
+    })
 
     love.window.setTitle("Fate & Pivot")
 
@@ -27,7 +39,7 @@ function love.load()
     -- MUSIC AND SOUND
     songs()
     load_audio()
-
+    background_music:setVolume(music_volume)
 
     -- TITLE AND MENU ART
     diamond_selector = love.graphics.newImage("art/buttons/player/diamond_r.png")
@@ -61,7 +73,15 @@ function love.update(dt)
 
 
     -- GAMEPLAY
+    
     if game_state == "play" then
+        
+        if board_death_active == true then
+            update_block_destruction_effects(dt)
+            update_board_death(dt)
+            return
+        end
+        
         update_wrong_button_flash(dt)
         l1_blocks_timer(dt)
         update_bad_block_timer(dt)
@@ -77,13 +97,13 @@ function love.update(dt)
         update_player_shard(dt)
         update_block_destruction_effects(dt)
         update_devil_fate(dt)
-
+        update_sun_fate(dt)
+        
         if lovers_fate_active == true then
             lovers_animation_timer = lovers_animation_timer + dt
         end
 
         -- player_pulse = player_pulse + dt
-
 
         if score <= game_over_score then
             game_over()
@@ -121,7 +141,7 @@ function love.draw()
     elseif game_state == "how_to_play" then
         how_to_play()
 
-    elseif game_state == "play" then
+    elseif game_state == "play" or board_death_active == true then
         display_gameplay_info()
         draw_block_destruction_effects()
         draw_destroy_pulse()

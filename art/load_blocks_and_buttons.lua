@@ -26,6 +26,14 @@ function load_blocks()
     devil_image  = love.graphics.newImage("art/buttons/devil/devil.png")
     devil_arrows = love.graphics.newImage("art/buttons/devil/arrows.png")
     
+    -- Sun Block
+    sun_block = player_image
+    sun_image = love.graphics.newImage("art/buttons/sun/sun.png")
+    sun_glow = love.graphics.newImage("art/buttons/sun/sun_glow.png")
+
+
+
+
     blue_block   = love.graphics.newImage("art/blocks/blue_block_t.png")
     green_block  = love.graphics.newImage("art/blocks/green_block_t.png")
     purple_block = love.graphics.newImage("art/blocks/purple_block_t.png")
@@ -34,40 +42,42 @@ function load_blocks()
     
     block_x = cell / player_image:getWidth()
     block_y = cell / player_image:getHeight()
+
 end 
 
 
 
 
 
-function load_buttons(joystick)
+function load_buttons()
     local joysticks = love.joystick.getJoysticks()
     local joystick = joysticks[1]
     
     if joystick == nil then controller = "keyboard"
     else controller = joystick:getName() end  
     
-    if controller == "Controller (Xbox One For Windows)" then 
+    --if controller:find("Xbox") or controller:find("XInput") then
+      if controller == "Controller (Xbox One For Windows)" then
         a_button = love.graphics.newImage("art/buttons/switch_xbox/a_button.png")
         b_button = love.graphics.newImage("art/buttons/switch_xbox/b_button.png")
         x_button = love.graphics.newImage("art/buttons/switch_xbox/x_button.png")
         y_button = love.graphics.newImage("art/buttons/switch_xbox/y_button.png")
+
+        elseif controller:find("DualSense") or controller:find("DualShock") or controller:find("PlayStation") then
+
+            a_button = love.graphics.newImage("art/buttons/playstation/x_button.png")
+            b_button = love.graphics.newImage("art/buttons/playstation/circle_button.png")
+            x_button = love.graphics.newImage("art/buttons/playstation/square_button.png")
+            y_button = love.graphics.newImage("art/buttons/playstation/triangle_button.png")
+
+        else
+            a_button = love.graphics.newImage("art/buttons/keyboard/k_button.png")
+            b_button = love.graphics.newImage("art/buttons/keyboard/l_button.png")
+            x_button = love.graphics.newImage("art/buttons/keyboard/j_button.png")
+            y_button = love.graphics.newImage("art/buttons/keyboard/i_button.png")
+    end        
         
-    elseif controller == "DualSense Wireless Controller" then 
-        a_button = love.graphics.newImage("art/buttons/playstation/x_button.png")
-        b_button = love.graphics.newImage("art/buttons/playstation/circle_button.png")
-        x_button = love.graphics.newImage("art/buttons/playstation/square_button.png")
-        y_button = love.graphics.newImage("art/buttons/playstation/triangle_button.png")
-        -- where the change was made 
-    else 
-        a_button = love.graphics.newImage("art/buttons/keyboard/k_button.png")
-        b_button = love.graphics.newImage("art/buttons/keyboard/l_button.png")
-        x_button = love.graphics.newImage("art/buttons/keyboard/j_button.png")
-        y_button = love.graphics.newImage("art/buttons/keyboard/i_button.png")
-        -- where the change ended 
-    end         
-    
-    fate_button = love.graphics.newImage("art/buttons/fate/fate_button.png")
-    button_x = 65 / a_button:getWidth()
-    button_y = 65 / a_button:getHeight()
+        fate_button = love.graphics.newImage("art/buttons/fate/fate_button.png")
+        button_x = 65 / a_button:getWidth()
+        button_y = 65 / a_button:getHeight()
 end 

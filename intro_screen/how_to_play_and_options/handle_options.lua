@@ -22,6 +22,9 @@ function toggle_fullscreen()
 
     love.window.setFullscreen(not is_fullscreen, "desktop")
 
+    save_data.settings.fullscreen = love.window.getFullscreen()
+    save_game_data()
+
     calculate_display_scale()
     create_stars()
     update_fullscreen_text()
@@ -47,42 +50,58 @@ function change_resolution(direction)
 
     local resolution = resolutions[resolution_index]
 
-    love.window.setMode(resolution.w, resolution.h, {fullscreen = false, vsync = 1,  resizable = false })
+    local is_fullscreen = love.window.getFullscreen()
 
-    
+    love.window.setMode(
+        resolution.w,
+        resolution.h,
+        {
+            fullscreen = is_fullscreen,
+            fullscreentype = "desktop",
+            vsync = 1,
+            resizable = false
+        }
+    )
+
+    save_data.settings.resolution_index = resolution_index
+    save_data.settings.fullscreen = is_fullscreen
+    save_game_data()
+
     calculate_display_scale()
     create_stars()
     update_fullscreen_text()
-
 end
 
 function change_music_volume(direction)
     music_volume = music_volume + (direction * 0.1)
 
-
-    if music_volume > 1 then 
+    if music_volume > 1 then
         music_volume = 1
-    
-        elseif music_volume < 0 then 
-            music_volume = 0
-    end 
+    elseif music_volume < 0 then
+        music_volume = 0
+    end
 
-        background_music:setVolume(music_volume)
-        
-end 
+    background_music:setVolume(music_volume)
+
+    save_data.settings.music_volume = music_volume
+    save_game_data()
+end
+
 
 function change_sound_volume(direction)
     sound_volume = sound_volume + (direction * 0.1)
 
     if sound_volume > 1 then
         sound_volume = 1
-
-        elseif sound_volume < 0 then 
-            sound_volume = 0
+    elseif sound_volume < 0 then
+        sound_volume = 0
     end
 
+    save_data.settings.sound_volume = sound_volume
+    save_game_data()
+
     play_respawn_click()
-end 
+end
 
 function update_fullscreen_text()
     local is_fullscreen = love.window.getFullscreen()

@@ -88,6 +88,55 @@ function draw_block() -- This is the code to filling in the blocks of the grid
 
                     love.graphics.draw(lovers_block, lovers_center_x, lovers_center_y, lovers_sway, lovers_scale_x, lovers_scale_y, lovers_block:getWidth() / 2, lovers_block:getHeight() / 2)
 
+
+
+                    elseif cell_data.color == "devil" then 
+                        love.graphics.draw(devil_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
+                        local devil_scale_x = cell / devil_image:getWidth()
+
+                        local devil_scale_y = cell / devil_image:getHeight()
+                        love.graphics.draw(devil_image, cell_data.x, cell_data.y, 0, devil_scale_x, devil_scale_y)
+                        
+
+                        local arrow_scale_x = cell / devil_arrows:getWidth()
+                        local arrow_scale_y = cell / devil_arrows:getHeight()
+
+                        local arrow_sway = math.sin((10 - devil_fate_timer) * 2.5) * 0.1
+                        local arrow_center_x = cell_data.x + cell / 2
+                        local arrow_center_y = cell_data.y + cell / 2
+
+                        love.graphics.draw(devil_arrows, arrow_center_x, arrow_center_y, arrow_sway, arrow_scale_x, arrow_scale_y, devil_arrows:getWidth() / 2, devil_arrows:getHeight() / 2)
+                        
+        
+                    elseif cell_data.color == "sun" then
+                        love.graphics.draw(sun_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y )
+
+                    local glow_wave = math.sin((12 - sun_fate_timer) * 3)
+                    local glow_size = cell * (0.88 + glow_wave * 0.04)
+
+                    local glow_alpha = 0.38 + glow_wave * 0.10
+                    local glow_scale_x = glow_size / sun_glow:getWidth()
+                    local glow_scale_y = glow_size / sun_glow:getHeight()
+                    local glow_center_x = cell_data.x + cell / 2
+                    local glow_center_y = cell_data.y + cell / 2 - 1
+
+                    love.graphics.setColor(1, 1, 1, glow_alpha)
+                    love.graphics.draw(sun_glow, glow_center_x, glow_center_y, 0, glow_scale_x, glow_scale_y, sun_glow:getWidth() / 2, sun_glow:getHeight() / 2)
+                    love.graphics.setColor(1, 1, 1, 1)
+
+
+                    local sun_size = cell * 0.78
+                    local sun_scale_x = sun_size / sun_image:getWidth()
+                    local sun_scale_y = sun_size / sun_image:getHeight()
+
+                    local sun_center_x = cell_data.x + cell / 2
+                    local sun_center_y = cell_data.y + cell / 2 - 1
+
+                    local sun_angle = math.rad(sun_fate_destroy_count * -30)
+
+                    love.graphics.draw(sun_image, sun_center_x, sun_center_y, sun_angle, sun_scale_x, sun_scale_y, sun_image:getWidth() / 2, sun_image:getHeight() / 2
+)
+
             elseif cell_data.color == "blue" then
                 love.graphics.draw(blue_block, cell_data.x, cell_data.y - 1, 0, block_x, block_y)
             elseif cell_data.color == "green" then

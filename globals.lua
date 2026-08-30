@@ -181,11 +181,6 @@ time_p = 0 -- for time Played but I used the name for a function
 
 
 
-
-
-
-
-
 ------------------------------------------------
 -- FATES 
 
@@ -228,6 +223,16 @@ lovers_fate_cell = nil
 lovers_animation_timer = 0
 
 ----------------------------------------------
+--- THE SUN
+----------------------------------------------
+
+sun_fate_active = false
+sun_fate_timer = 0
+sun_fate_tick = 0
+sun_fate_destroy_count = 0
+sun_fate_cell = nil
+
+----------------------------------------------
 -- FREEZE TIME
 ----------------------------------------------
 
@@ -245,3 +250,9 @@ sound_volume = 1.0
 -- GAME INFORMATION
 -----------------------------------------------
 game_version = "0.5.2"
+
+-----------------------------------------------
+---Board Death
+----------------------------------------------
+board_death_active = false
+board_death_timer = 0
