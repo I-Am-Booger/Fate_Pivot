@@ -79,6 +79,9 @@ function love.gamepadpressed(joystick, input)
         elseif(input == "dpright") and game_state == "options" and options_selection == 4 then 
             change_sound_volume(1) return 
 
+        elseif (input == "dpleft" or input == "dpright") and game_state == "options" and options_selection == 5 then
+            change_language() return
+
 
         elseif (input == "back" or input == "b") and game_state == "statistics" then
             game_state = "mode_select" return

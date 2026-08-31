@@ -1,6 +1,6 @@
 function display_pause()
-    local pause = "-PAUSED-"
-
+    local pause = text[current_language].paused
+    
     love.graphics.setFont(big_font)
     local font = love.graphics.getFont()
 

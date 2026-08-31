@@ -4,7 +4,7 @@ function handle_option_selection(input)
         if input == "dpdown" or input == "s" then
             options_selection = options_selection + 1
 
-            if options_selection > 5 then 
+            if options_selection > 6 then 
                 options_selection = 1 end
         end
 
@@ -12,7 +12,7 @@ function handle_option_selection(input)
             options_selection = options_selection - 1
 
             if options_selection < 1 then 
-                options_selection = 5 end
+                options_selection = 6 end
         end
     end
 end

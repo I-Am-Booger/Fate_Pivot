@@ -1,0 +1,28 @@
+CÓMO JUGAR
+
+BLOQUES DE DESTINO
+Durante la partida aparecerán bloques morados con ?.
+Destruye uno antes de que desaparezca
+para activar un Destino al azar.
+Algunos Destinos te ayudan.
+Otros hacen que sobrevivir sea mucho más difícil.
+Aprende sus efectos y adáptate.
+
+
+L1 — RIESGO Y RECOMPENSA
+Pulsa L1 / Botón superior izquierdo
+para generar inmediatamente 6 bloques malos.
+Esto inicia un temporizador de bonus.
+Pulsa L1 otra vez antes de que termine
+y tu multiplicador se duplicará:
+
+x2  x4  x8  x16  x32  x64...
+
+Cada pulsación también añade tiempo
+al temporizador de bonus.
+Mientras el bonus esté activo,
+destruir bloques te dará puntos adicionales.
+Cuanto más aumentes el multiplicador,
+más peligroso será el tablero.
+Juega con cuidado y sobrevive...
+o arriesga todo por una puntuación enorme.

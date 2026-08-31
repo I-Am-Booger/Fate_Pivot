@@ -1,0 +1,28 @@
+CÓMO JUGAR
+
+TU OBJETIVO
+Sobrevive el mayor tiempo posible, destruye bloques,
+aumenta tu puntuación y evita que el tablero se llene por completo.
+
+
+EL DIAMANTE BLANCO
+El diamante blanco eres tú.
+Mueve el selector con la cruceta o WASD.
+Destruye un bloque de color adyacente pulsando
+el botón que aparece en ese bloque.
+
+
+REAPARECER
+Tu jugador tiene un temporizador.
+Cuando el tiempo llega a cero, tu bloque se rompe,
+tu puntuación recibe una penalización y reapareces
+en otra parte del tablero.
+También puedes reaparecer antes con
+R1 / Botón superior derecho.
+
+
+BOTÓN INCORRECTO
+Pulsar el botón incorrecto es peligroso.
+Aparece un nuevo bloque malo, aumenta tu penalización
+de puntuación y pierdes una pequeña cantidad de tiempo.
+Los errores repetidos son cada vez más costosos.

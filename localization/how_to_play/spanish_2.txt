@@ -1,0 +1,31 @@
+CÓMO JUGAR
+
+PUNTUACIÓN
+Destruir bloques te da puntos.
+A medida que aumenta tu nivel,
+los bloques normales valen más puntos.
+
+
+COMBOS
+Destruye 3 bloques del mismo color seguidos
+para activar un combo.
+
+ROJO
+Destruye los bloques malos de tu fila.
+
+AZUL
+Destruye los bloques malos de tu columna.
+
+VERDE
+Recupera tiempo y puede ayudarte
+a mantener activo tu bonus de L1.
+
+AMARILLO
+Destruye hasta 6 bloques malos al azar.
+
+
+PERDER
+La partida termina si tu puntuación llega a -50
+o si el tablero se llena por completo.
+Cuando el tablero se llena,
+todo desaparece con él.

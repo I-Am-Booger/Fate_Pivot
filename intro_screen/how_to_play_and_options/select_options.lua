@@ -2,11 +2,12 @@ local diamond_position_close = 32
 local far = 90
 
 local options_menu = {
-    "Fullscreen",
-    "Resolution",
-    "Music Volume",
-    "Sound Volume",
-    "Back"
+    "fullscreen",
+    "resolution",
+    "music_volume",
+    "sound_volume",
+    "language",
+    "back"
 }
 
 function select_options_selection()
@@ -21,23 +22,40 @@ function select_options_selection()
 
             love.graphics.draw(diamond_selector, diamond_position_close, diamond_y, 0, 0.05, 0.05)
 
-            love.graphics.print(item, far, item_y)
+            love.graphics.print(text[current_language][item], far, item_y)
         else
             love.graphics.setColor(1, 1, 1, 0.35)
-            love.graphics.print(item, close, item_y)
+            love.graphics.print(text[current_language][item], close, item_y)
         end
     end
 
 
     -- the drawing of the options 
     love.graphics.setColor(1, 1, 1, 1)
-
     love.graphics.print(full_screen, 450, 175)
-
     love.graphics.print(current_resolution.w .. " x " .. current_resolution.h, 450, 240)
-    
     love.graphics.print(math.floor(music_volume * 100 + 0.5) .. "%", 450, 305)
-
     love.graphics.print(math.floor(sound_volume * 100 + 0.5) .. "%", 450, 370)
 
+    local language_name = "English"
+
+    if current_language == "es" then
+        language_name = "Español"
+    end
+
+    love.graphics.print(language_name, 450, 435)
+end
+
+function change_language()
+
+    if current_language == "en" then
+        current_language = "es"
+        
+        else
+            current_language = "en"
+    end
+
+    save_data.settings.language = current_language
+    load_how_to_play_text()
+    save_game_data()
 end

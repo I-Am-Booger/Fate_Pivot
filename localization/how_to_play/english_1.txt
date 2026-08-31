@@ -1,0 +1,26 @@
+HOW TO PLAY
+
+YOUR GOAL
+Survive as long as you can, destroy blocks, build your score,
+and keep the board from filling completely.
+
+
+THE WHITE DIAMOND
+The white diamond is you.
+Move the selector with the D-Pad or WASD.
+Destroy an adjacent colored block by pressing the face button
+shown on that block.
+
+
+RESPAWNING
+Your player has a timer.
+When the timer reaches zero, your player shatters, your score
+takes a penalty, and you respawn somewhere else on the board.
+You can also respawn early with R1 / Right Shoulder.
+
+
+WRONG BUTTONS
+Pressing the wrong face button is dangerous.
+A new bad block spawns, your score penalty increases,
+and a small amount of player time is lost.
+Repeated mistakes become increasingly expensive.

@@ -9,9 +9,9 @@ function display_intro_screen()
         
         if show_enter then 
             if input_device == "keyboard" then     
-                love.graphics.print("Press ENTER", 800, 375)
+                love.graphics.print(text[current_language].press_enter, 800, 375)
             else 
-                love.graphics.print("Press START", 800, 375)
+                love.graphics.print(text[current_language].press_start, 800, 375)
             end
         end
     

@@ -12,10 +12,13 @@ function activate_options()
         -- change_sound_volume() with left and right
 
     elseif options_selection == 5 then
+        -- language changes with left and right
+
+    elseif options_selection == 6 then
         game_state = "mode_select"
     end
-end 
-
+    end 
+    
 
 function toggle_fullscreen()
     local is_fullscreen = love.window.getFullscreen()

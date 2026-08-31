@@ -24,7 +24,8 @@ require("grid/draw_the_grid")
 require("grid/grid_table")
 
 
-
+require("localization/text")
+require("localization/font_manager")
 require("art/load_blocks_and_buttons")
 
 require("ui/ui_hub")
@@ -49,3 +50,4 @@ require("controls/controls")
 require("pause/pause")
 
 require("score/scoring")
+require("localization/load_how_to_play_text")

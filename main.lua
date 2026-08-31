@@ -6,17 +6,15 @@ require("save/save_manager")
 function love.load()
     load_game_data()
 
+    current_language = save_data.settings.language or "en"
+
     music_volume = save_data.settings.music_volume or 1
     sound_volume = save_data.settings.sound_volume or 1
     resolution_index = save_data.settings.resolution_index or 1
 
 
     -- HOW TO PLAY TEXT
-    how_to_play_text_1 = love.filesystem.read("states/how_to_play_text/english_1.txt")
-
-    how_to_play_text_2 = love.filesystem.read("states/how_to_play_text/english_2.txt")
-
-    how_to_play_text_3 = love.filesystem.read("states/how_to_play_text/english_3.txt")
+    load_how_to_play_text()
 
 
     -- WINDOW AND DISPLAY

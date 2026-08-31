@@ -1,0 +1,24 @@
+HOW TO PLAY
+
+FATE BLOCKS
+Purple ? blocks appear during the game.
+Destroy one before it disappears to trigger a random Fate.
+
+Some Fates help you.
+Some make survival much harder.
+Learn them and adapt.
+
+
+L1 — RISK AND REWARD
+Press L1 / Left Shoulder to immediately spawn 6 bad blocks.
+Doing so starts a bonus timer.
+Press L1 again before the timer expires and your multiplier doubles:
+x2  x4  x8  x16  x32  x64...
+Each successful L1 press also extends the bonus timer.
+While the bonus is active, destroyed blocks earn additional points.
+The higher you push the multiplier,
+the more dangerous the board becomes.
+
+Play safe and survive...
+
+or push your luck for a massive score.

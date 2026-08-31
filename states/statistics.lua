@@ -1,26 +1,26 @@
 statistics_names_table = {
     {
-        title = "= Career ===============",
+        title = "career",
         group = "career",
 
         items = {
-            {name = "Games Played", key = "games_played"},
-            {name = "Highest Score", key = "highest_score"},
-            {name = "Highest Level", key = "highest_level"},
-            {name = "Total Time Played", key = "total_time_played", time = true}
+            {name = "games_played", key = "games_played"},
+            {name = "highest_score", key = "highest_score"},
+            {name = "highest_level", key = "highest_level"},
+            {name = "total_time_played", key = "total_time_played", time = true}
         }
     },
 
     {
-        title = "= Gameplay =============",
+        title = "gameplay",
         group = "gameplay",
 
         items = {
-            {name = "Highest Multiplier",    key = "highest_multiplier"},
-            {name = "Bad Blocks Destroyed",  key = "bad_blocks_destroyed"},
-            {name = "Wrong Buttons Pressed", key = "wrong_buttons_pressed"},
-            {name = "Fate Blocks Triggered", key = "fate_blocks_triggered"},
-            {name = "Longest Survival",      key = "longest_survival", time = true}
+            {name = "highest_multiplier", key = "highest_multiplier"},
+            {name = "bad_blocks_destroyed", key = "bad_blocks_destroyed"},
+            {name = "wrong_buttons_pressed", key = "wrong_buttons_pressed"},
+            {name = "fate_blocks_triggered", key = "fate_blocks_triggered"},
+            {name = "longest_survival", key = "longest_survival", time = true}
         }
     }
 }
@@ -43,7 +43,7 @@ function display_statistics()
 
     love.graphics.setFont(big_font)
     love.graphics.print("Fate & Pivot", close, 100)
-    love.graphics.print("Statistics", close, 165)
+    love.graphics.print(text[current_language].statistics_title, close, 165)
 
     love.graphics.setFont(font)
 
@@ -51,17 +51,16 @@ function display_statistics()
     local value_x = close + 400
 
     for _, section in ipairs(statistics_names_table) do
-        love.graphics.print(section.title, close, y)
+        love.graphics.print(text[current_language][section.title], close, y)
         y = y + 65
 
         for _, item in ipairs(section.items) do
 
-            local value =
-                save_data.statistics[section.group][item.key]
+            local value = save_data.statistics[section.group][item.key]
 
             if item.time == true then value = format_time(value) end    
 
-            love.graphics.print(item.name, close, y)
+            love.graphics.print(text[current_language][item.name], close, y)
             love.graphics.print(tostring(value), value_x, y)
 
             y = y + 65

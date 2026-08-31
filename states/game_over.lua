@@ -38,14 +38,13 @@ end
 function draw_game_over()
     love.graphics.setColor(1, 1, 1, 1)
     love.graphics.setFont(big_font)
-    love.graphics.printf("Game Over", 0, 400, design_width, "center")
 
+    love.graphics.printf(text[current_language].game_over, 0, 400, design_width, "center")
     love.graphics.setFont(font)
 
     if input_device == "keyboard" then
-        love.graphics.printf("Press ENTER to Continue", 0, 470, design_width, "center")
+        love.graphics.printf(text[current_language].press_enter_continue, 0, 470, design_width, "center")
     else
-        love.graphics.printf("Press START to Continue", 0, 470, design_width, "center")
+        love.graphics.printf(text[current_language].press_start_continue, 0, 470, design_width, "center")
     end
 end
-

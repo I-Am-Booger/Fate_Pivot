@@ -1,0 +1,27 @@
+HOW TO PLAY
+
+SCORING
+Destroying blocks earns points.
+As your level increases, normal blocks become worth more.
+
+
+COMBOS
+Destroy 3 blocks of the same color in a row to trigger a combo.
+
+RED
+Clears bad blocks across your row.
+
+BLUE
+Clears bad blocks in your column.
+
+GREEN
+Restores time, slows the bad-block timer,
+and helps extend an active L1 bonus.
+
+YELLOW
+Destroys up to 6 random bad blocks.
+
+LOSING
+The run ends if your score reaches -50
+or the board becomes completely full.
+When the board fills, everything goes with it.

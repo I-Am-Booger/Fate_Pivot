@@ -34,6 +34,18 @@ font = love.graphics.newFont(24)
 mid_font = love.graphics.newFont(36)
 big_font = love.graphics.newFont(48)
 
+    -- jp_font = love.graphics.newFont("art/fonts/NotoSansCJKjp-VF.ttf", 24)
+    -- jp_mid_font = love.graphics.newFont("art/fonts/NotoSansCJKjp-VF.ttf", 36)
+    -- jp_big_font = love.graphics.newFont("art/fonts/NotoSansCJKjp-VF.ttf", 48)
+
+    -- kr_font = love.graphics.newFont("art/fonts/NotoSansCJKkr-VF.ttf", 24)
+    -- kr_mid_font = love.graphics.newFont("art/fonts/NotoSansCJKkr-VF.ttf", 36)
+    -- kr_big_font = love.graphics.newFont("art/fonts/NotoSansCJKkr-VF.ttf", 48)
+
+    -- zh_font = love.graphics.newFont("art/fonts/NotoSansCJKsc-VF.ttf", 24)
+    -- zh_mid_font = love.graphics.newFont("art/fonts/NotoSansCJKsc-VF.ttf", 36)
+    -- zh_big_font = love.graphics.newFont("art/fonts/NotoSansCJKsc-VF.ttf", 48)
+
 --------------------------------------------
 -- GAME STATE
 --------------------------------------------

@@ -91,6 +91,9 @@ function love.keypressed(input)
     elseif(input == "d") and game_state == "options" and options_selection == 4 then 
         change_sound_volume(1) return     
     
+    elseif (input == "a" or input == "d") and game_state == "options" and options_selection == 5 then
+        change_language() return
+
     elseif input == "return" and game_state == "play" then
         game_state = "pause" return
 

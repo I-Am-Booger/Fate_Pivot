@@ -3,7 +3,8 @@ save_data = {
         music_volume = 1,
         sound_volume = 1,
         fullscreen = false,
-        resolution_index = 1
+        resolution_index = 1,
+        language = "en"
     },
 
     statistics = {

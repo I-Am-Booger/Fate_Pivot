@@ -38,18 +38,19 @@ function activate_combo(color)
         end
 
     elseif color == "green" then
-        player_timer = math.min(
-            player_timer + 3,
-            player_timer_max
-        )
+        player_timer = math.min(player_timer + 3, player_timer_max)
 
-        bad_timer = math.min(
-            bad_timer + 2,
-            bad_timer_max
-        )
+        bad_timer = math.min(bad_timer + 2, bad_timer_max)
+
         if l1_bonus_timer > 0 then 
-            l1_bonus_timer = l1_bonus_timer + 1.25 
+            local green_timer_bonus = math.min(level * 0.20, 2.00)
+            
+            l1_bonus_timer = l1_bonus_timer + 2.00 
+
+            bad_timer = math.min(bad_timer + green_timer_bonus, bad_timer_max)
+            player_timer = math.min(player_timer + green_timer_bonus, player_timer_max)
         end 
+
 
     elseif color == "yellow" then
         local yellow_bad = {}
