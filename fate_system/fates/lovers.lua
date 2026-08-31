@@ -56,6 +56,8 @@ function lovers_destroy_random_block()
         lovers_yellow = lovers_yellow + 1
     end
 
+    save_data.statistics.gameplay.bad_blocks_destroyed = save_data.statistics.gameplay.bad_blocks_destroyed + 1
+
 
     start_block_destruction_effect(cell)
 

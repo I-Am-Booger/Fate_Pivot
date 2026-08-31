@@ -120,6 +120,9 @@ function destroy_bad_block(buttonPressed)
         end
 
         add_score(bonus_points)
+        
+        player_timer = math.min(player_timer + 0.05, player_timer_max)
+        bad_timer = math.min(bad_timer + 0.05, bad_timer_max)
     end
 
         combo_counter(destroyed_color)

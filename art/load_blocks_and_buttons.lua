@@ -45,19 +45,18 @@ function load_blocks()
 
 end 
 
-
-
-
-
 function load_buttons()
     local joysticks = love.joystick.getJoysticks()
     local joystick = joysticks[1]
     
-    if joystick == nil then controller = "keyboard"
-    else controller = joystick:getName() end  
+    if input_device == "keyboard" or joystick == nil then
+        controller = "keyboard"
     
-    --if controller:find("Xbox") or controller:find("XInput") then
-      if controller == "Controller (Xbox One For Windows)" then
+        else
+            controller = joystick:getName()
+    end 
+    
+    if controller:find("Xbox") or controller:find("XInput") then
         a_button = love.graphics.newImage("art/buttons/switch_xbox/a_button.png")
         b_button = love.graphics.newImage("art/buttons/switch_xbox/b_button.png")
         x_button = love.graphics.newImage("art/buttons/switch_xbox/x_button.png")

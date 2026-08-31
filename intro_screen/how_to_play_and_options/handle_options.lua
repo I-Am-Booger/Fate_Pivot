@@ -110,8 +110,8 @@ function update_fullscreen_text()
     local is_fullscreen = love.window.getFullscreen()
 
     if is_fullscreen then
-        full_screen = "Yes"
+        full_screen = text[current_language].yes
     else
-        full_screen = "No"
+        full_screen = text[current_language].no
     end
 end

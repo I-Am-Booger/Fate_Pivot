@@ -33,6 +33,9 @@ function love.keypressed(input)
     elseif input == "return" and game_state == "mode_select" and title_selection == 5 then
         game_state = "exit" love.event.quit()
 
+    elseif input == "return" and game_state == "options" then
+        activate_options() return
+
     elseif input == "escape" and game_state == "options" then 
         game_state = "mode_select" return
 
@@ -41,12 +44,8 @@ function love.keypressed(input)
 
     elseif input == "escape" and game_state == "how_to_play" then
         game_state = "mode_select" return    
-
-        elseif input == "escape" and game_state == "how_to_play" then
-        game_state = "mode_select"
-        return
-
-    elseif input == "a" and game_state == "how_to_play" then
+      
+    elseif (input == "a" or input == "left") and game_state == "how_to_play" then
         page_number = page_number - 1
 
         if page_number < 1 then
@@ -55,60 +54,54 @@ function love.keypressed(input)
 
         return
 
-    elseif input == "d" and game_state == "how_to_play" then
+    elseif (input == "d" or input == "right") and game_state == "how_to_play" then
         page_number = page_number + 1
 
         if page_number > 3 then
             page_number = 1
         end
 
-        return
+        return  
 
-    elseif (input == "a" or input == "d")
-    and game_state == "options" and options_selection == 1 then
-
-        toggle_fullscreen()
-        return    
-
-    elseif (input == "a" or input == "d") and game_state == "options" and options_selection == 1 then
+    elseif (input == "a" or input == "d" or input == "left" or input == "right") and game_state == "options" and options_selection == 1 then
         toggle_fullscreen() return
     
-    elseif (input == "a") and game_state == "options" and options_selection == 2 then
+    elseif (input == "a" or input == "left") and game_state == "options" and options_selection == 2 then
         change_resolution(-1) return
 
-    elseif (input == "d") and game_state == "options" and options_selection == 2 then
+    elseif (input == "d" or input == "right") and game_state == "options" and options_selection == 2 then
         change_resolution(1) return  
               
-    elseif(input == "a") and game_state == "options" and options_selection == 3 then 
+    elseif (input == "a" or input == "left") and game_state == "options" and options_selection == 3 then 
         change_music_volume(-1) return 
 
-    elseif(input == "d") and game_state == "options" and options_selection == 3 then 
+    elseif (input == "d" or input == "right") and game_state == "options" and options_selection == 3 then 
         change_music_volume(1) return
 
-    elseif(input == "a") and game_state == "options" and options_selection == 4 then 
+    elseif(input == "a" or input == "left") and game_state == "options" and options_selection == 4 then 
         change_sound_volume(-1) return
 
-    elseif(input == "d") and game_state == "options" and options_selection == 4 then 
+    elseif(input == "d" or input == "right") and game_state == "options" and options_selection == 4 then 
         change_sound_volume(1) return     
     
-    elseif (input == "a" or input == "d") and game_state == "options" and options_selection == 5 then
+   elseif (input == "a" or input == "d" or input == "left" or input == "right") and game_state == "options" and options_selection == 5 then
         change_language() return
 
-    elseif input == "return" and game_state == "play" then
+    elseif input == "return" and game_state == "play" and board_death_active == false then
         game_state = "pause" return
 
     elseif input == "return" and game_state == "pause" then
         game_state = "play" return
 
-    elseif input == "escape" and (game_state == "play" or game_state == "pause")
-        then game_state = "mode_select" return
+    elseif input == "escape" and (game_state == "play" or game_state == "pause") and board_death_active == false then
+        game_state = "mode_select" return
 
     elseif input == "return" and game_state == "game_over" then
         game_state = "mode_select" return
     end
 
     -- Gameplay keyboard controls
-    if game_state == "play" then
+    if game_state == "play" and board_death_active == false then
         if devil_fate_active == true then
             if input == "w" then move_selector("down") end
             if input == "s" then move_selector("up") end

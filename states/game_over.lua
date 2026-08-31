@@ -1,5 +1,6 @@
 function game_over()
     game_state = "game_over"
+    save_game_data()
 end 
 
 function start_board_death()

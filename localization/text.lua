@@ -9,6 +9,8 @@ text = {
         statistics = "Statistics",
         options = "Options",
         how_to_play = "How to Play",
+        previous = "Previous",
+        next = "Next",
         exit = "Exit",
 
         -- Game states
@@ -20,6 +22,8 @@ text = {
         
         -- options 
         fullscreen = "Fullscreen",
+        yes = "Yes",
+        no = "No",
         resolution = "Resolution",
         music_volume = "Music Volume",
         sound_volume = "Sound Volume",     
@@ -74,6 +78,8 @@ text = {
         statistics = "Estadísticas",
         options = "Opciones",
         how_to_play = "Cómo jugar",
+        previous = "Anterior",
+        next = "Siguiente",
         exit = "Salir",
 
         -- Game states
@@ -85,6 +91,8 @@ text = {
 
         -- Options
         fullscreen = "Pantalla completa",
+        yes = "Si",
+        no = "No",
         resolution = "Resolución",
         music_volume = "Volumen de música",
         sound_volume = "Volumen de sonido",

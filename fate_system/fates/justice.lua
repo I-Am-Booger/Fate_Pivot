@@ -25,6 +25,9 @@ function issue_justice()
         
         local cell = justice_fate_teardown[i]
 
+        save_data.statistics.gameplay.bad_blocks_destroyed =
+        save_data.statistics.gameplay.bad_blocks_destroyed + 1
+        
         start_block_destruction_effect(cell)
         
         cell.occupied = false
@@ -62,6 +65,7 @@ function issue_justice()
         table.remove(justice_fate_rebuild, random_index)
     end 
 
+    save_game_data()
 end
 
 function update_justice_fate(dt)

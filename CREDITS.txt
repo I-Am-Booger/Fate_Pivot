@@ -1,0 +1,38 @@
+FATE & PIVOT
+CREDITS
+
+Created and developed by Gant Allen
+
+
+MUSIC
+
+"Crystal Cave (song18)"
+Artist: cynicmusic / The Cynic Project
+Originally created for Pixelsphere
+License: CC0 1.0 Universal / Public Domain Dedication
+Source: https://opengameart.org/content/crystal-cave-song18
+
+
+SOUND EFFECTS
+
+Selected sound effects by Fernando del Pueyo Montesinos,
+Tao & Sound Creative Music Solutions.
+Obtained through the Puzzle Audio Bundle distributed by Humble Bundle.
+
+Additional sound effect from the Sonniss GDC Game Audio Bundle 2015.
+
+
+TECHNOLOGY
+
+Built with LÖVE, an open-source 2D game framework for Lua.
+https://love2d.org/
+
+LÖVE is distributed under the zlib/libpng license. The complete LÖVE
+license and bundled third-party notices should be included with the
+distributed game runtime.
+
+
+FINAL RELEASE CHECK
+
+Before release, add credits for any final music, artwork, voice work,
+localization, or other contributed material that is not listed above.

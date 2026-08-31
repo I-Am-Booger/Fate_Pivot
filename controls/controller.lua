@@ -50,6 +50,8 @@ function love.gamepadpressed(joystick, input)
             page_number = page_number + 1 
             if page_number > 3 then page_number = 1 return end  
 
+        elseif input == "a" and game_state == "options" then
+            activate_options() return
 
         elseif (input == "back" or input == "b") and game_state == "options"  then 
             game_state = "mode_select" return
@@ -86,12 +88,13 @@ function love.gamepadpressed(joystick, input)
         elseif (input == "back" or input == "b") and game_state == "statistics" then
             game_state = "mode_select" return
 
-        elseif input == "start" and game_state == "play" then game_state = "pause" return
+        elseif input == "start" and game_state == "play" and board_death_active == false then
+            game_state = "pause" return
 
         elseif input == "start" and game_state == "pause" then game_state = "play" return
 
-        elseif (input == "back") and (game_state == "play" or game_state == "pause")
-            then game_state = "mode_select" return
+        elseif input == "back" and (game_state == "play" or game_state == "pause") and board_death_active == false then
+            game_state = "mode_select" return
             
         elseif input == "start" and game_state == "game_over" then
             game_state = "mode_select" return
@@ -99,7 +102,7 @@ function love.gamepadpressed(joystick, input)
     end
 
     -- Gameplay controls
-    if game_state == "play" then
+    if game_state == "play" and board_death_active == false then
         
         if devil_fate_active == true then
             if input == "dpup" then move_selector("down") end
